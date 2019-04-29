@@ -2,6 +2,8 @@ package FinalExam;
 
 
 public class AquaworldRoom extends Rooms{
+	
+	private String restrictions;
 
 	@Override
 	public int getCost() {
@@ -35,6 +37,11 @@ public class AquaworldRoom extends Rooms{
 		// TODO Auto-generated method stub
 		numofRooms = 1;
 		return numofRooms;
+	}
+	
+	public String getRestrictions() {
+		restrictions = "To access water facilities, bathing suits must be worn at all times.";
+		return restrictions;
 	}
 
 }
