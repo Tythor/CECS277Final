@@ -27,15 +27,13 @@ public abstract class Rooms {
 		includedCost = ic;
 	}
 	
-	public String getDescription() {
-		return description;
-	}
+	abstract public String getDescription();
 	
 	public void setDescription(String describe) {
 		description = describe;
 	}
 	
-	public String getUpgrades() {
+	public String getUpgrades(){
 		return upgrades;
 	}
 	
@@ -43,17 +41,13 @@ public abstract class Rooms {
 		upgrades = up;
 	}
 	
-	public String getIncludedCost() {
-		return includedCost;
-	}
+	abstract public String getIncludedCost();
 	
 	public void setIncludedCost(String ic) {
 		includedCost = ic;
 	}
 	
-	public int getCapacity() {
-		return capacity;
-	}
+	abstract public int getCapacity();
 	
 	public void setCapacity(int cap) {
 		capacity = cap;
@@ -61,9 +55,7 @@ public abstract class Rooms {
 	
 	abstract public int getCost();
 	
-	public int getNumofRooms() {
-		return numofRooms;
-	}
+	abstract public int getNumofRooms();
 	
 	public void setNumofRooms(int num) {
 		numofRooms = num;
