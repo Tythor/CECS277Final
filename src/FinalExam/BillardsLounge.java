@@ -2,11 +2,7 @@ package FinalExam;
 
 public class BillardsLounge extends Rooms {
 
-	@Override
-	public int getCost() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	@Override
 	public String getDescription() {
@@ -34,6 +30,12 @@ public class BillardsLounge extends Rooms {
 		// TODO Auto-generated method stub
 		numofRooms = 5;
 		return numofRooms;
+	}
+
+	@Override
+	public double getCost() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

@@ -4,20 +4,31 @@ package FinalExam;
 public class AquaworldRoom extends Rooms{
 	
 	private String restrictions;
-
-	@Override
-	public int getCost() {
-		// TODO Auto-generated method stub
-		return 0;
+	private static AquaworldRoom aquaWorld = new AquaworldRoom();
+	
+	private AquaworldRoom() {}
+	
+	public static AquaworldRoom getInstance() {
+		
+		if(aquaWorld == null) {
+			
+			aquaWorld = new AquaworldRoom();
+		}
+		
+		return aquaWorld;	
 	}
 
+	@Override
+	public double getCost() {
+		// TODO Auto-generated method stub
+		return 0.00;	
+		}
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
 		description = "Olympic-sized pool with water slide, kiddie pool, and large jacuzzi";
 		return description;
 	}
-
 	@Override
 	public String getIncludedCost() {
 		// TODO Auto-generated method stub
@@ -42,6 +53,6 @@ public class AquaworldRoom extends Rooms{
 	public String getRestrictions() {
 		restrictions = "To access water facilities, bathing suits must be worn at all times.";
 		return restrictions;
-	}
+		}
 
 }

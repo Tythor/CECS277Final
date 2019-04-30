@@ -3,7 +3,7 @@ package FinalExam;
 public class MakeReservation {
     private Date date;
     private Rooms room;
-    private Guest guest;
+    private GuestInfo guest;
     private boolean isFinalized;
 
     public MakeReservation(Date date, Rooms room) {

@@ -1,28 +1,31 @@
 package FinalExam;
 
+import java.util.ArrayList;
+
 public abstract class Rooms {
 
 	protected int capacity;
-	protected int cost;
+	protected double cost;
 	protected int numofRooms;
-	protected String upgrades;
+	protected Upgrades upgrades;
 	protected String description;
 	protected String includedCost;
+	protected boolean isAvailable;
+	protected ArrayList<MakeReservation> waitlist = new ArrayList<MakeReservation>();
 	
 	public Rooms() {
 		capacity = 50;
-		cost = 700;
+		cost = 700.00;
 		numofRooms = 10;
-		upgrades = "none";
+		upgrades = new Upgrades();
 		description = "room with party tables, chairs and is next to arcade";
 		includedCost = "table and chair set up, basic meal plan";
 	}
 	
-	public Rooms(int cap, int c, int num, String up, String describe, String ic) {
+	public Rooms(int cap, double c, int num, String describe, String ic) {
 		capacity = cap;
 		cost = c;
 		numofRooms = num;
-		upgrades = up;
 		description = describe;
 		includedCost = ic;
 	}
@@ -33,11 +36,11 @@ public abstract class Rooms {
 		description = describe;
 	}
 	
-	public String getUpgrades(){
+	public Upgrades getUpgrades(){
 		return upgrades;
 	}
 	
-	public void setUpgrades(String up) {
+	public void setUpgrades(Upgrades up) {
 		upgrades = up;
 	}
 	
@@ -53,12 +56,16 @@ public abstract class Rooms {
 		capacity = cap;
 	}
 	
-	abstract public int getCost();
+	abstract public double getCost();
 	
 	abstract public int getNumofRooms();
 	
 	public void setNumofRooms(int num) {
 		numofRooms = num;
+	}
+	
+	public void isAvaliable() {
+		
 	}
 	
 	public String toString() {

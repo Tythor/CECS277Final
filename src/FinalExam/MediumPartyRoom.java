@@ -3,7 +3,7 @@ package FinalExam;
 public class MediumPartyRoom extends Rooms{
 
 	@Override
-	public int getCost() {
+	public double getCost() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
