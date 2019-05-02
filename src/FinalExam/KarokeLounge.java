@@ -1,39 +1,33 @@
 package FinalExam;
 
-public class KarokeLounge extends Rooms{
+public class KarokeLounge extends Room{
 
-	@Override
-	public int getCost() {
-		// TODO Auto-generated method stub
-		return 0;
+	
+	
+	public KarokeLounge() {
+		super.setCapacity(10);
+		super.setDescription("Enclosed lounge with karaoke machine. Includes access to karoke machine in cost.");
+		getCost();
 	}
-
+	
+	
 	@Override
-	public String getDescription() {
+	public double getCost() {
 		// TODO Auto-generated method stub
-		description = "enclosed lounge with karoke machine";
-		return description;
+		cost = 30;
+		return cost;
 	}
-
-	@Override
-	public String getIncludedCost() {
-		// TODO Auto-generated method stub
-		includedCost = "access to karoke machine";
-		return includedCost;
+	
+	public String toString() {
+		return("Karoke Lounge: \nCapacity: " + capacity + " people \nDescription: " + description + "\nCost: $" + cost +" an hour");
 	}
-
-	@Override
-	public int getCapacity() {
-		// TODO Auto-generated method stub
-		capacity = 10;
-		return capacity;
-	}
-
-	@Override
-	public int getNumofRooms() {
-		// TODO Auto-generated method stub
-		numofRooms = 10;
-		return numofRooms;
+		
+		
+		
+		
+public static void main(String[] args) {
+		KarokeLounge a = new KarokeLounge();
+		System.out.println(a);
 	}
 
 }
