@@ -1,10 +1,10 @@
 package FinalExam;
 
-public class KarokeLounge extends Room{
+public class KaraokeLounge extends Room{
 
 	
 	
-	public KarokeLounge() {
+	public KaraokeLounge() {
 		super.setCapacity(10);
 		super.setDescription("Enclosed lounge with karaoke machine. Includes access to karoke machine in cost.");
 		getCost();
@@ -26,7 +26,7 @@ public class KarokeLounge extends Room{
 		
 		
 public static void main(String[] args) {
-		KarokeLounge a = new KarokeLounge();
+		KaraokeLounge a = new KaraokeLounge();
 		System.out.println(a);
 	}
 

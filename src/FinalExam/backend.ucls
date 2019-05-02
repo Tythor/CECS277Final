@@ -91,7 +91,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="FinalExam.KarokeLounge" project="CECS277Final" 
+  <class id="11" language="java" name="FinalExam.KaraokeLounge" project="CECS277Final"
     file="/CECS277Final/src/FinalExam/KarokeLounge.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="352" y="591"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
