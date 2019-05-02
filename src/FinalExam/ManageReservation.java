@@ -1,12 +1,18 @@
 package FinalExam;
 
+import java.util.ArrayList;
+
 public class ManageReservation {
+    ArrayList<Room> log;
     boolean isFinalized;
     Date date;
-    Rooms Room;
+    Room Room;
+
     public ManageReservation() {
     }
+    void update() {
 
+    }
     public boolean isFinalized() {
         return isFinalized;
     }
@@ -15,19 +21,4 @@ public class ManageReservation {
         isFinalized = finalized;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Rooms getRoom() {
-        return Room;
-    }
-
-    public void setRoom(Rooms room) {
-        Room = room;
-    }
 }
