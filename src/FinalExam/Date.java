@@ -1,6 +1,6 @@
 package FinalExam;
 
-public class Date {
+public class Date  {
     private int month;
     private int day;
     private int year;
