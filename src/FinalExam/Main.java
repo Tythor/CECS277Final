@@ -2,6 +2,10 @@ package FinalExam;
 
 public class Main {
     public static void main(String[] args) {
+<<<<<<< HEAD
+=======
+    	
+>>>>>>> 57fe81b5eb84c42553c79119adbfe8da36ce4400
         SmallPartyRoom a = new SmallPartyRoom();
         System.out.println(a);
 

@@ -8,9 +8,12 @@ public class ManageReservation {
     Date date;
     Room Room;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> a11d0ba4881620c5be641a62bcbdf30eaf497a60
+=======
+>>>>>>> 57fe81b5eb84c42553c79119adbfe8da36ce4400
     public ManageReservation() {
     }
     void update() {
