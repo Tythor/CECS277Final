@@ -1,8 +1,10 @@
 package FinalExam;
 
-public class Upgrades {
+public class Upgrades extends Room {
 
-	public double addPartyFavorsBag() {
+	// Break Into classes
+	
+	/*public double addPartyFavorsBag() {
 		return 0;
 	}
 	
@@ -16,7 +18,20 @@ public class Upgrades {
 	
 	public double addMealPlan() {
 		return 0;
+	} */
+
+	private int numUpgrades;
+	
+	
+	public Upgrades() {
+		
 	}
 
+	@Override
+	public double getCost() {
+		// TODO Auto-generated method stub
+		return numUpgrades;
+	}
+	
 	
 }

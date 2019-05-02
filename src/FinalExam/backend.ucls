@@ -21,23 +21,14 @@
   </class>  
   <class id="3" language="java" name="FinalExam.MakeReservation" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/MakeReservation.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1030" y="133"/>    
+    <position height="-1" width="-1" x="1140" y="125"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="FinalExam.Upgrades" project="CECS277Final" 
-    file="/CECS277Final/src/FinalExam/Upgrades.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="735" y="93"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="FinalExam.MealPlans" project="CECS277Final" 
+  <class id="4" language="java" name="FinalExam.MealPlans" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/MealPlans.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1139" y="673"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -46,16 +37,16 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="FinalExam.Card" project="CECS277Final" 
+  <class id="5" language="java" name="FinalExam.Card" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/Card.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1143" y="395"/>    
+    <position height="-1" width="-1" x="1158" y="395"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="FinalExam.Room" project="CECS277Final" 
+  <class id="6" language="java" name="FinalExam.Room" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/Room.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="451" y="283"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -64,16 +55,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="FinalExam.AquaworldRoom" project="CECS277Final" 
-    file="/CECS277Final/src/FinalExam/AquaworldRoom.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="166" y="164"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="9" language="java" name="FinalExam.MediumPartyRoom" project="CECS277Final" 
+  <class id="7" language="java" name="FinalExam.MediumPartyRoom" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/MediumPartyRoom.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="124" y="376"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -82,7 +64,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="FinalExam.SmallPartyRoom" project="CECS277Final" 
+  <class id="8" language="java" name="FinalExam.SmallPartyRoom" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/SmallPartyRoom.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="178" y="538"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -91,8 +73,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="FinalExam.KaraokeLounge" project="CECS277Final"
-    file="/CECS277Final/src/FinalExam/KarokeLounge.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="9" language="java" name="FinalExam.KaraokeLounge" project="CECS277Final" 
+    file="/CECS277Final/src/FinalExam/KaraokeLounge.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="352" y="591"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -100,7 +82,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="FinalExam.BillardsLounge" project="CECS277Final" 
+  <class id="10" language="java" name="FinalExam.BillardsLounge" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/BillardsLounge.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="566" y="577"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -109,98 +91,175 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="13">    
+  <class id="11" language="java" name="FinalExam.AquaworldRoom" project="CECS277Final" 
+    file="/CECS277Final/src/FinalExam/AquaworldRoom.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="166" y="139"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="FinalExam.Upgrades" project="CECS277Final" 
+    file="/CECS277Final/src/FinalExam/Upgrades.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="744" y="159"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="FinalExam.Projector" project="CECS277Final" 
+    file="/CECS277Final/src/FinalExam/Projector.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="568" y="16"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="FinalExam.PartyDecorations" project="CECS277Final" 
+    file="/CECS277Final/src/FinalExam/PartyDecorations.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="740" y="16"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="FinalExam.PartyFavorsBag" project="CECS277Final" 
+    file="/CECS277Final/src/FinalExam/PartyFavorsBag.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="931" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="16">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="17" name="aquaWorld"/>      
+      <multiplicity id="18" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="19">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="14" name="guest">        
+      <attribute id="20" name="guest">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="15" minimum="0" maximum="1">        
+      <multiplicity id="21" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="16">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="17" name="paymentMethod">        
+  <generalization id="22">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="23">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="24" name="room">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="18" minimum="0" maximum="1">        
+      <multiplicity id="25" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="19">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="7"/>  
+  <generalization id="26">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="6"/>  
   </generalization>  
-  <association id="20">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="21" name="aquaWorld"/>      
-      <multiplicity id="22" minimum="0" maximum="1"/>    
+  <generalization id="27">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="28">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="29" name="waitlist">        
+        <position height="0" width="0" x="110" y="-8"/>      
+      </attribute>      
+      <multiplicity id="30" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="110" y="-8"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="23">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="7"/>  
-  </generalization>  
-  <generalization id="24">    
+  <association id="31">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="32" name="paymentMethod">        
+        <position height="0" width="0" x="15" y="0"/>      
+      </attribute>      
+      <multiplicity id="33" minimum="0" maximum="1">        
+        <position height="0" width="0" x="15" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="34">    
     <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="7"/>  
+    <end type="TARGET" refId="6"/>  
   </generalization>  
-  <generalization id="25">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="7"/>  
+  <generalization id="35">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="12"/>  
   </generalization>  
-  <association id="26">    
+  <association id="36">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="27" name="date">        
+      <attribute id="37" name="date">        
         <position height="0" width="0" x="-12" y="1"/>      
       </attribute>      
-      <multiplicity id="28" minimum="0" maximum="1">        
+      <multiplicity id="38" minimum="0" maximum="1">        
         <position height="0" width="0" x="-12" y="1"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="29">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="7"/>  
+  <association id="39">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="40" name="room"/>      
+      <multiplicity id="41" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="42">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="12"/>  
   </generalization>  
-  <association id="30">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="31" name="waitlist"/>      
-      <multiplicity id="32" minimum="0" maximum="2147483647"/>    
+  <association id="43">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="44" name="upgrades"/>      
+      <multiplicity id="45" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
+    <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="33">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="34" name="room"/>      
-      <multiplicity id="35" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="36">    
+  <generalization id="46">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <association id="37">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="38" name="upgrades"/>      
-      <multiplicity id="39" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
+  <generalization id="47">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="48">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
