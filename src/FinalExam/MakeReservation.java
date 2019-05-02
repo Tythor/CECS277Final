@@ -2,11 +2,11 @@ package FinalExam;
 
 public class MakeReservation {
     private Date date;
-    private Rooms room;
+    private Room room;
     private GuestInfo guest;
     private boolean isFinalized;
 
-    public MakeReservation(Date date, Rooms room) {
+    public MakeReservation(Date date, Room room) {
 
     }
 
@@ -18,11 +18,11 @@ public class MakeReservation {
         this.date = date;
     }
 
-    public Rooms getRoom() {
+    public Room getRoom() {
         return room;
     }
 
-    public void setRoom(Rooms room) {
+    public void setRoom(Room room) {
         this.room = room;
     }
 

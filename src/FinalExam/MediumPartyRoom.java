@@ -1,39 +1,33 @@
 package FinalExam;
 
-public class MediumPartyRoom extends Rooms{
+public class MediumPartyRoom extends Room{
 
+	public MediumPartyRoom() {
+		super.setCapacity(45);
+		super.setDescription("Room with party tables and chairs, quick access to arcade. Includes table & chair set-up, DJ, and basic meal plan in cost.");
+		getCost();
+	}
+	
+	
 	@Override
 	public double getCost() {
 		// TODO Auto-generated method stub
-		return 0;
+		cost = 250;
+		return cost;
 	}
-
-	@Override
-	public String getDescription() {
-		// TODO Auto-generated method stub
-		description = "Room with party tables and chairs, quick access to arcade";
-		return description;
+	
+	public String toString() {
+		return("Medium Party Room: \nCapacity: " + capacity + " people \nDescription: " + description + "\nCost: $" + cost +" an hour");
 	}
+		
+		
+		
+		
+public static void main(String[] args) {
+		MediumPartyRoom a = new MediumPartyRoom();
+		System.out.println(a);
+	
 
-	@Override
-	public String getIncludedCost() {
-		// TODO Auto-generated method stub
-		includedCost = "table & chair set-up, DJ, Basic Meal Plan";
-		return includedCost;
-	}
-
-	@Override
-	public int getCapacity() {
-		// TODO Auto-generated method stub
-		capacity = 45;
-		return capacity;
-	}
-
-	@Override
-	public int getNumofRooms() {
-		// TODO Auto-generated method stub
-		numofRooms = 2;
-		return numofRooms;
 	}
 
 }

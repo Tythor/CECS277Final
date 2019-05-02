@@ -11,7 +11,7 @@ public class GuestInfo extends MakeReservation{
 	    private String email;
 	    private Card paymentMethod;
 
-	  public GuestInfo(Date date, Rooms room) {
+	  public GuestInfo(Date date, Room room) {
 		super(date, room);
 		// TODO Auto-generated constructor stub
 	}

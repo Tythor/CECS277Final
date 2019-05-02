@@ -2,35 +2,33 @@ package FinalExam;
 
 import java.util.ArrayList;
 
-public abstract class Rooms {
+public abstract class Room {
 
 	protected int capacity;
 	protected double cost;
-	protected int numofRooms;
 	protected Upgrades upgrades;
 	protected String description;
-	protected String includedCost;
 	protected boolean isAvailable;
+	protected MealPlans Meal;
 	protected ArrayList<MakeReservation> waitlist = new ArrayList<MakeReservation>();
 	
-	public Rooms() {
+	public Room() {
 		capacity = 50;
 		cost = 700.00;
-		numofRooms = 10;
 		upgrades = new Upgrades();
 		description = "room with party tables, chairs and is next to arcade";
-		includedCost = "table and chair set up, basic meal plan";
+
 	}
 	
-	public Rooms(int cap, double c, int num, String describe, String ic) {
+	public Room(int cap, double c, String describe) {
 		capacity = cap;
 		cost = c;
-		numofRooms = num;
 		description = describe;
-		includedCost = ic;
 	}
 	
-	abstract public String getDescription();
+	public String getDescription() {
+		return description;
+	}
 	
 	public void setDescription(String describe) {
 		description = describe;
@@ -44,13 +42,10 @@ public abstract class Rooms {
 		upgrades = up;
 	}
 	
-	abstract public String getIncludedCost();
 	
-	public void setIncludedCost(String ic) {
-		includedCost = ic;
+	public int getCapacity() {
+		return capacity;
 	}
-	
-	abstract public int getCapacity();
 	
 	public void setCapacity(int cap) {
 		capacity = cap;
@@ -58,14 +53,11 @@ public abstract class Rooms {
 	
 	abstract public double getCost();
 	
-	abstract public int getNumofRooms();
-	
-	public void setNumofRooms(int num) {
-		numofRooms = num;
+	public void upgradeMealPlan(MealPlans P) {
+		
 	}
 	
 	public void isAvaliable() {
-		
 	}
 	
 	public String toString() {
