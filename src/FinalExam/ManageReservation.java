@@ -3,7 +3,7 @@ package FinalExam;
 public class ManageReservation {
     boolean isFinalized;
     Date date;
-    Rooms Room;
+    Room Room;
     public ManageReservation() {
     }
 
@@ -23,11 +23,11 @@ public class ManageReservation {
         this.date = date;
     }
 
-    public Rooms getRoom() {
+    public Room getRoom() {
         return Room;
     }
 
-    public void setRoom(Rooms room) {
+    public void setRoom(Room room) {
         Room = room;
     }
 }
