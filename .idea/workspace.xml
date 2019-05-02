@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce9eb9b9-3f95-4037-94fa-e349ba991113" name="Default Changelist" comment="" />
+    <list default="true" id="ce9eb9b9-3f95-4037-94fa-e349ba991113" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,11 +47,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FinalExam/Factory/AquaworldRoomFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
               <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -107,7 +121,6 @@
         <option value="$PROJECT_DIR$/src/FinalExam/GuestInfo.java" />
         <option value="$PROJECT_DIR$/src/FinalExam/Date.java" />
         <option value="$PROJECT_DIR$/src/FinalExam/KaraokeLounge.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/FinalExam/AquaworldFactory.java" />
         <option value="$PROJECT_DIR$/src/FinalExam/RoomFactory.java" />
         <option value="$PROJECT_DIR$/src/FinalExam/AquaworldRoomFactory.java" />
@@ -122,6 +135,7 @@
         <option value="$PROJECT_DIR$/src/FinalExam/Factory/BilliardsLoungeFactory.java" />
         <option value="$PROJECT_DIR$/src/FinalExam/Factory/KaraokeLoungeFactory.java" />
         <option value="$PROJECT_DIR$/src/FinalExam/Factory/MediumPartyRoomFactory.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -149,11 +163,6 @@
             <path>
               <item name="CECS277Final" type="b2602c69:ProjectViewProjectNode" />
               <item name="CECS277Final" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CECS277Final" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CECS277Final" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CECS277Final" type="b2602c69:ProjectViewProjectNode" />
@@ -405,13 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FinalExam/BillardsLounge.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -511,6 +513,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
