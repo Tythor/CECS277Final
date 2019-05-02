@@ -21,13 +21,4 @@ public class KaraokeLounge extends Room{
 	public String toString() {
 		return("Karoke Lounge: \nCapacity: " + capacity + " people \nDescription: " + description + "\nCost: $" + cost +" an hour");
 	}
-		
-		
-		
-		
-public static void main(String[] args) {
-		KaraokeLounge a = new KaraokeLounge();
-		System.out.println(a);
-	}
-
 }
