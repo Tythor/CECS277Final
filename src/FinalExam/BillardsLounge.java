@@ -27,11 +27,4 @@ public class BillardsLounge extends Room{
 		restrictions = "21+ only";
 		return restrictions;
 	}
-	
-	public static void main(String[] args) {
-		BillardsLounge a = new BillardsLounge();
-		System.out.println(a);
-	}
-	
-
 }

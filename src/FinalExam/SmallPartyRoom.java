@@ -21,15 +21,6 @@ public class SmallPartyRoom extends Room{
 	public String toString() {
 		return("Small Party Room: \nCapacity: " + capacity + " people \nDescription: " + description + "\nCost: $" + cost +" an hour");
 	}
-		
-		
-		
-		
-public static void main(String[] args) {
-		SmallPartyRoom a = new SmallPartyRoom();
-		System.out.println(a);
-	}
-
 }
 
 

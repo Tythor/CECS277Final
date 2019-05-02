@@ -19,15 +19,4 @@ public class MediumPartyRoom extends Room{
 	public String toString() {
 		return("Medium Party Room: \nCapacity: " + capacity + " people \nDescription: " + description + "\nCost: $" + cost +" an hour");
 	}
-		
-		
-		
-		
-public static void main(String[] args) {
-		MediumPartyRoom a = new MediumPartyRoom();
-		System.out.println(a);
-	
-
-	}
-
 }
