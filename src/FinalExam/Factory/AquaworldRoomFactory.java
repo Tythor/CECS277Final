@@ -1,9 +1,10 @@
 package FinalExam.Factory;
 
+import FinalExam.AquaworldRoom;
 import FinalExam.Room;
 
 public class AquaworldRoomFactory extends RoomFactory {
-    public Room createRoom(Room room) {
-        return room;
+    public Room createRoom() {
+        return new AquaworldRoom();
     }
 }
