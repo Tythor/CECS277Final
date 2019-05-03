@@ -3,6 +3,7 @@ package FinalExam;
 public class MediumPartyRoom extends Room{
 
 	public MediumPartyRoom() {
+		super.name = "Medium Party Room";
 		super.setCapacity(45);
 		super.setDescription("Room with party tables and chairs, quick access to arcade. Includes table & chair set-up, DJ, and basic meal plan in cost.");
 		getCost();
@@ -17,6 +18,6 @@ public class MediumPartyRoom extends Room{
 	}
 	
 	public String toString() {
-		return("Medium Party Room: \nCapacity: " + capacity + " people \nDescription: " + description + "\nCost: $" + cost +" an hour");
+		return(name + ": \nCapacity: " + capacity + " people \nDescription: " + description + "\nCost: $" + cost +" an hour");
 	}
 }
