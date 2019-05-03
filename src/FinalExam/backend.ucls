@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="FinalExam.GuestInfo" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/GuestInfo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="774" y="422"/>    
+    <position height="-1" width="-1" x="762" y="472"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="FinalExam.Upgrades" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/Upgrades.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="744" y="159"/>    
+    <position height="-1" width="-1" x="831" y="97"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="FinalExam.Projector" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/Projector.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="568" y="16"/>    
+    <position height="-1" width="-1" x="521" y="16"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -120,7 +120,7 @@
   </class>  
   <class id="14" language="java" name="FinalExam.PartyDecorations" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/PartyDecorations.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="740" y="16"/>    
+    <position height="-1" width="-1" x="689" y="19"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="FinalExam.PartyFavorsBag" project="CECS277Final" 
     file="/CECS277Final/src/FinalExam/PartyFavorsBag.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="931" y="23"/>    
+    <position height="-1" width="-1" x="963" y="18"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -147,10 +147,10 @@
   <association id="19">    
     <end type="SOURCE" refId="3" navigable="false">      
       <attribute id="20" name="guest">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="-12" y="50"/>      
       </attribute>      
       <multiplicity id="21" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="0" width="0" x="-12" y="50"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
@@ -245,18 +245,14 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <generalization id="46">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <generalization id="47">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="6"/>  
   </generalization>  
-  <generalization id="48">    
+  <generalization id="47">    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="6"/>  
   </generalization>  
-  <generalization id="49">    
+  <generalization id="48">    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="6"/>  
   </generalization>  

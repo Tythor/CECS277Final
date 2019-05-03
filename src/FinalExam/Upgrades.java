@@ -23,9 +23,9 @@ public class Upgrades extends Room {
 	private int numUpgrades;
 	
 	
-	public Upgrades() {
+	//public Upgrades() {
 		
-	}
+	//}
 
 	@Override
 	public double getCost() {
