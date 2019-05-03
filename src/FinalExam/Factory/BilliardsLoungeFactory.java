@@ -1,9 +1,10 @@
 package FinalExam.Factory;
 
+import FinalExam.BillardsLounge;
 import FinalExam.Room;
 
 public class BilliardsLoungeFactory extends RoomFactory {
-    public Room createRoom(Room room) {
-        return room;
+    public Room createRoom() {
+        return new BillardsLounge();
     }
 }

@@ -1,9 +1,10 @@
 package FinalExam.Factory;
 
+import FinalExam.MediumPartyRoom;
 import FinalExam.Room;
 
 public class MediumPartyRoomFactory extends RoomFactory {
-    public Room createRoom(Room room) {
-        return room;
+    public Room createRoom() {
+        return new MediumPartyRoom();
     }
 }

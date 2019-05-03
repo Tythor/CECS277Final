@@ -7,7 +7,7 @@ public class KaraokeLounge extends Room{
 	public KaraokeLounge() {
 		super.name = "Karaoke Lounge";
 		super.setCapacity(10);
-		super.setDescription("Enclosed lounge with karaoke machine. Includes access to karoke machine in cost.");
+		super.setDescription("Enclosed lounge with karaoke machine. Includes access to karaoke machine in cost.");
 		getCost();
 	}
 	
