@@ -3,7 +3,8 @@ package FinalExam;
 import java.util.ArrayList;
 
 public abstract class Room {
-
+	
+	protected String name;
 	protected int capacity;
 	protected double cost;
 	protected Upgrades upgrades;
@@ -13,17 +14,26 @@ public abstract class Room {
 	protected ArrayList<MakeReservation> waitlist = new ArrayList<MakeReservation>();
 	
 	public Room() {
+		name = "Small Party Room";
 		capacity = 50;
 		cost = 700.00;
-		upgrades = new Upgrades();
 		description = "room with party tables, chairs and is next to arcade";
 
 	}
 	
-	public Room(int cap, double c, String describe) {
+	public Room(String n, int cap, double c, String describe) {
+		name = n;
 		capacity = cap;
 		cost = c;
 		description = describe;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String n) {
+		name = n;
 	}
 	
 	public String getDescription() {

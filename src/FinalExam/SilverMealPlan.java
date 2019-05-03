@@ -1,3 +1,4 @@
+package FinalExam;
 
 public class SilverMealPlan extends BronzeMealPlan {
 	
@@ -6,7 +7,7 @@ public class SilverMealPlan extends BronzeMealPlan {
 		super(np, ns, nt, s, b);
 	}
 
-	private String toString()
+	public String toString()
 	{
 		return super.toString() + ", salad";
 	}
