@@ -6,6 +6,16 @@ public class Projector extends Upgrades {
 	
 	private int hourlyRate;
 	
+	
+	public void setHour(int hourlyRate) {
+		this.hourlyRate = hourlyRate;
+	}
+	
+	public int getHour() {
+		return hourlyRate;
+	}
+	
+	
 	public double getCost() {
 		
 		return 10 * hourlyRate;
