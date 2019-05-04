@@ -1,5 +1,7 @@
 package FinalExam;
 
+import FinalExam.Factory.*;
+
 public class Main {
     public static void main(String[] args) {
         SmallPartyRoom a = new SmallPartyRoom();
@@ -17,5 +19,31 @@ public class Main {
 
         KaraokeLounge f = new KaraokeLounge();
         System.out.println(f);
+
+        // Abstract Factory Implementation
+        RoomFactory roomFactory = null;
+        String name = "MediumPartyRoom";
+        switch (name) {
+            case "SmallPartyRoom":
+                roomFactory = new SmallPartyRoomFactory();
+                break;
+            case "MediumPartyRoom":
+                roomFactory = new MediumPartyRoomFactory();
+                break;
+            case "AquaworldRoom":
+                roomFactory = new AquaworldRoomFactory();
+                break;
+            case "BilliardsLounge":
+                roomFactory = new BilliardsLoungeFactory();
+                break;
+            case "KaraokeLounge":
+                roomFactory = new KaraokeLoungeFactory();
+                break;
+        }
+        Room room = roomFactory.createRoom();
+        System.out.println(room);
+
+        Room smallPartyRoom = new SmallPartyRoomFactory().createRoom();
+        System.out.println(smallPartyRoom);
     }
 }

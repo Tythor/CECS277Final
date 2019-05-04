@@ -11,7 +11,7 @@ public abstract class Room {
 	protected String description;
 	protected boolean isAvailable;
 	protected MealPlans Meal;
-	protected ArrayList<MakeReservation> waitlist = new ArrayList<MakeReservation>();
+	protected ArrayList<MakeReservation> waitlist = new ArrayList<>();
 	
 	public Room() {
 		name = "Small Party Room";
@@ -21,11 +21,11 @@ public abstract class Room {
 
 	}
 	
-	public Room(String n, int cap, double c, String describe) {
-		name = n;
-		capacity = cap;
-		cost = c;
-		description = describe;
+	public Room(String name, int capacity, String description) {
+		this.name = name;
+		this.capacity = capacity;
+		this.cost = getCost();
+		this.description = description;
 	}
 	
 	public String getName() {
@@ -66,8 +66,21 @@ public abstract class Room {
 	public void upgradeMealPlan(MealPlans P) {
 		
 	}
+	public void addToWaitlist(MakeReservation reservation) {
+	    waitlist.add(reservation);
+	    System.out.println("Added " + reservation + " to the waitlist");
+    }
+
+    public void removeFromWaitlist(MakeReservation reservation) {
+        waitlist.remove(reservation);
+        System.out.println("Removed " + reservation + " from the waitlist");
+    }
+    public void contactGuest() {
+
+    }
 	
-	public void isAvaliable() {
+	public boolean isAvaliable(Date date) {
+	    return isAvailable;
 	}
 	
 	public String toString() {
