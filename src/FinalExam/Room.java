@@ -15,7 +15,7 @@ public abstract class Room {
 	public Room() {
 		capacity = 50;
 		cost = 700.00;
-		upgrades = new Upgrades();
+		//upgrades = new Upgrades();
 		description = "room with party tables, chairs and is next to arcade";
 
 	}
