@@ -3,7 +3,16 @@ package FinalExam.Factory;
 import FinalExam.Room;
 import FinalExam.SmallPartyRoom;
 
+/**
+ * This class represents a ConcreteFactory in the abstract factory design pattern.
+ */
 public class SmallPartyRoomFactory extends RoomFactory {
+
+    /**
+     * This method overrides the abstract method in RoomFactory and returns a SmallPartyRoom object
+     *
+     * @return SmallPartyRoom
+     */
     @Override
     public Room createRoom() {
         /*SmallPartyRoom smallPartyRoom = new SmallPartyRoom();
