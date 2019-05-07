@@ -35,6 +35,7 @@ public class AquaworldRoom extends Room{
 	 * @return a - a string of information about aquaworld room 
 	 * **/
 	public String newAquaworldRoom() {
+		super.name = "Aquaworld Room";
 		super.setCapacity(75);
 		super.setDescription("Olympic-sized pool with water slide, kiddie pool, and large jacuzzi. Includes access to showers/lockers, life guards on duty, DJ, table & chair set-up, and basic meal plan in cost.");
 		getRestrictions();
