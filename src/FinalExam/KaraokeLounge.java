@@ -3,7 +3,7 @@ package FinalExam;
 /**
  * @author audreybrio (group 6)
  * @release date - May 6, 2019
- * this class is a subclass of room and gets the information details of the karaoke lounge 
+ * this class is a subclass of room and gets the information details of the karaoke lounge
  * **/
 
 public class KaraokeLounge extends Room{
