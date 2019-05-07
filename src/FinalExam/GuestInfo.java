@@ -39,7 +39,6 @@ public class GuestInfo {
 			this.phoneNum = phoneNum;
 		}
 
-
 		public void setEmail(String email) {
 			this.email = email;
 		}

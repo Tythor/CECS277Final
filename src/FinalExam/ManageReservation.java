@@ -27,7 +27,7 @@ public class ManageReservation {
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.date = dates;
     }
 
     public Room getRoom() {
