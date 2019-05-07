@@ -1,41 +1,26 @@
 package FinalExam;
 
-public class SmallPartyRoom extends Rooms{
+public class SmallPartyRoom extends Room{
 	
 	
 
-	@Override
-	public int getCost() {
-		// TODO Auto-generated method stub
-		return 0;
+	public SmallPartyRoom() {
+		super.setCapacity(30);
+		super.setDescription("Room with party tables and chairs, adjacent to arcade. Includes table & chair set-up and basic meal plan in cost.");
+		getCost();
 	}
-
+	
+	
 	@Override
-	public String getDescription() {
+	public double getCost() {
 		// TODO Auto-generated method stub
-		description  = "Room with party tables and chairs, adjacent to arcade";
-		return description;
+		cost = 150;
+		return cost;
 	}
-
-	@Override
-	public String getIncludedCost() {
-		// TODO Auto-generated method stub
-		includedCost = "table and chair set up, basic meal plan";
-		return includedCost;
+	
+	public String toString() {
+		return("Small Party Room: \nCapacity: " + capacity + " people \nDescription: " + description + "\nCost: $" + cost +" an hour");
 	}
-
-	@Override
-	public int getCapacity() {
-		// TODO Auto-generated method stub
-		capacity = 30;
-		return capacity;
-	}
-
-	@Override
-	public int getNumofRooms() {
-		// TODO Auto-generated method stub
-		numofRooms = 10;
-		return numofRooms;
-	}
-
 }
+
+

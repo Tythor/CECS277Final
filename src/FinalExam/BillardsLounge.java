@@ -1,39 +1,30 @@
 package FinalExam;
 
-public class BillardsLounge extends Rooms {
+public class BillardsLounge extends Room{
 
-	@Override
-	public int getCost() {
-		// TODO Auto-generated method stub
-		return 0;
+	private String restrictions;
+
+	public BillardsLounge() {
+		super.setCapacity(10);
+		super.setDescription("Enclosed lounge with pool table. Includes access to pool table and cues in cost.");
+		getRestrictions();
+		getCost();
 	}
 
-	@Override
-	public String getDescription() {
-		// TODO Auto-generated method stub
-		description = "enclosed lounge with pool table";
-		return description;
-	}
 
 	@Override
-	public String getIncludedCost() {
+	public double getCost() {
 		// TODO Auto-generated method stub
-		includedCost = "access to pool tables and cues";
-		return includedCost;
+		cost = 25;
+		return cost;
 	}
 
-	@Override
-	public int getCapacity() {
-		// TODO Auto-generated method stub
-		capacity = 10;
-		return capacity;
+	public String toString() {
+		return("Karoke Lounge: \nCapacity: " + capacity + " people \nDescription: " + description + "\nRestrictions: " + restrictions + "\nCost: $" + cost +" an hour");
 	}
-
-	@Override
-	public int getNumofRooms() {
-		// TODO Auto-generated method stub
-		numofRooms = 5;
-		return numofRooms;
+	
+	public String getRestrictions() {
+		restrictions = "21+ only";
+		return restrictions;
 	}
-
 }

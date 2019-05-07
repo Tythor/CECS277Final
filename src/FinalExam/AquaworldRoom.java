@@ -1,47 +1,48 @@
 package FinalExam;
 
 
-public class AquaworldRoom extends Rooms{
-	
+public class AquaworldRoom extends Room{
+
 	private String restrictions;
+	private static AquaworldRoom aquaWorld = new AquaworldRoom();
 
-	@Override
-	public int getCost() {
-		// TODO Auto-generated method stub
-		return 0;
+	public AquaworldRoom() {}
+
+	public static AquaworldRoom getInstance() {
+
+		if(aquaWorld == null) {
+
+			aquaWorld = new AquaworldRoom();
+		}
+
+		return aquaWorld;
 	}
 
-	@Override
-	public String getDescription() {
-		// TODO Auto-generated method stub
-		description = "Olympic-sized pool with water slide, kiddie pool, and large jacuzzi";
-		return description;
+	public String newAquaworldRoom() {
+		super.setCapacity(75);
+		super.setDescription("Olympic-sized pool with water slide, kiddie pool, and large jacuzzi. Includes access to showers/lockers, life guards on duty, DJ, table & chair set-up, and basic meal plan in cost.");
+		getRestrictions();
+		getCost();
+		String a = toString();
+		return a;
+
 	}
 
-	@Override
-	public String getIncludedCost() {
-		// TODO Auto-generated method stub
-		includedCost = "access to showers/lockers, life guards on duty, DJ, table & chair set-up, Basic Meal Plan";
-		return includedCost;
-	}
-
-	@Override
-	public int getCapacity() {
-		// TODO Auto-generated method stub
-		capacity = 75;
-		return capacity;
-	}
-
-	@Override
-	public int getNumofRooms() {
-		// TODO Auto-generated method stub
-		numofRooms = 1;
-		return numofRooms;
-	}
-	
 	public String getRestrictions() {
 		restrictions = "To access water facilities, bathing suits must be worn at all times.";
 		return restrictions;
-	}
+		}
 
+	@Override
+	public double getCost() {
+		// TODO Auto-generated method stub
+		cost = 700;
+		return cost;
+		}
+
+	public String toString() {
+		return("Aquaworld Room: \nCapacity: " + capacity + " people \nDescription: " + description + "\nRestrictions: " + restrictions + "\nCost: $" + cost +" an hour");
+	}
 }
+
+
