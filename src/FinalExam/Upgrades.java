@@ -10,6 +10,15 @@ public class Upgrades extends Room {
 
 	String choice;
 
+
+	/**
+	 *
+	 * @param choice - the choices that the user can choose from is the projector, party decorations, and party favors bag
+	 * as a String
+	 * After that, the choices will be added to an the amenities ArrayList<Upgrades>.
+	 * Note that, there can MORE than ONE upgrade, if desired
+	 */
+
 	public static void setAmeneties(String choice) {
 		if (choice == "Projector") {
 			Projector p = new Projector();
@@ -32,6 +41,10 @@ public class Upgrades extends Room {
 
 	}
 
+	/**
+	 * Displays the upgrades that the customer has selected when booking the room
+	 */
+
 	public static void displayAmeneties() {
 
 		int i;
@@ -43,10 +56,17 @@ public class Upgrades extends Room {
 
 
 	@Override
+
+	/**
+	 * @return
+	 */
+
 	public double getCost() {
 		// TODO Auto-generated method stub
 		return 0.0;
 	}
+
+	// Testing the Upgrade Decorator Pattern Setter and Getter Methods
 
 	public static void main (String [] args) {
 

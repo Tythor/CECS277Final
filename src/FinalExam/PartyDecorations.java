@@ -5,10 +5,19 @@ public class PartyDecorations extends Upgrades {
 
 	private String theme;
 
+	/**
+	 *
+	 * @param theme - the theme being set to the the room that the guests are renting
+	 */
 
 	public void setTheme(String theme) {
 		this.theme = theme;
 	}
+
+	/**
+	 *
+	 * @return - the theme being set as a String, could be Hawaiian, Sea Life, Jungle, Space, or Modern Theme
+	 */
 
 	public String getTheme() {
 		return theme;
@@ -18,8 +27,13 @@ public class PartyDecorations extends Upgrades {
 		return theme;
 	}*/
 
+
+	/**
+	 * @return $100.00, the fixed price for setting a theme to the room that the guests are renting
+	 */
+
 	public double getCost() {
 
-		return 100;
+		return 100.00;
 	}
 }

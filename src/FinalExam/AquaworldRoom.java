@@ -19,6 +19,7 @@ public class AquaworldRoom extends Room{
 	 * method that creates new instance of itself
 	 * @return aquaworld - a new aquaworld room
 	 * **/
+
 	public static AquaworldRoom getInstance() {
 
 		if(aquaWorld == null) {
@@ -34,7 +35,6 @@ public class AquaworldRoom extends Room{
 	 * @return a - a string of information about aquaworld room 
 	 * **/
 	public String newAquaworldRoom() {
-		super.name = "Aquaworld Room";
 		super.setCapacity(75);
 		super.setDescription("Olympic-sized pool with water slide, kiddie pool, and large jacuzzi. Includes access to showers/lockers, life guards on duty, DJ, table & chair set-up, and basic meal plan in cost.");
 		getRestrictions();
@@ -51,8 +51,8 @@ public class AquaworldRoom extends Room{
 	public String getRestrictions() {
 		restrictions = "To access water facilities, bathing suits must be worn at all times.";
 		return restrictions;
-		}
-
+	
+	}
 	/**
 	 * method that overrides the one from superclass, gets the cost of room 
 	 * @return cost - the cost as a double of the room
@@ -62,8 +62,8 @@ public class AquaworldRoom extends Room{
 		// TODO Auto-generated method stub
 		cost = 700;
 		return cost;
-		}
-
+	
+	}
 	/**
 	 * string representation of the information of the aquaworld room 
 	 * @return - a string
