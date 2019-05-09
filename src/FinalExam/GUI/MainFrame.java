@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
+import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -21,6 +22,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.Border;
+import javax.swing.plaf.basic.BasicButtonListener;
 
 import FinalExam.AquaworldRoom;
 import FinalExam.MediumPartyRoom;
@@ -97,20 +99,31 @@ public class MainFrame extends JFrame {
 		//Title of default view
 		panelTitle = new JLabel("Party World Rooms");
 		panelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
-		
 		centerPanel.add(panelTitle);
+		
+		
+//		ActionListener book = new bookButtonListener(); 
+//		bookButton.addActionListener(book);
+		
+	//	bookButton.addActionListener(new bookButtonListener());
+		
 		spr = addARoomDescription("file:///Users/audreybrio/Desktop/smallroom%202.jpg", "Small Party Room" , small.toString());
 		centerPanel.add(spr);
+		bookButton.addActionListener(new bookButtonListener());
 		mpr = addARoomDescription("","Medium Party Room", medium.toString());
 		centerPanel.add(mpr);
+		bookButton.addActionListener(new bookButtonListener());
 		aq = addARoomDescription( "file:///Users/audreybrio/Pictures/Photos%20Library.photoslibrary/resources/proxies/derivatives/01/00/109/UNADJUSTEDNONRAW_thumb_109.jpg", "Aquaworld Room" , aquaworld.newAquaworldRoom());
 		centerPanel.add(aq);
+		bookButton.addActionListener(new bookButtonListener());
 		kl = addARoomDescription( "C:\\Users\\audreybrio\\Desktop\\Pictures\\smallroom.jpg","Karaoke Lounge", karaoke.toString());
 		centerPanel.add(kl);
 		kl.setVisible(false);
+		bookButton.addActionListener(new bookButtonListener());
 		bl = addARoomDescription( "C:\\Users\\\\Desktop\\Pictures\\medroom.jpg", "Billiards Lounge" , billiards.toString());
 		centerPanel.add(bl);
 		bl.setVisible(false);
+		bookButton.addActionListener(new bookButtonListener());
 		bmp = addMealPlanDescription("Basic Meal Plan", basic.toString(), basic.getCost());
 		centerPanel.add(bmp);
 		bmp.setVisible(false);
@@ -127,6 +140,10 @@ public class MainFrame extends JFrame {
 		centerPanel.add(pmp);
 		pmp.setVisible(false);
 		
+		
+		//ActionListener book = new bookButtonListener(); 
+		//bookButton.addActionListener(book);
+
 		
 		scrollPane = new JScrollPane(centerPanel);
 		this.add(scrollPane, BorderLayout.CENTER);
@@ -181,6 +198,8 @@ public class MainFrame extends JFrame {
 				
 				menu.add(submenu);
 				menu.addSeparator();
+				
+			
 				
 				//Meal Plans Sub Menu
 				submenu = new JMenu("Meal Plans");
@@ -246,6 +265,7 @@ public class MainFrame extends JFrame {
 				
 				menuBar.add(menu);
 				this.add(menuBar, BorderLayout.NORTH);
+	
 	}
 	
 	
@@ -452,20 +472,17 @@ public class MainFrame extends JFrame {
 				centerPanel.repaint();
 			}
 		}
-		
-		class bookButtonListener implements ActionListener{
-
-			@Override
-			public void actionPerformed(ActionEvent click) {
-				
-				SetDateAndTimeFrame setDateandTime = new SetDateAndTimeFrame(); //creates new pastry frame
-				//setDateandTime.setVisible(true);
-				//setDateandTime.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-			}
-		}
+	
 		
 	}
-	
+	class bookButtonListener implements ActionListener{
+			@Override
+			public void actionPerformed(ActionEvent click) {
+				SetDateAndTimeFrame setDateandTime = new SetDateAndTimeFrame(); //creates new pastry frame
+				setDateandTime.setVisible(true);
+				setDateandTime.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+			}
+		}
 	public static void main(String[] args
 			) {
 		MainFrame f = new MainFrame();

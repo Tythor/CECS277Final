@@ -9,10 +9,14 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 import javax.swing.SwingUtilities;
 
-public class SetDateAndTimeFrame {
+public class SetDateAndTimeFrame extends JFrame{
 
+	private JSpinner month;
+	private JPanel panel;
+	private JComboBox<String> dates;
 	
 	public SetDateAndTimeFrame() {
 		createComponents();
@@ -22,7 +26,9 @@ public class SetDateAndTimeFrame {
 	}
 	
 	public void createComponents() {
-		String[] monthNames = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-		
+//		String[] monthNames = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+//		dates = new JComboBox<String>(monthNames);
+//		panel.add(dates);
+//		this.add(panel);
 	}
 }
