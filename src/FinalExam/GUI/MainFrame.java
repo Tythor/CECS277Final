@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
@@ -53,6 +54,10 @@ public class MainFrame extends JFrame {
 	JPanel gmp;
 	JPanel pmp;
 
+	ArrayList<JPanel> partyRooms = new ArrayList<>();
+	ArrayList<JPanel> lounges = new ArrayList<>();
+	ArrayList<JPanel> mealPlans = new ArrayList<>();
+
 	SmallPartyRoom small = new SmallPartyRoom();
 	MediumPartyRoom medium = new MediumPartyRoom();
 	AquaworldRoom aquaworld = new AquaworldRoom();
@@ -77,7 +82,19 @@ public class MainFrame extends JFrame {
 		this.createMenuBar();
 		this.createDefaultPanel();
 		this.setVisible(true);
-		
+
+		partyRooms.add(spr);
+		partyRooms.add(mpr);
+		partyRooms.add(aq);
+
+		lounges.add(kl);
+		lounges.add(bl);
+
+		mealPlans.add(bmp);
+		mealPlans.add(brmp);
+		mealPlans.add(smp);
+		mealPlans.add(gmp);
+		mealPlans.add(pmp);
 	}
 	
 	/*
@@ -340,53 +357,41 @@ public class MainFrame extends JFrame {
 		public void actionPerformed(ActionEvent click) {
 			panelTitle.setText("Party World Meal Plans");
 			centerPanel.repaint();
-			spr.setVisible(false);
-			mpr.setVisible(false);
-			aq.setVisible(false);
-			kl.setVisible(false);
-			bl.setVisible(false);
+
+			for (JPanel jPanel : partyRooms)
+				jPanel.setVisible(false);
+			for (JPanel jPanel: lounges)
+				jPanel.setVisible(false);
+
 			JMenuItem menuItem = (JMenuItem) click.getSource();
 			String item = menuItem.getText();
 			if(item.equals("All")) {
-				bmp.setVisible(true);
-				brmp.setVisible(true);
-				smp.setVisible(true);
-				gmp.setVisible(true);
-				pmp.setVisible(true);
+				for (JPanel jPanel: mealPlans)
+					jPanel.setVisible(true);
 			}
 			else if(item.equals("Basic")) {
+				for (JPanel jPanel: mealPlans)
+					jPanel.setVisible(false);
 				bmp.setVisible(true);
-				brmp.setVisible(false);
-				smp.setVisible(false);
-				gmp.setVisible(false);
-				pmp.setVisible(false);
 			}
 			else if(item.equals("Bronze")) {
-				bmp.setVisible(false);
+				for (JPanel jPanel: mealPlans)
+					jPanel.setVisible(false);
 				brmp.setVisible(true);
-				smp.setVisible(false);
-				gmp.setVisible(false);
-				pmp.setVisible(false);
 			}
 			else if(item.equals("Silver")) {
-				bmp.setVisible(false);
-				brmp.setVisible(false);
+				for (JPanel jPanel: mealPlans)
+					jPanel.setVisible(false);
 				smp.setVisible(true);
-				gmp.setVisible(false);
-				pmp.setVisible(false);
 			}
 			else if(item.equals("Gold")) {
-				bmp.setVisible(false);
-				brmp.setVisible(false);
-				smp.setVisible(false);
+				for (JPanel jPanel: mealPlans)
+					jPanel.setVisible(false);
 				gmp.setVisible(true);
-				pmp.setVisible(false);
 			}
 			else if(item.equals("Platinum")) {
-				bmp.setVisible(false);
-				brmp.setVisible(false);
-				smp.setVisible(false);
-				gmp.setVisible(false);
+				for (JPanel jPanel: mealPlans)
+					jPanel.setVisible(false);
 				pmp.setVisible(true);
 			}
 			
@@ -399,16 +404,14 @@ public class MainFrame extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent select) {
-			panelTitle.setText("Party World Rooms");
+			panelTitle.setText("Lounge Rooms");
 			centerPanel.repaint();
-			spr.setVisible(false);
-			mpr.setVisible(false);
-			aq.setVisible(false);
-			bmp.setVisible(false);
-			brmp.setVisible(false);
-			smp.setVisible(false);
-			gmp.setVisible(false);
-			pmp.setVisible(false);
+
+			for (JPanel jPanel : partyRooms)
+				jPanel.setVisible(false);
+			for (JPanel jPanel: mealPlans)
+				jPanel.setVisible(false);
+
 			JMenuItem item = (JMenuItem) select.getSource();
 			centerPanel.repaint();
 			if(item.getText().equals("All")) {
@@ -439,41 +442,36 @@ public class MainFrame extends JFrame {
 		public void actionPerformed(ActionEvent select) {
 			panelTitle.setText("Party World Rooms");
 			centerPanel.repaint();
-			kl.setVisible(false);
-			bl.setVisible(false);
-			bmp.setVisible(false);
-			brmp.setVisible(false);
-			smp.setVisible(false);
-			gmp.setVisible(false);
-			pmp.setVisible(false);
+			for (JPanel jPanel : lounges)
+				jPanel.setVisible(false);
+			for (JPanel jPanel: mealPlans)
+				jPanel.setVisible(false);
+
 			JMenuItem item = (JMenuItem) select.getSource();
 			if(item.getText().equals("All")) {
-				spr.setVisible(true);
-				mpr.setVisible(true);
-				aq.setVisible(true);
+				for (JPanel jPanel : partyRooms)
+					jPanel.setVisible(true);
 				centerPanel.repaint();
 			}
 			if(item.getText().equals("Small Party Rooms")) {
+				for (JPanel jPanel : partyRooms)
+					jPanel.setVisible(false);
 				spr.setVisible(true);
-				mpr.setVisible(false);
-				aq.setVisible(false);
 				centerPanel.repaint();
 			}
 			else if(item.getText().equals("Medium Party Rooms")) {
+				for (JPanel jPanel : partyRooms)
+					jPanel.setVisible(false);
 				mpr.setVisible(true);
-				spr.setVisible(false);
-				aq.setVisible(false);
 				centerPanel.repaint();
 			}
 			else if(item.getText().equals("Aquaworld Room")) {
+				for (JPanel jPanel : partyRooms)
+					jPanel.setVisible(false);
 				aq.setVisible(true);
-				spr.setVisible(false);
-				mpr.setVisible(false);
 				centerPanel.repaint();
 			}
 		}
-	
-		
 	}
 	class bookButtonListener implements ActionListener{
 			@Override
