@@ -1,54 +1,45 @@
 package FinalExam;
 
-import java.util.ArrayList;
-
-public class Upgrades extends Room {
+public abstract class Upgrades extends Room {
 	
-	protected static ArrayList<Upgrades> ameneties = new ArrayList<Upgrades>(); 
+	protected int quantity; //this represents # hours in Projector
 	
-	//Upgrades u = new Upgrades();
+	// # towels in Towels
 	
-	String choice;
+	// # bags in FavorBags
 	
-	public static void setAmeneties(String choice) {
-		if (choice == "Projector") {
-			Projector p = new Projector();
-			//u.setUpgrades(p);
-			ameneties.add(p);
-			
-		}
+	// the theme in PartyDecorations
+	
+	
+	public void setQty(int quantity) {
+		this.quantity = quantity;
+	}
+	
+	// Get and Set Quantity - Bags
+	// Towels
+	// Hours
+	
+	public int getQty() { 
 		
-		if (choice == "Party Decorations") {
-			PartyDecorations pd = new PartyDecorations();
-			//u.setUpgrades(pd);
-			ameneties.add(pd);
-		}	
-		
-		if (choice == "Party Favors Bag") {
-			PartyFavorsBag pb = new PartyFavorsBag();
-			//u.setUpgrades(pb);
-			ameneties.add(pb);
-		}
+		return quantity;
 		
 	}
 	
-	public static void displayAmeneties() {
-		
-		int i;
-		
-		for(i = 0; i < ameneties.size(); i++) {
-			System.out.println(ameneties.get(i));
-		}
-	}
+	/**
+	 * @return 
+	 */
 	
-	
-	@Override
 	public double getCost() {
 		// TODO Auto-generated method stub
 		return 0.0;
 	}
 	
-	public static void main (String [] args) {
+	
+	public abstract String getDescription();
+	
+	// Testing the Upgrade Decorator Pattern Setter and Getter Methods
+	
+	/*public static void main (String [] args) {
 			
 		Projector p = new Projector();
 		
@@ -68,9 +59,6 @@ public class Upgrades extends Room {
 		System.out.println(pf.getCost());
 		
 				
-	}
-	
-
-	
+	} */
 	
 }

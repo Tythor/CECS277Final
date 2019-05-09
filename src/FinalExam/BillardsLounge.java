@@ -6,7 +6,7 @@ public class BillardsLounge extends Room{
 
 	public BillardsLounge() {
 		super.setCapacity(10);
-		super.setDescription("Enclosed lounge with pool table. Includes access to pool table and cues in cost.");
+		super.setDescription("Enclosed lounge with pool table. Includes access to pool table and cues in cost.\n");
 		getRestrictions();
 		getCost();
 	}

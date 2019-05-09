@@ -2,19 +2,29 @@ package FinalExam;
 
 public class PartyFavorsBag extends Upgrades {
 
-	private int numPartyFavorsBag;
+	private Room partyBags;
 	
-	public void setNumPartyFavorsBag(int numPartyFavorsBag) {
-		this.numPartyFavorsBag = numPartyFavorsBag;
+	PartyFavorsBag(Room partyBags, int numBags) {
+		
+		this.partyBags = partyBags;
+		super.quantity = numBags;
 	}
 	
-	public int getNumPartyFavorsBag() {
-		return numPartyFavorsBag;
+	
+	public String getDescription() {
+		return partyBags.getDescription() + getCost() + " Getting Party Favor Bags\n";
 	}
+	
+	
+	/**
+	 * @return the total price of the party favors bag, which is 5 * the number of party favors bag
+	 */
 	
 	public double getCost() {
 		
-		return 5 * numPartyFavorsBag;
+		//return (5 * numPartyFavorsBag) + partyBags.getCost();
+		return 5 * super.quantity;
 	}
 	
 }
+

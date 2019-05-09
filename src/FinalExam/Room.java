@@ -15,8 +15,8 @@ public abstract class Room {
 	public Room() {
 		capacity = 50;
 		cost = 700.00;
-		//upgrades = new Upgrades();
-		description = "room with party tables, chairs and is next to arcade";
+		//upgrades u = new Upgrades();
+		description = "room with party tables, chairs and is next to arcade\n";
 
 	}
 	
@@ -50,9 +50,7 @@ public abstract class Room {
 	public void setCapacity(int cap) {
 		capacity = cap;
 	}
-	
-	abstract public double getCost();
-	
+		
 	public void upgradeMealPlan(MealPlans P) {
 		
 	}
@@ -63,4 +61,7 @@ public abstract class Room {
 	public String toString() {
 		return description;
 	}
+	
+	public abstract double getCost();
+
 }

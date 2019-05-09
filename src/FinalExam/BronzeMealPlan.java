@@ -2,43 +2,76 @@ package FinalExam;
 
 public class BronzeMealPlan extends BasicMealPlan {
 	
-	private boolean salad, breadsticks;
+	private String side;
+	private final int COST = 75;
 	
-	public BronzeMealPlan(int np, int ns, int nt, boolean s, boolean b)
+	/**
+	 * default constructor
+	 * **/
+	public BronzeMealPlan() {
+		numPizzas = 3;
+		numSoda = 5;
+		numToppings = 2;
+		side = "Side option of salad or breadsticks";
+	}
+	/**
+	 * Constructor which sets the number of pizzas, number of soda bottles, number of toppings, and type of side
+	 * @param np represents the number of pizzas
+	 * @param ns represents the number of soda bottles
+	 * @param nt represents the number of toppings
+	 * @param s represents the type of side 
+	 */
+	public BronzeMealPlan(int np, int ns, int nt, String s)
 	{
 		super(np, ns, nt);
 		
-		salad = s;
-		breadsticks = b;
+		side = s;
 	}
 	
-	public void setSalad(boolean s)
+	/**
+	 * method that sets the type of side 
+	 * @param s represents the type of side 
+	 */
+	public void setSide(String s)
 	{
-		salad = s;
+		side = s;
 	}
 	
-	public void setBreadsticks(boolean b)
+	/**
+	 * method that returns the type of side
+	 * @return a String representing the type of side 
+	 */
+	public String getSide()
 	{
-		breadsticks = b;
+		return side;
 	}
 	
-	public boolean getSalad()
+	/**
+	 * method that returns the cost of the meal plan
+	 * @return an integer representing the cost of the meal plan
+	 */
+	public int getCost()
 	{
-		return salad;
+		return COST;
 	}
 	
-	public boolean getBreadsticks()
-	{
-		return breadsticks;
-	}
-
+	/**
+	 * method that returns a String representation of the contents of the bronze meal plan
+	 */
 	public String toString()
 	{
 		
-		if(salad == true)
-			return 	super.toString() + ", Salad";
-		else
-			return super.toString() + ", Breadsticks";
+		return super.toString() + "\n" + side;
+	}
+	
+	/**
+	 * main tester for the bronze meal plan class
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		BronzeMealPlan bmp = new BronzeMealPlan(3, 5, 2, "Salad");
+		System.out.println(bmp.toString());
+		System.out.println("Cost: $" + bmp.getCost());
 	}
 	
 }
