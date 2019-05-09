@@ -15,6 +15,7 @@ public abstract class Room {
 	protected Upgrades upgrades;
 	protected String description;
 	protected boolean isAvailable;
+	protected Date date;
 	protected MealPlans Meal;
 	protected ArrayList<MakeReservation> waitlist = new ArrayList<>(); //instance variables
 	
@@ -106,6 +107,13 @@ public abstract class Room {
 		capacity = cap;
 	}
 	
+	public Date getDate() {
+		return date;
+	}
+	
+	public void setDate(Date d) {
+		date = d;
+	}
 	/**
 	 * abstract method that gets overridden, gets the cost for each room
 	 * **/
@@ -153,6 +161,10 @@ public abstract class Room {
 	    return isAvailable;
 	}
 	
+	
+	public void Notify() {
+		//notifies reservaiton when someone checks out/is removed
+	}
 	/**
 	 * string representation of the information of room that gets overridden
 	 * @return - a string

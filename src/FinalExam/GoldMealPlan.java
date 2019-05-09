@@ -2,9 +2,23 @@ package FinalExam;
 
 public class GoldMealPlan extends SilverMealPlan{
 	
-	private String wingFlavor1, wingFlavor2, wingType;
+	protected String wingFlavor1, wingFlavor2, wingType;
 	
-	private final int COST = 120;
+	private final int COST = 120; 
+
+	/**
+	 * default constructor
+	 * **/
+	public GoldMealPlan() {
+		numPizzas = 3;
+		numSoda = 5;
+		numToppings = 3;
+		salad = "Salad";
+		breadsticks = "Breadsticks";
+		wingFlavor1 = "Choice of chicken wing flavor #1";
+		wingFlavor2 = "choice of chicken wing flavor #2";
+		wingType = "boneless or bone-in";
+	}
 	
 	/**
 	 * Constructor which sets the number of pizzas, number of soda bottles, number of toppings, two flavors of wings, and type of wings
@@ -93,7 +107,7 @@ public class GoldMealPlan extends SilverMealPlan{
 	 */
 	public String toString()
 	{
-		return super.toString() + ", " + wingFlavor1 + " and " + wingFlavor2 + " " + wingType + " Chicken Wings";
+		return super.toString() + "\n" + wingFlavor1 + " and " + wingFlavor2 + " " + wingType + " Chicken Wings";
 	}
 	
 	/**
@@ -101,7 +115,7 @@ public class GoldMealPlan extends SilverMealPlan{
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		GoldMealPlan gmp = new GoldMealPlan(3, 5, 3, "BBQ", "Sesame", "Bone-In");
+		GoldMealPlan gmp = new GoldMealPlan();
 		System.out.println(gmp.toString());
 		System.out.println("Cost: $" + gmp.getCost());
 	}

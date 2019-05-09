@@ -4,10 +4,19 @@ import java.util.ArrayList;
 
 public class BasicMealPlan {
 	
-	private int numPizzas, numSoda, numToppings;
+	protected int numPizzas, numSoda, numToppings;
 	private final int COST = 65;
-	
+
 	private ArrayList<String> toppingsList = new ArrayList<>();
+	
+	/**
+	 * default constructor
+	 * **/
+	public BasicMealPlan() {
+		numPizzas = 3;
+		numSoda = 3;
+		numToppings = 1;
+	}
 	
 	/**
 	 * Constructor which sets the number of pizzas, number of soda bottles, and number of toppings
@@ -112,7 +121,7 @@ public class BasicMealPlan {
 	 */
 	public String toString()
 	{
-		return numPizzas + " XL " + numToppings + " Topping Gourmet Pizzas, " + numSoda + " 2L Soda Bottles";
+		return numPizzas + " XL " + numToppings + " Topping Gourmet Pizzas " + "\n" + numSoda + " 2L Soda Bottles";
 	}
 	
 	/**

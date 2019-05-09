@@ -1,9 +1,7 @@
 package FinalExam.GUI;
 
-
-
 import java.awt.BorderLayout;
-import java.awt.Container;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,6 +11,7 @@ import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -26,18 +25,43 @@ import javax.swing.border.Border;
 import FinalExam.AquaworldRoom;
 import FinalExam.MediumPartyRoom;
 import FinalExam.SmallPartyRoom;
+import FinalExam.KaraokeLounge;
+import FinalExam.BillardsLounge;
+import FinalExam.BasicMealPlan;
+import FinalExam.BronzeMealPlan;
+import FinalExam.SilverMealPlan;
+import FinalExam.GoldMealPlan;
+import FinalExam.PlatinumMealPlan;
 
 public class MainFrame extends JFrame {
+	JLabel panelTitle;
 	JMenuBar menuBar;
 	JScrollPane scrollPane;
+	JButton bookButton;
 	JPanel centerPanel;
-	
+	JPanel panel;
+	JPanel aq;
+	JPanel spr;
+	JPanel mpr;
+	JPanel kl;
+	JPanel bl;
+	JPanel bmp;
+	JPanel brmp;
+	JPanel smp;
+	JPanel gmp;
+	JPanel pmp;
+
 	SmallPartyRoom small = new SmallPartyRoom();
-	String a = small.toString();
 	MediumPartyRoom medium = new MediumPartyRoom();
-	String b = medium.toString();
 	AquaworldRoom aquaworld = new AquaworldRoom();
-	String c = aquaworld.toString();
+	KaraokeLounge karaoke = new KaraokeLounge();
+	BillardsLounge billiards = new BillardsLounge();
+	BasicMealPlan basic = new BasicMealPlan();
+	BronzeMealPlan bronze = new BronzeMealPlan();
+	SilverMealPlan silver = new SilverMealPlan();
+	GoldMealPlan gold = new GoldMealPlan();
+	PlatinumMealPlan platinum = new PlatinumMealPlan();
+	
 
 	//border settings used in the method addARoomDescription()
  	Border raisedbevel = BorderFactory.createRaisedBevelBorder(); 
@@ -54,22 +78,55 @@ public class MainFrame extends JFrame {
 		
 	}
 	
-
-
 	/*
 	 * initializes the default center panel and adds it to this frame
 	 * */
 	private void createDefaultPanel() {
 		centerPanel = new JPanel();
+		aq = new JPanel();
+		spr = new JPanel();
+		mpr = new JPanel();
+		kl = new JPanel();
+		bl = new JPanel();
+		bmp= new JPanel();
+		brmp = new JPanel();
+		smp = new JPanel() ;
+		gmp = new JPanel();
+		pmp = new JPanel();
 		centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
 		//Title of default view
-		JLabel panelTitle = new JLabel("Party World Rooms");
+		panelTitle = new JLabel("Party World Rooms");
 		panelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
 		
 		centerPanel.add(panelTitle);
-		addARoomDescription(centerPanel, "C:\\Users\\kapiv\\Desktop\\Pictures\\medroom.jpg", "Small Party Room" , a);
-		addARoomDescription(centerPanel, "C:\\Users\\kapiv\\Desktop\\Pictures\\medroom.jpg","Medium Party Room", b);
-		addARoomDescription(centerPanel, "C:\\Users\\kapiv\\Desktop\\Pictures\\medroom.jpg", "Aqua Room" , c);
+		spr = addARoomDescription("file:///Users/audreybrio/Desktop/smallroom%202.jpg", "Small Party Room" , small.toString());
+		centerPanel.add(spr);
+		mpr = addARoomDescription("","Medium Party Room", medium.toString());
+		centerPanel.add(mpr);
+		aq = addARoomDescription( "file:///Users/audreybrio/Pictures/Photos%20Library.photoslibrary/resources/proxies/derivatives/01/00/109/UNADJUSTEDNONRAW_thumb_109.jpg", "Aquaworld Room" , aquaworld.newAquaworldRoom());
+		centerPanel.add(aq);
+		kl = addARoomDescription( "C:\\Users\\audreybrio\\Desktop\\Pictures\\smallroom.jpg","Karaoke Lounge", karaoke.toString());
+		centerPanel.add(kl);
+		kl.setVisible(false);
+		bl = addARoomDescription( "C:\\Users\\\\Desktop\\Pictures\\medroom.jpg", "Billiards Lounge" , billiards.toString());
+		centerPanel.add(bl);
+		bl.setVisible(false);
+		bmp = addMealPlanDescription("Basic Meal Plan", basic.toString(), basic.getCost());
+		centerPanel.add(bmp);
+		bmp.setVisible(false);
+		brmp = addMealPlanDescription("Bronze Meal Plan", bronze.toString(), bronze.getCost());
+		centerPanel.add(brmp);
+		brmp.setVisible(false);
+		smp = addMealPlanDescription("Silver Meal Plan", silver.toString(), silver.getCost());
+		centerPanel.add(smp);
+		smp.setVisible(false);
+		gmp = addMealPlanDescription("Gold Meal Plan", gold.toString(), gold.getCost());
+		centerPanel.add(gmp);
+		gmp.setVisible(false);
+		pmp = addMealPlanDescription("Platinum Meal Plan", platinum.toString(), platinum.getCost());
+		centerPanel.add(pmp);
+		pmp.setVisible(false);
+		
 		
 		scrollPane = new JScrollPane(centerPanel);
 		this.add(scrollPane, BorderLayout.CENTER);
@@ -102,7 +159,8 @@ public class MainFrame extends JFrame {
 				menuItem.addActionListener(new RoomItemListener());
 				submenu.add(menuItem);
 				
-				menuItem = new JMenuItem("Aqua Room");
+				menuItem = new JMenuItem("Aquaworld Room");
+				menuItem.addActionListener(new RoomItemListener());
 				submenu.add(menuItem);
 				menu.add(submenu);
 				
@@ -110,12 +168,15 @@ public class MainFrame extends JFrame {
 				submenu = new JMenu("Lounges");
 				
 				menuItem = new JMenuItem("All");
+				menuItem.addActionListener(new LoungeItemListener());
 				submenu.add(menuItem);
 				
 				menuItem = new JMenuItem("Karaoke Lounges");
+				menuItem.addActionListener(new LoungeItemListener());
 				submenu.add(menuItem);
 				
 				menuItem = new JMenuItem("Billiards Lounges");
+				menuItem.addActionListener(new LoungeItemListener());
 				submenu.add(menuItem);
 				
 				menu.add(submenu);
@@ -197,7 +258,7 @@ public class MainFrame extends JFrame {
 	 * @param roomDesc - the description of the room
 	 * 
 	 * */
-	 private void addARoomDescription(Container container, String imgDir, String roomName, String roomDesc) {
+	 private JPanel addARoomDescription(String imgDir, String roomName, String roomDesc) {
 		 	JPanel p = new JPanel();
 		 	
 		 	ImageIcon icon = new ImageIcon(imgDir);
@@ -209,7 +270,7 @@ public class MainFrame extends JFrame {
 		 	picture.setHorizontalTextPosition(JLabel.CENTER);
 		 	//Set border around 
 		 	picture.setBorder(BorderFactory.createCompoundBorder(raisedbevel, loweredbevel));
-		 	
+		 	picture.setVisible(true);
 		 	p.add(picture);
 		 	
 	
@@ -220,9 +281,35 @@ public class MainFrame extends JFrame {
 		 	description.setBorder(BorderFactory.createCompoundBorder(raisedbevel, loweredbevel));
 			p.add(description);
 			
-	        JButton bookButton = new JButton("Book Now");
+	        bookButton = new JButton("Book Now");
 	        p.add(bookButton);
-	        container.add(p);
+	        return p;
+	    }
+	 
+	 private JPanel addMealPlanDescription(String mealPlan, String mealPlanDesc, int mealPlanCost) {
+		 	JPanel p = new JPanel();
+		 	String costmp = String.format("\nCost: $%S", mealPlanCost);
+		 	JLabel text = new JLabel(mealPlan, JLabel.CENTER);
+		 	text.setFont(new Font(Font.SERIF, Font.BOLD, 20));
+		 	
+		 	//Set the position of the text, relative to the icon:
+		 	text.setVerticalTextPosition(JLabel.TOP);
+		 	text.setHorizontalTextPosition(JLabel.CENTER);
+		 	//Set border around 
+		 	text.setBorder(BorderFactory.createCompoundBorder(raisedbevel, loweredbevel));
+		 	text.setVisible(true);
+		 	p.add(text);
+		 	
+	
+		 	JTextArea description = new JTextArea(5,10);
+		 	description.append(mealPlanDesc);
+		 	description.append(costmp);
+		 	description.setEditable(false);
+		 	description.setFont(new Font(Font.SERIF, Font.PLAIN, 20));
+		 	description.setBorder(BorderFactory.createCompoundBorder(raisedbevel, loweredbevel));
+			p.add(description);
+		
+	        return p;
 	    }
 
 
@@ -231,32 +318,153 @@ public class MainFrame extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent click) {
+			panelTitle.setText("Party World Meal Plans");
+			centerPanel.repaint();
+			spr.setVisible(false);
+			mpr.setVisible(false);
+			aq.setVisible(false);
+			kl.setVisible(false);
+			bl.setVisible(false);
 			JMenuItem menuItem = (JMenuItem) click.getSource();
 			String item = menuItem.getText();
-			System.out.println(item);
 			if(item.equals("All")) {
-				System.out.println("VIEW ALL"); //replace 
+				bmp.setVisible(true);
+				brmp.setVisible(true);
+				smp.setVisible(true);
+				gmp.setVisible(true);
+				pmp.setVisible(true);
 			}
-			else if(item.equals("Basic")) System.out.println("VIEW BASIC"); //replace 
-			else if(item.equals("Bronze")) System.out.println("VIEW BRONZE");
+			else if(item.equals("Basic")) {
+				bmp.setVisible(true);
+				brmp.setVisible(false);
+				smp.setVisible(false);
+				gmp.setVisible(false);
+				pmp.setVisible(false);
+			}
+			else if(item.equals("Bronze")) {
+				bmp.setVisible(false);
+				brmp.setVisible(true);
+				smp.setVisible(false);
+				gmp.setVisible(false);
+				pmp.setVisible(false);
+			}
+			else if(item.equals("Silver")) {
+				bmp.setVisible(false);
+				brmp.setVisible(false);
+				smp.setVisible(true);
+				gmp.setVisible(false);
+				pmp.setVisible(false);
+			}
+			else if(item.equals("Gold")) {
+				bmp.setVisible(false);
+				brmp.setVisible(false);
+				smp.setVisible(false);
+				gmp.setVisible(true);
+				pmp.setVisible(false);
+			}
+			else if(item.equals("Platinum")) {
+				bmp.setVisible(false);
+				brmp.setVisible(false);
+				smp.setVisible(false);
+				gmp.setVisible(false);
+				pmp.setVisible(true);
+			}
 			
 			
 		}
 		
 	}
 	
+	class LoungeItemListener implements ActionListener{
 
+		@Override
+		public void actionPerformed(ActionEvent select) {
+			panelTitle.setText("Party World Rooms");
+			centerPanel.repaint();
+			spr.setVisible(false);
+			mpr.setVisible(false);
+			aq.setVisible(false);
+			bmp.setVisible(false);
+			brmp.setVisible(false);
+			smp.setVisible(false);
+			gmp.setVisible(false);
+			pmp.setVisible(false);
+			JMenuItem item = (JMenuItem) select.getSource();
+			centerPanel.repaint();
+			if(item.getText().equals("All")) {
+				kl.setVisible(true);
+				bl.setVisible(true);
+				centerPanel.repaint();
+			}
+			if(item.getText().equals("Karaoke Lounges")) {
+				kl.setVisible(true);
+				bl.setVisible(false);
+				centerPanel.repaint();
+			}
+			else if(item.getText().equals("Billiards Lounges")) {
+				kl.setVisible(false);
+				bl.setVisible(true);
+				centerPanel.repaint();
+			}	
+			
+		}
+		
+	}
 	
-	
+
+
 	class RoomItemListener implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent select) {
+			panelTitle.setText("Party World Rooms");
+			centerPanel.repaint();
+			kl.setVisible(false);
+			bl.setVisible(false);
+			bmp.setVisible(false);
+			brmp.setVisible(false);
+			smp.setVisible(false);
+			gmp.setVisible(false);
+			pmp.setVisible(false);
 			JMenuItem item = (JMenuItem) select.getSource();
-			
-			if(item.getText().equals("Medium Party Rooms")) System.out.println("Display only Medium Party Room");
-			
-		}}
+			if(item.getText().equals("All")) {
+				spr.setVisible(true);
+				mpr.setVisible(true);
+				aq.setVisible(true);
+				centerPanel.repaint();
+			}
+			if(item.getText().equals("Small Party Rooms")) {
+				spr.setVisible(true);
+				mpr.setVisible(false);
+				aq.setVisible(false);
+				centerPanel.repaint();
+			}
+			else if(item.getText().equals("Medium Party Rooms")) {
+				mpr.setVisible(true);
+				spr.setVisible(false);
+				aq.setVisible(false);
+				centerPanel.repaint();
+			}
+			else if(item.getText().equals("Aquaworld Room")) {
+				aq.setVisible(true);
+				spr.setVisible(false);
+				mpr.setVisible(false);
+				centerPanel.repaint();
+			}
+		}
+		
+		class bookButtonListener implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent click) {
+				
+				SetDateAndTimeFrame setDateandTime = new SetDateAndTimeFrame(); //creates new pastry frame
+				//setDateandTime.setVisible(true);
+				//setDateandTime.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+			}
+		}
+		
+	}
 	
 	public static void main(String[] args
 			) {

@@ -14,7 +14,7 @@ public class MediumPartyRoom extends Room{
 	public MediumPartyRoom() {
 		super.name = "Medium Party Room";
 		super.setCapacity(45);
-		super.setDescription("Room with party tables and chairs, quick access to arcade. Includes table & chair set-up, DJ, and basic meal plan in cost.");
+		super.setDescription("Room with party tables and chairs, quick access to arcade. \nIncludes table & chair set-up, DJ, and basic meal plan in cost.");
 		getCost();
 	}
 	

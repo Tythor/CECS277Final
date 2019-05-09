@@ -6,6 +6,15 @@ public class BronzeMealPlan extends BasicMealPlan {
 	private final int COST = 75;
 	
 	/**
+	 * default constructor
+	 * **/
+	public BronzeMealPlan() {
+		numPizzas = 3;
+		numSoda = 5;
+		numToppings = 2;
+		side = "Side option of salad or breadsticks";
+	}
+	/**
 	 * Constructor which sets the number of pizzas, number of soda bottles, number of toppings, and type of side
 	 * @param np represents the number of pizzas
 	 * @param ns represents the number of soda bottles
@@ -52,7 +61,7 @@ public class BronzeMealPlan extends BasicMealPlan {
 	public String toString()
 	{
 		
-		return super.toString() + ", " + side;
+		return super.toString() + "\n" + side;
 	}
 	
 	/**

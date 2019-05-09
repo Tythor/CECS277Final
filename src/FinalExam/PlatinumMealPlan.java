@@ -6,6 +6,23 @@ public class PlatinumMealPlan extends GoldMealPlan{
 	private final int COST = 150;
 	
 	/**
+	 * default constructor
+	 * **/
+	public PlatinumMealPlan() {
+		numPizzas = 4;
+		numSoda = 5;
+		numToppings = 4;
+		salad = "Salad";
+		breadsticks = "Breadsticks";
+		wingFlavor1 = "Choice of chicken wing flavor #1";
+		wingFlavor2 = "choice of chicken wing flavor #2";
+		wingType = "boneless or bone-in";
+		icFlavor1 = "Ice Cream flavor #1";
+		icFlavor2 = "ice cream flavor #2";		
+		
+	}
+	
+	/**
 	* Constructor which sets the number of pizzas, number of soda bottles, number of toppings, two flavors of wings, type of wings, and
 	* flavors of ice cream
 	 * @param np represents the number of pizzas
@@ -75,7 +92,7 @@ public class PlatinumMealPlan extends GoldMealPlan{
 	 */
 	public String toString()
 	{
-		return super.toString() + ", " + icFlavor1 + " and " + icFlavor2 + " flavored ice cream";
+		return super.toString() + "\n" + icFlavor1 + " and " + icFlavor2 + " flavored ice cream";
 	}
 	
 	/**

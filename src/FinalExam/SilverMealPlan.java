@@ -2,9 +2,19 @@ package FinalExam;
 
 public class SilverMealPlan extends BronzeMealPlan {
 
-	private String salad, breadsticks;
+	protected String salad, breadsticks;
 	private final int COST = 90;
 
+	/**
+	 * default constructor
+	 * **/
+	public SilverMealPlan() {
+		numPizzas = 3;
+		numSoda = 5;
+		numToppings = 3;
+		salad = "Salad";
+		breadsticks = "Breadsticks";
+	}
 	/**
 	 * Constructor which sets the number of pizzas, number of soda bottles, number of toppings, and salad & breadsticks
 	 * @param np represents the number of pizzas
@@ -71,7 +81,7 @@ public class SilverMealPlan extends BronzeMealPlan {
 	 */
 	public String toString()
 	{
-		return super.toString() + ", " + breadsticks;
+		return numPizzas + " XL " + numToppings + " Topping Gourmet Pizzas " + "\n" + numSoda + " 2L Soda Bottles" + "\n" + salad + ", " + breadsticks;
 	}
 
 	/**

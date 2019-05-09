@@ -37,7 +37,7 @@ public class AquaworldRoom extends Room{
 	public String newAquaworldRoom() {
 		super.name = "Aquaworld Room";
 		super.setCapacity(75);
-		super.setDescription("Olympic-sized pool with water slide, kiddie pool, and large jacuzzi. Includes access to showers/lockers, life guards on duty, DJ, table & chair set-up, and basic meal plan in cost.");
+		super.setDescription("Olympic-sized pool with water slide, kiddie pool, and large jacuzzi. \nIncludes access to showers/lockers, life guards on duty, DJ, table & chair set-up, and basic meal plan in cost.");
 		getRestrictions();
 		getCost();
 		String a = toString();
