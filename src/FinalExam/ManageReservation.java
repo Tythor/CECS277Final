@@ -1,53 +1,148 @@
 package FinalExam;
+/**
+ * Manages the reservations and updates whenever guest info changes. Makes and can add a reservation.
+ */
 
 import java.util.ArrayList;
 import java.sql.Time;
 
 public class ManageReservation {
-    ArrayList<Room> log;
-    boolean isFinalized;
-    Date date;
-    Room Room;
+    private GuestInfo guest;
+    private Room room;
 
-    Time time;
+//    private Date start_date;
+//    private Date end_date;
+//    private Time start_time;
+//    private Time end_time;
+//    private Upgrades upgrade;
+//    GuestInfo guest;
+//    MealPlans mealplan;
+//    Upgrades upgrades;
 
-    public ManageReservation() {
+//    /**
+//     * gets un update when the guestinfo is updated.
+//     */
+//    public void update() {
+//        System.out.println("");
+//    }
+//
+//    /**
+//     * gets when the room is available.
+//     * @return yes or no
+//     */
+//    public boolean isFinalized() {
+//        return isFinalized;
+//    }
+//
+//    /**
+//     * gets the start date
+//     * @return the start date
+//     */
+//    public Date getStart_date() {
+//        return start_date;
+//    }
+//
+//    /**
+//     * sets the start date
+//     * @param start_date
+//     */
+//    public void setStart_date(Date start_date) {
+//        this.start_date = start_date;
+//    }
+//
+//    /**
+//     * gets the end date
+//     * @return the end date
+//     */
+//    public Date getEnd_date() {
+//        return end_date;
+//    }
+//
+//    /**
+//     * sets the end date
+//     * @param end_date
+//     */
+//    public void setEnd_date(Date end_date) {
+//        this.end_date = end_date;
+//    }
+//
+//    /**
+//     * gets the start time
+//     * @return the start time
+//     */
+//    public Time getStart_time() {
+//        return start_time;
+//    }
+//
+//    /**
+//     * sets the start time
+//     * @param start_time
+//     */
+//    public void setStart_time(Time start_time) {
+//        this.start_time = start_time;
+//    }
+//
+//    /**
+//     * gets the end time;
+//     * @return end time
+//     */
+//    public Time getEnd_time() {
+//        return end_time;
+//    }
+//
+//    /**
+//     * sets the end time
+//     * @param end_time
+//     */
+//    public void setEnd_time(Time end_time) {
+//        this.end_time = end_time;
+//    }
+//
+//    /**
+//     * get mealplan
+//     * @return
+//     */
+//    public MealPlans getMealplan() {
+//        return mealplan;
+//    }
+//
+//    /**
+//     * get mealplan
+//     * @return upgrades
+//     */
+//    public Upgrades getUpgrades() {
+//        return upgrades;
+//    }
+//
+//    /**
+//     * sets the upgrades
+//     * @param upgrades
+//     */
+//    public void setUpgrades(Upgrades upgrades) {
+//        this.upgrades = upgrades;
+//    }
+//
+//    /**
+//     * sets mealplan
+//     * @param mealplan
+//     */
+//    public void setMealplan(MealPlans mealplan) {
+//        this.mealplan = mealplan;
+//    }
+//
+//    /**
+//     * sets guest info
+//     * @return guest info
+//     */
+    public GuestInfo getGuest() {
+        return guest;
     }
 
-    public void update(GuestInfo x, Object y) {
-        this.setDate((Date) y);
-        this.setRoom((Room) y);
+    /**
+     * sets guest
+     * @param guest
+     */
+    public void setGuest(GuestInfo guest) {
+        this.guest = guest;
     }
-    public boolean isFinalized() {
-        return isFinalized;
-    }
-    public void setFinalized(boolean finalized) {
-        isFinalized = finalized;
-    }
-
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Time getTime() {
-        return time;
-    }
-
-    public void setTime(Time time) {
-        this.time = time;
-    }
-
-    public Room getRoom() {
-        return Room;
-    }
-
-    public void setRoom(Room room) {
-        Room = room;
-    }
-
 }

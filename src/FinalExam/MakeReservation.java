@@ -1,32 +1,146 @@
 package FinalExam;
 
+import java.sql.Time;
+
+/**
+ * creates a reservation
+ */
 public class MakeReservation {
-    private Date date;
-    private Room room;
-    private GuestInfo guest;
-    private boolean isFinalized;
+    boolean isFinalized;
+    private Date start_date;
+    private Date end_date;
+    private Time start_time;
+    private Time end_time;
+    private Upgrades upgrade;
+    GuestInfo guest;
+    MealPlans mealplan;
+    Upgrades upgrades;
 
-    public MakeReservation(Date date, Room room) {
-
+    /**
+     * gets un update when the guestinfo is updated.
+     */
+    public void update() {
+        // GuestInfo.getPop();
     }
 
-    public Date getDate() {
-        return date;
+    /**
+     * gets when the room is available.
+     * @return yes or no
+     */
+    public boolean isFinalized() {
+        return isFinalized;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    /**
+     * gets the start date
+     * @return the start date
+     */
+    public Date getStart_date() {
+        return start_date;
     }
 
-    public Room getRoom() {
-        return room;
+    /**
+     * sets the start date
+     * @param start_date
+     */
+    public void setStart_date(Date start_date) {
+        this.start_date = start_date;
     }
 
-    public void setRoom(Room room) {
-        this.room = room;
+    /**
+     * gets the end date
+     * @return the end date
+     */
+    public Date getEnd_date() {
+        return end_date;
     }
 
-    public void finalizeReservation() {
+    /**
+     * sets the end date
+     * @param end_date
+     */
+    public void setEnd_date(Date end_date) {
+        this.end_date = end_date;
+    }
 
+    /**
+     * gets the start time
+     * @return the start time
+     */
+    public Time getStart_time() {
+        return start_time;
+    }
+
+    /**
+     * sets the start time
+     * @param start_time
+     */
+    public void setStart_time(Time start_time) {
+        this.start_time = start_time;
+    }
+
+    /**
+     * gets the end time;
+     * @return end time
+     */
+    public Time getEnd_time() {
+        return end_time;
+    }
+
+    /**
+     * sets the end time
+     * @param end_time
+     */
+    public void setEnd_time(Time end_time) {
+        this.end_time = end_time;
+    }
+
+    /**
+     * get mealplan
+     * @return
+     */
+    public MealPlans getMealplan() {
+        return mealplan;
+    }
+
+    /**
+     * get mealplan
+     * @return upgrades
+     */
+    public Upgrades getUpgrades() {
+        return upgrades;
+    }
+
+    /**
+     * sets the upgrades
+     * @param upgrades
+     */
+    public void setUpgrades(Upgrades upgrades) {
+        this.upgrades = upgrades;
+    }
+
+    /**
+     * sets mealplan
+     * @param mealplan
+     */
+    public void setMealplan(MealPlans mealplan) {
+        this.mealplan = mealplan;
+    }
+
+    /**
+     * sets guest info
+     * @return guest info
+     */
+    public GuestInfo getGuest() {
+        return guest;
+    }
+
+    /**
+     * sets guest
+     * @param guest
+     */
+    public void setGuest(GuestInfo guest) {
+        this.guest = guest;
     }
 }
+
