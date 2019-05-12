@@ -26,6 +26,7 @@ public class MainFrame extends JFrame {
     JPanel smp;
     JPanel gmp;
     JPanel pmp;
+    protected String name;
 
     ArrayList<JPanel> partyRooms = new ArrayList<>();
     ArrayList<JPanel> lounges = new ArrayList<>();
@@ -252,33 +253,6 @@ public class MainFrame extends JFrame {
 
     }
 
-    //	 private void addARoomDescription(Container c, String imgDir, String roomName, String roomDesc) {
-//		 	JPanel p = new JPanel();
-//
-//		 	ImageIcon icon = new ImageIcon(imgDir);
-//		 	JLabel picture = new JLabel(roomName, icon, JLabel.CENTER);
-//		 	picture.setFont(new Font(Font.SERIF, Font.BOLD, 20));
-//
-//		 	//Set the position of the text, relative to the icon:
-//		 	picture.setVerticalTextPosition(JLabel.TOP);
-//		 	picture.setHorizontalTextPosition(JLabel.CENTER);
-//		 	//Set border around
-//		 	picture.setBorder(BorderFactory.createCompoundBorder(raisedbevel, loweredbevel));
-//		 	picture.setVisible(true);
-//		 	p.add(picture);
-//
-//
-//		 	JTextArea description = new JTextArea(5,10);
-//		 	description.append(roomDesc);
-//		 	description.setEditable(false);
-//		 	description.setFont(new Font(Font.SERIF, Font.PLAIN, 20));
-//		 	description.setBorder(BorderFactory.createCompoundBorder(raisedbevel, loweredbevel));
-//			p.add(description);
-//
-//	        bookButton = new JButton("Book Now");
-//	        p.add(bookButton);
-//	        c.add(p);
-//	    }
 
     private JPanel addARoomDescription(String imgDir, String roomName, String roomDesc) {
         JPanel p = new JPanel();
@@ -406,9 +380,11 @@ public class MainFrame extends JFrame {
     class bookButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent click) {
-            SetDateAndTimeFrame setDateandTime = new SetDateAndTimeFrame(); //creates new pastry frame
+        	
+            SetDateAndTimeFrame setDateandTime = new SetDateAndTimeFrame();
+   
             setDateandTime.setVisible(true);
-            setDateandTime.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            //setDateandTime.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         }
     }
 }
