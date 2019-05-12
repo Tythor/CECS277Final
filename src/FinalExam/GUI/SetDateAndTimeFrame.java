@@ -30,13 +30,14 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
     private Date e;
     private JSpinner spinner;
     private JFrame frame;
+    private JFormattedTextField text;
     
     
     
     public SetDateAndTimeFrame() {
       	frame = new JFrame();
     	createComponents();
-    	frame.setName("Something");
+    	frame.setTitle("Something");
     	frame.pack();
     	frame.setVisible(true);
     
@@ -58,9 +59,7 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         } else { //use standard model
             monthModel = new SpinnerListModel(monthStrings);
         }
-        spinner = addLabeledSpinner(this,
-                                             labels[0],
-                                             monthModel);
+        spinner = addLabeledSpinner(this, labels[0], monthModel);
         //Tweak the spinner's formatted text field.
         ftf = getTextField(spinner);
         if (ftf != null ) {
@@ -151,9 +150,11 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
                                         10, 10,        //initX, initY
                                         6, 10);  
         //xPad, yPad
-        e = findDate();
+
     }
 
+    
+    
     /**
      * Return the formatted text field used by the editor, or
      * null if the editor doesn't descend from JSpinner.DefaultEditor.
@@ -176,29 +177,36 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
      * response.
      */
     public void stateChanged(ChangeEvent e) {
-        SpinnerModel dateModel = dateSpinner.getModel();
-        if (dateModel instanceof SpinnerDateModel) {
-            //setSeasonalColor(((SpinnerDateModel)dateModel).getDate());
+        SpinnerModel monthModel = dateSpinner.getModel();
+        SpinnerModel dayModel = dateSpinner.getModel();
+        SpinnerModel yearModel = dateSpinner.getModel();
+        SpinnerModel timeModel = dateSpinner.getModel();
+        SpinnerModel timeMod = dateSpinner.getModel();
+        if (monthModel instanceof SpinnerListModel && dayModel instanceof SpinnerNumberModel 
+        		&& yearModel instanceof SpinnerNumberModel && timeModel instanceof SpinnerDateModel
+        		&& timeMod instanceof SpinnerDateModel) {
+           e = (ChangeEvent) spinner.getValue();
         }
     }
 
 
-    static protected JSpinner addLabeledSpinner(Container c,
+     protected JSpinner addLabeledSpinner(Container c,
                                                 String label,
                                                 SpinnerModel model) {
         JLabel l = new JLabel(label);
         c.add(l);
 
-        JSpinner spinner = new JSpinner(model);
+        spinner = new JSpinner(model);
         l.setLabelFor(spinner);
         c.add(spinner);
 
         return spinner;
     }
 
-    public Date findDate() {
-    	return (Date) spinner.getValue();
-    }
+//    public String findDate() {
+//    	text = spinner.getValue().toString();
+//    	return text;
+//    }
     /**
      * Create the GUI and show it.  For thread safety,
      * this method should be invoked from the
@@ -229,9 +237,6 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         	Component n = (Component) click.getSource(); //e.getSource() returns Object 
 			JFrame m = (JFrame) SwingUtilities.getRoot(n);
 			m.setVisible(false);
-			//info = j.toString();
-			//System.out.println(info);
-			//e = findDate();
 			System.out.println(e);
         	
         	
