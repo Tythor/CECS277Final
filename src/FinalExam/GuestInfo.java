@@ -31,18 +31,18 @@ public class GuestInfo {
      * this adds one manager to the list to notify
      * @param manager
      */
-	public void attach(ManageReservation manager) {
-		manager_list.add(manager);
-	}
+//	public void attach(ManageReservation manager) {
+//		manager_list.add(manager);
+//	}
 
-    /**
-     * this notifies the manager of any updates
-     */
-	public void notify_manager() {
-		for (ManageReservation manager: manager_list) {
-			manager.update();
-		}
-	}
+//    /**
+//     * this notifies the manager of any updates
+//     */
+//	public void notify_manager() {
+//		for (ManageReservation manager: manager_list) {
+//			manager.update();
+//		}
+//	}
 
     /**
      * sets the name of the guest.
