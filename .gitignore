@@ -1,3 +1,10 @@
-/bin/
+bin
+out
 .DS_Store
-.idea
+.classpath
+.project
+.idea/
+.settings/
+*.class
+*.iml
+workspace
