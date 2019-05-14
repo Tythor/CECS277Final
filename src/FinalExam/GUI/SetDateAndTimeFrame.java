@@ -49,16 +49,16 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         String[] labels = {"Month: ", "Day: ", "Year: ", "Time Start: ", "Time End: "};
         int numPairs = labels.length;
         calendar = Calendar.getInstance();
-        JFormattedTextField ftf = null;
+        JFormattedTextField ftf;
 
         //Add the first label-spinner pair.
         String[] monthStrings = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         SpinnerListModel monthModel = null;
-        if (cycleMonths) { //use custom model
-            monthModel = new CyclingSpinnerListModel(monthStrings);
-        } else { //use standard model
+       // if (cycleMonths) { //use custom model
+       //     monthModel = new CyclingSpinnerListModel(monthStrings);
+       // } else { //use standard model
             monthModel = new SpinnerListModel(monthStrings);
-        }
+      //  }
         spinner = addLabeledSpinner(this, labels[0], monthModel);
         //Tweak the spinner's formatted text field.
         ftf = getTextField(spinner);
@@ -70,14 +70,11 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
 
      //add 2nd label
         int currentDay = 1;
-        SpinnerModel dayModel = new SpinnerNumberModel(currentDay, //initial value
-                                       1, //min
-                                       31, //max
-                                       1);                //step
+        SpinnerModel dayModel = new SpinnerNumberModel(currentDay,  1,  31, 1);         
         //If we're cycling, hook this model up to the month model.
-        if (monthModel instanceof CyclingSpinnerListModel) {
-            ((CyclingSpinnerListModel)monthModel).setLinkedModel(dayModel);
-        }
+//        if (monthModel instanceof CyclingSpinnerListModel) {
+//            ((CyclingSpinnerListModel)monthModel).setLinkedModel(dayModel);
+//        }
         spinner = addLabeledSpinner(this, labels[1], dayModel);
         //Make the year be formatted without a thousands separator.
         spinner.setEditor(new JSpinner.NumberEditor(spinner, "#"));
@@ -85,28 +82,19 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
 
         //Add 3rd label-spinner pair.
         int currentYear = calendar.get(Calendar.YEAR);
-        SpinnerModel yearModel = new SpinnerNumberModel(currentYear, //initial value
-                                       currentYear, //min
-                                       currentYear + 6, //max
-                                       1);                //step
-        //If we're cycling, hook this model up to the month model.
-        if (monthModel instanceof CyclingSpinnerListModel) {
-            ((CyclingSpinnerListModel)monthModel).setLinkedModel(yearModel);
-        }
+        SpinnerModel yearModel = new SpinnerNumberModel(currentYear, currentYear, currentYear + 6, 1);                //step
+     
+//        if (monthModel instanceof CyclingSpinnerListModel) {
+//            ((CyclingSpinnerListModel)monthModel).setLinkedModel(yearModel);
+//        }
         spinner = addLabeledSpinner(this, labels[2], yearModel);
         //Make the year be formatted without a thousands separator.
         spinner.setEditor(new JSpinner.NumberEditor(spinner, "#"));
    
-        
-        
-   
  
 		//Add the 4th label-spinner pair
         Date initTime = calendar.getTime();
-        SpinnerDateModel timeModel = new SpinnerDateModel(initTime,
-                                     null,
-                                     null,
-                                     Calendar.HOUR_OF_DAY);//ignored for user input
+        SpinnerDateModel timeModel = new SpinnerDateModel(initTime, null, null, Calendar.HOUR_OF_DAY);//ignored for user input
         dateSpinner = spinner = addLabeledSpinner(this, labels[3], timeModel);
         spinner.setEditor(new JSpinner.DateEditor(spinner, "HH:mm a"));
         ftf = getTextField(spinner);
@@ -116,19 +104,12 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
 
         }
         
-        
-        
         //add 5th 
         Date endTime = calendar.getTime();
-        SpinnerDateModel timeMod = new SpinnerDateModel(endTime,
-                                     null,
-                                     null,
-                                     Calendar.HOUR_OF_DAY);//ignored for user input
+        SpinnerDateModel timeMod = new SpinnerDateModel(endTime, null, null, Calendar.HOUR_OF_DAY);//ignored for user input
         dateSpinner = spinner = addLabeledSpinner(this, labels[4], timeMod);
         spinner.setEditor(new JSpinner.DateEditor(spinner, "HH:mm a"));
        
-        
-        
         
         //Tweak the spinner's formatted text field.
         ftf = getTextField(spinner);
@@ -252,19 +233,4 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
 			
         	}
         }
-
-    
-//    private void createAndShowGUI() {
-//        //Create and set up the window.
-//        JFrame frame = new JFrame("Set Date and Time");
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        //Add content to the window.
-//        frame.add(panel);
-//        //Display the window.
-//        frame.pack();
-//        frame.setVisible(true);
-//    }
-
-
-	
 }
