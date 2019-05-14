@@ -227,11 +227,13 @@ public class MainFrame extends JFrame {
         //New reservation item
         menuItem = new JMenuItem("New Reservation...");
         menu.add(menuItem);
+        menuItem.addActionListener(new NewReservationListener());
         menu.addSeparator();
 
         //Edit reservation item
         menuItem = new JMenuItem("Edit Existing Reservation...");
         menu.add(menuItem);
+        
         menu.addSeparator();
 
 
@@ -386,6 +388,17 @@ public class MainFrame extends JFrame {
             SetDateAndTimeFrame setDateandTime = new SetDateAndTimeFrame();
    
             setDateandTime.setVisible(true);
+            //setDateandTime.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        }
+    }
+    
+
+    class NewReservationListener implements ActionListener {
+    	@Override
+        public void actionPerformed(ActionEvent select) {
+        	
+        	
+            NewReservationFrame nrf = new NewReservationFrame();
             //setDateandTime.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         }
     }
