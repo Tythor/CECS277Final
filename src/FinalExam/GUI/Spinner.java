@@ -1,38 +1,5 @@
 package FinalExam.GUI;
 
-<<<<<<< HEAD
-import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.SwingUtilities;
-
-public class SetDateAndTimeFrame extends JFrame{
-
-	private JSpinner month;
-	private JPanel panel;
-	private JComboBox<String> dates;
-	
-	public SetDateAndTimeFrame() {
-		createComponents();
-		this.setTitle("Set Date and Time");
-		this.setSize(900,400);
-		
-	}
-	
-	public void createComponents() {
-//		String[] monthNames = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-//		dates = new JComboBox<String>(monthNames);
-//		panel.add(dates);
-//		this.add(panel);
-	}
-=======
 
 /*
 * This application demonstrates using spinners.
@@ -45,38 +12,32 @@ import javax.swing.*;
 
 import java.awt.Component;
 import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
+public class Spinner extends JPanel implements ChangeListener {
     protected Calendar calendar;
     protected JSpinner dateSpinner;
     private JButton save;
     private JButton cancel;
     private String month;
-    private JPanel panel;
+    private String day;
+    private String year;
+    private String hourS;
+    private String minuteS;
+    private String hourE;
     private Date s;
     private Date e;
     private JSpinner spinner;
-    private JFrame frame;
-    private JFormattedTextField text;
-    
-    
-    
-    public SetDateAndTimeFrame() {
-      	frame = new JFrame();
-    	createComponents();
-    	frame.setTitle("Something");
-    	frame.pack();
-    	frame.setVisible(true);
-    
-    }
-    
-    public SetDateAndTimeFrame(boolean cycleMonths) {
+
+//    protected Color SPRING_COLOR = new Color(0, 204, 51);
+//    protected Color SUMMER_COLOR = Color.RED;
+//    protected Color FALL_COLOR = new Color(255, 153, 0);
+//    protected Color WINTER_COLOR = Color.CYAN;
+
+    public Spinner(boolean cycleMonths) {
         super(new SpringLayout());
 
         String[] labels = {"Month: ", "Day: ", "Year: ", "Time Start: ", "Time End: "};
@@ -92,13 +53,15 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         } else { //use standard model
             monthModel = new SpinnerListModel(monthStrings);
         }
-        spinner = addLabeledSpinner(this, labels[0], monthModel);
+        spinner = addLabeledSpinner(this,
+                                             labels[0],
+                                             monthModel);
         //Tweak the spinner's formatted text field.
         ftf = getTextField(spinner);
         if (ftf != null ) {
             ftf.setColumns(8); //specify more width than we need
             ftf.setHorizontalAlignment(JTextField.RIGHT);
-  
+            month = ftf.getText();
         }
 
      //add 2nd label
@@ -114,7 +77,7 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         spinner = addLabeledSpinner(this, labels[1], dayModel);
         //Make the year be formatted without a thousands separator.
         spinner.setEditor(new JSpinner.NumberEditor(spinner, "#"));
-
+        day = getTextField(spinner).getText();
 
         //Add 3rd label-spinner pair.
         int currentYear = calendar.get(Calendar.YEAR);
@@ -129,7 +92,7 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         spinner = addLabeledSpinner(this, labels[2], yearModel);
         //Make the year be formatted without a thousands separator.
         spinner.setEditor(new JSpinner.NumberEditor(spinner, "#"));
-   
+        year = getTextField(spinner).getText();
         
         
    
@@ -146,7 +109,7 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         if(ftf != null) {
         	ftf.setHorizontalAlignment(JTextField.RIGHT);
         	ftf.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 3));
-
+        	hourS = ftf.getText();
         }
         
         
@@ -168,7 +131,7 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         if (ftf != null ) {
             ftf.setHorizontalAlignment(JTextField.RIGHT);
             ftf.setBorder(BorderFactory.createEmptyBorder(1,1,1,3));
-
+            hourE = ftf.getText();
         }
         //spinner.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         //XXX: No easy way to get to the buttons and change their border.
@@ -183,11 +146,10 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
                                         10, 10,        //initX, initY
                                         6, 10);  
         //xPad, yPad
-
+         e = (Date) spinner.getValue();
+         System.out.println(e);
     }
 
-    
-    
     /**
      * Return the formatted text field used by the editor, or
      * null if the editor doesn't descend from JSpinner.DefaultEditor.
@@ -210,89 +172,42 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
      * response.
      */
     public void stateChanged(ChangeEvent e) {
-        SpinnerModel monthModel = dateSpinner.getModel();
-        SpinnerModel dayModel = dateSpinner.getModel();
-        SpinnerModel yearModel = dateSpinner.getModel();
-        SpinnerModel timeModel = dateSpinner.getModel();
-        SpinnerModel timeMod = dateSpinner.getModel();
-        if (monthModel instanceof SpinnerListModel && dayModel instanceof SpinnerNumberModel 
-        		&& yearModel instanceof SpinnerNumberModel && timeModel instanceof SpinnerDateModel
-        		&& timeMod instanceof SpinnerDateModel) {
-           e = (ChangeEvent) spinner.getValue();
+        SpinnerModel dateModel = dateSpinner.getModel();
+        if (dateModel instanceof SpinnerDateModel) {
+            //setSeasonalColor(((SpinnerDateModel)dateModel).getDate());
         }
     }
 
 
-     protected JSpinner addLabeledSpinner(Container c,
+    static protected JSpinner addLabeledSpinner(Container c,
                                                 String label,
                                                 SpinnerModel model) {
         JLabel l = new JLabel(label);
         c.add(l);
 
-        spinner = new JSpinner(model);
+        JSpinner spinner = new JSpinner(model);
         l.setLabelFor(spinner);
         c.add(spinner);
 
         return spinner;
     }
 
-//    public String findDate() {
-//    	text = spinner.getValue().toString();
-//    	return text;
-//    }
+    public Date findDate() {
+    	return (Date) spinner.getValue();
+    }
     /**
      * Create the GUI and show it.  For thread safety,
      * this method should be invoked from the
      * event dispatch thread.
      */
-    
-    
-    public void createComponents() {
-    	panel = new JPanel();
-    	save = new JButton("Check Availability");
-    	cancel = new JButton("Cancel");
-    	panel.add(new SetDateAndTimeFrame(true));
-    	panel.add(save);
-    	panel.add(cancel);
-    	
-
-    	
-   	 save.addActionListener(new saveButtonListener());
-	 cancel.addActionListener(new cancelButtonListener());
-     
-    	
-    	frame.add(panel);
-    }
-    
-    class saveButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent click) {
-        	Component n = (Component) click.getSource(); //e.getSource() returns Object 
-			JFrame m = (JFrame) SwingUtilities.getRoot(n);
-			m.setVisible(false);
-			System.out.println(e);
-        	
-        	
-        	}
-        }
-    
-    class cancelButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent click) {
-        	Component n = (Component) click.getSource(); //e.getSource() returns Object 
-			JFrame m = (JFrame) SwingUtilities.getRoot(n);
-			m.setVisible(false);
-			
-        	}
-        }
-
-    
-//    private void createAndShowGUI() {
+//    private static void createAndShowGUI() {
 //        //Create and set up the window.
 //        JFrame frame = new JFrame("Set Date and Time");
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        //Add content to the window.
-//        frame.add(panel);
+//        frame.add(new Spinner(true));
+//        JPanel panel = new JPanel();
+//
 //        //Display the window.
 //        frame.pack();
 //        frame.setVisible(true);
@@ -300,5 +215,4 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
 
 
 	
->>>>>>> master
 }

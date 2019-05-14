@@ -10,6 +10,7 @@ public class ManageReservation {
     private GuestInfo guest;
     private Room room;
 
+<<<<<<< HEAD
 //    private Date start_date;
 //    private Date end_date;
 //    private Time start_time;
@@ -18,6 +19,23 @@ public class ManageReservation {
 //    GuestInfo guest;
 //    MealPlans mealplan;
 //    Upgrades upgrades;
+=======
+    Time time;
+
+    public ManageReservation() {
+    }
+
+    public void update(GuestInfo x, Object y) {
+        this.setDate((Date) y);
+        this.setRoom((Room) y);
+    }
+    public boolean isFinalized() {
+        return isFinalized;
+    }
+    public void setFinalized(boolean finalized) {
+        isFinalized = finalized;
+    }
+>>>>>>> master
 
 //    /**
 //     * gets un update when the guestinfo is updated.
@@ -138,11 +156,24 @@ public class ManageReservation {
         return guest;
     }
 
+<<<<<<< HEAD
     /**
      * sets guest
      * @param guest
      */
     public void setGuest(GuestInfo guest) {
         this.guest = guest;
+=======
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    public Room getRoom() {
+        return Room;
+>>>>>>> master
     }
 }
