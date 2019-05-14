@@ -27,7 +27,7 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
     private String month;
     private JPanel panel;
     private Date s;
-    private Date e;
+    private JComponent e;
     private JSpinner spinner;
     private JFrame frame;
     private JFormattedTextField text;
@@ -167,7 +167,7 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
             System.err.println("Unexpected editor type: "
                                + spinner.getEditor().getClass()
                                + " isn't a descendant of DefaultEditor");
-            return null;
+            return ((JSpinner.DefaultEditor) editor).getTextField();
         }
     }
 
@@ -203,10 +203,10 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         return spinner;
     }
 
-//    public String findDate() {
-//    	text = spinner.getValue().toString();
-//    	return text;
-//    }
+   public JComponent findDate() {
+    	e = spinner.getEditor();
+    	return e;
+    }
     /**
      * Create the GUI and show it.  For thread safety,
      * this method should be invoked from the
