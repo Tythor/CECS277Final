@@ -51,15 +51,12 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         calendar = Calendar.getInstance();
         JFormattedTextField ftf;
 
-        //Add the first label-spinner pair.
+        //Add month component
         String[] monthStrings = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         SpinnerListModel monthModel = null;
-       // if (cycleMonths) { //use custom model
-       //     monthModel = new CyclingSpinnerListModel(monthStrings);
-       // } else { //use standard model
-            monthModel = new SpinnerListModel(monthStrings);
-      //  }
+        monthModel = new SpinnerListModel(monthStrings);
         spinner = addLabeledSpinner(this, labels[0], monthModel);
+        
         //Tweak the spinner's formatted text field.
         ftf = getTextField(spinner);
         if (ftf != null ) {
@@ -68,70 +65,50 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
   
         }
 
-     //add 2nd label
+     //add day component
         int currentDay = 1;
         SpinnerModel dayModel = new SpinnerNumberModel(currentDay,  1,  31, 1);         
-        //If we're cycling, hook this model up to the month model.
-//        if (monthModel instanceof CyclingSpinnerListModel) {
-//            ((CyclingSpinnerListModel)monthModel).setLinkedModel(dayModel);
-//        }
         spinner = addLabeledSpinner(this, labels[1], dayModel);
         //Make the year be formatted without a thousands separator.
         spinner.setEditor(new JSpinner.NumberEditor(spinner, "#"));
 
 
-        //Add 3rd label-spinner pair.
+        //Add year component
         int currentYear = calendar.get(Calendar.YEAR);
-        SpinnerModel yearModel = new SpinnerNumberModel(currentYear, currentYear, currentYear + 6, 1);                //step
-     
-//        if (monthModel instanceof CyclingSpinnerListModel) {
-//            ((CyclingSpinnerListModel)monthModel).setLinkedModel(yearModel);
-//        }
+        SpinnerModel yearModel = new SpinnerNumberModel(currentYear, currentYear, currentYear + 6, 1);
         spinner = addLabeledSpinner(this, labels[2], yearModel);
         //Make the year be formatted without a thousands separator.
         spinner.setEditor(new JSpinner.NumberEditor(spinner, "#"));
    
  
-		//Add the 4th label-spinner pair
+		//Add start time component
         Date initTime = calendar.getTime();
-        SpinnerDateModel timeModel = new SpinnerDateModel(initTime, null, null, Calendar.HOUR_OF_DAY);//ignored for user input
+        SpinnerDateModel timeModel = new SpinnerDateModel(initTime, null, null, Calendar.HOUR_OF_DAY);
         dateSpinner = spinner = addLabeledSpinner(this, labels[3], timeModel);
         spinner.setEditor(new JSpinner.DateEditor(spinner, "HH:mm a"));
         ftf = getTextField(spinner);
+        
         if(ftf != null) {
         	ftf.setHorizontalAlignment(JTextField.RIGHT);
         	ftf.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 3));
-
         }
         
-        //add 5th 
+        //add end time component
         Date endTime = calendar.getTime();
-        SpinnerDateModel timeMod = new SpinnerDateModel(endTime, null, null, Calendar.HOUR_OF_DAY);//ignored for user input
+        SpinnerDateModel timeMod = new SpinnerDateModel(endTime, null, null, Calendar.HOUR_OF_DAY);
         dateSpinner = spinner = addLabeledSpinner(this, labels[4], timeMod);
         spinner.setEditor(new JSpinner.DateEditor(spinner, "HH:mm a"));
-       
-        
+  
         //Tweak the spinner's formatted text field.
         ftf = getTextField(spinner);
         if (ftf != null ) {
             ftf.setHorizontalAlignment(JTextField.RIGHT);
             ftf.setBorder(BorderFactory.createEmptyBorder(1,1,1,3));
-
         }
-        //spinner.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
-        //XXX: No easy way to get to the buttons and change their border.
-        //setSeasonalColor(dateModel.getDate()); //initialize color
-
-        //Listen for changes on the date spinner.
+     
         dateSpinner.addChangeListener(this);
-
         //Lay out the panel.
-        SpringUtilities.makeCompactGrid(this,
-                                        numPairs, 2, //rows, cols
-                                        10, 10,        //initX, initY
-                                        6, 10);  
-        //xPad, yPad
-
+        SpringUtilities.makeCompactGrid(this, numPairs, 2, 10, 10,6, 10); 
     }
 
     
