@@ -253,14 +253,13 @@ public class MainFrame extends JFrame {
 
         menuBar.add(menu);
         this.add(menuBar, BorderLayout.NORTH);
-
     }
 
 
     private JPanel addARoomDescription(String imgDir, String roomName, String roomDesc) {
         JPanel p = new JPanel();
 
-        ImageIcon icon = new ImageIcon(imgDir);
+        ImageIcon icon = new ImageIcon(new ImageIcon(imgDir).getImage().getScaledInstance(300, 200, Image.SCALE_DEFAULT));
         JLabel picture = new JLabel(roomName, icon, JLabel.CENTER);
         picture.setFont(new Font(Font.SERIF, Font.BOLD, 20));
 
