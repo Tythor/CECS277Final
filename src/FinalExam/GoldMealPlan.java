@@ -120,4 +120,8 @@ public class GoldMealPlan extends SilverMealPlan{
 		System.out.println("Cost: $" + gmp.getCost());
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

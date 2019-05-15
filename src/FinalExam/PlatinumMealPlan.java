@@ -104,4 +104,8 @@ public class PlatinumMealPlan extends GoldMealPlan{
 		System.out.println(pmp.toString());
 		System.out.println("Cost: $" + pmp.getCost());
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master
