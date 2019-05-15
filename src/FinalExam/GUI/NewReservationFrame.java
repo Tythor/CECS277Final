@@ -140,9 +140,9 @@ public class NewReservationFrame implements ActionListener {
 		newPanel.add(cancel);
 
 		mealPlans.addActionListener(this);
-
         save.addActionListener(new SaveButtonListener());
         cancel.addActionListener(new CancelButtonListener());
+        
 		newPanel.setVisible(true);
 		newReservationFrame.add(newPanel);
 	}
@@ -248,7 +248,8 @@ public class NewReservationFrame implements ActionListener {
 		}
 		if(item.getSource() == save)
 		{
-
+			SaveButtonListener sbl = new SaveButtonListener();
+			sbl.actionPerformed(item);
 		}
 		else if(item.getSource() == cancel)
 		{
@@ -259,15 +260,19 @@ public class NewReservationFrame implements ActionListener {
 
     class SaveButtonListener implements ActionListener {
         @Override
-        public void actionPerformed(ActionEvent e) {
-
+        public void actionPerformed(ActionEvent item) {
+        	
+        	
+        	
         }
     }
 
     class CancelButtonListener implements ActionListener {
         @Override
-        public void actionPerformed(ActionEvent e) {
-
+        public void actionPerformed(ActionEvent item) {
+        	
+        	newReservationFrame.dispose();	
+        	
         }
     }
 
