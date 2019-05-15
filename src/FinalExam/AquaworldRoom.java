@@ -29,6 +29,11 @@ public class AquaworldRoom extends Room{
 		return aquaWorld;
 	}
 
+	public AquaworldRoom(String restrictions) {
+		this.restrictions = restrictions;
+	}
+	
+	
 	public String newAquaworldRoom() {
 		super.setCapacity(75);
 		super.setDescription("Olympic-sized pool with water slide, kiddie pool, and large jacuzzi. Includes access to showers/lockers, life guards on duty, DJ, table & chair set-up, and basic meal plan in cost.");
@@ -57,7 +62,7 @@ public class AquaworldRoom extends Room{
 		}
 
 	public String toString() {
-		return("Aquaworld Room: \nCapacity: " + capacity + " people \nDescription: " + description + "\nRestrictions: " + restrictions + "\nCost: $" + cost +" an hour");
+		return("Aquaworld Room: \nCapacity: " + capacity + " people \nDescription: " + description + "\nRestrictions: 21+ or older" + restrictions + "\nCost: $" + cost +" an hour");
 	}
 }
 

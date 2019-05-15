@@ -11,6 +11,12 @@ public abstract class Upgrades extends Room {
 	// the theme in PartyDecorations
 	
 	
+	/**
+	 * 
+	 * @param quantity - the number of a certain item as an integer
+	 * Representing the number of towels, favorBags, and the number of hours of the projector being used
+	 */
+	
 	public void setQty(int quantity) {
 		this.quantity = quantity;
 	}
@@ -19,6 +25,11 @@ public abstract class Upgrades extends Room {
 	// Towels
 	// Hours
 	
+	/**
+	 * 
+	 * @return quantity - the number as an integer
+	 */
+	
 	public int getQty() { 
 		
 		return quantity;
@@ -26,7 +37,7 @@ public abstract class Upgrades extends Room {
 	}
 	
 	/**
-	 * @return 
+	 * @return ...
 	 */
 	
 	public double getCost() {
@@ -35,7 +46,7 @@ public abstract class Upgrades extends Room {
 	}
 	
 	
-	public abstract String getDescription();
+	public abstract String getDescription(); // abstract method
 	
 	// Testing the Upgrade Decorator Pattern Setter and Getter Methods
 	

@@ -73,7 +73,25 @@ public class Main {
        System.out.println(lmn.getDescription());
        
        System.out.println();
+       Date test_date = new Date();
+       test_date.setDay(22);
+       test_date.setMonth(3);
+       test_date.setYear(2018);
+       Room test_room = new AquaworldRoom();
+       MakeReservation r = new MakeReservation(test_date,test_room);
        
+       //for (MakeReservation obj: r) {
+    	   
+      //}
+       
+       System.out.println(test_date);
+       System.out.println(test_room);
+       
+       waitListTemp  w = new waitListTemp();
+       w.setNewGuest(r);
+       for(MakeReservation obj: w.getGuests()) {
+    	   System.out.println(obj.getDate());
+       }
          
        
        

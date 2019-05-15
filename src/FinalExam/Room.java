@@ -10,7 +10,7 @@ public abstract class Room {
 	protected String description;
 	protected boolean isAvailable;
 	protected MealPlans Meal;
-	protected ArrayList<MakeReservation> waitlist = new ArrayList<MakeReservation>();
+	//protected ArrayList<MakeReservation> waitlist = new ArrayList<MakeReservation>();
 	
 	public Room() {
 		capacity = 50;
