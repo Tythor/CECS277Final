@@ -109,7 +109,7 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
 
         dateSpinner.addChangeListener(this);
         //Lay out the panel.
-        SpringUtilities.makeCompactGrid(this, numPairs, 2, 10, 10, 6, 10);
+//        SpringUtilities.makeCompactGrid(this, numPairs, 2, 10, 10, 6, 10);
     }
 
 
@@ -196,14 +196,12 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
             JFrame m = (JFrame) SwingUtilities.getRoot(n);
             m.setVisible(false);
             //System.out.println(e);
-//            System.out.println(monthModel.getValue());
-//            System.out.println(dayModel.getValue());
-//            System.out.println(yearModel.getValue());
-//            System.out.println(timeModel.getValue());
-//            System.out.println(timeMod.getValue());
-            String formattedDate = monthModel.getValue() + " " + dayModel.getValue() + ", " + yearModel.getValue();
-            System.out.println(formattedDate);
-
+            System.out.println(monthModel.getValue());
+            System.out.println(dayModel.getValue());
+            System.out.println(yearModel.getValue());
+            System.out.println(timeModel.getValue());
+            System.out.println(timeMod.getValue());
+            System.out.println(monthModel.getValue() + " " + dayModel.getValue() + ", " + yearModel.getValue());
         }
     }
 

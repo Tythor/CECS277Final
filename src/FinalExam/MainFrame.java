@@ -4,7 +4,7 @@ package FinalExam;
  * @author Daniel, Tylor, Syrac, Audrey, Varun
  */
 
-import FinalExam.*;
+//import FinalExam.*;
 
 import javax.swing.*;
 import javax.swing.border.Border;
