@@ -149,8 +149,8 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
 
 
      protected JSpinner addLabeledSpinner(Container c,
-                                                String label,
-                                                SpinnerModel model) {
+             								   	 String label,
+             								   	 SpinnerModel model) {
         JLabel l = new JLabel(label);
         c.add(l);
 
