@@ -3,7 +3,6 @@ package FinalExam;
 import FinalExam.Factory.*;
 
 public class Main {
-<<<<<<< HEAD
     
 	public static void main(String[] args) {
 
@@ -156,7 +155,6 @@ public class Main {
        
        System.out.println(); */
         
-=======
 
         // Abstract Factory Implementation
         RoomFactory roomFactory = null;
@@ -183,6 +181,5 @@ public class Main {
 
         Room smallPartyRoom = new SmallPartyRoomFactory().createRoom();
         System.out.println(smallPartyRoom);
->>>>>>> master
     }
 }

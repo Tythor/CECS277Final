@@ -17,11 +17,8 @@ public abstract class Room {
 	protected boolean isAvailable;
 	protected Date date;
 	protected MealPlans Meal;
-<<<<<<< HEAD
 	//protected ArrayList<MakeReservation> waitlist = new ArrayList<MakeReservation>();
-=======
 	protected ArrayList<MakeReservation> waitlist = new ArrayList<>(); //instance variables
->>>>>>> master
 	
 	/**
 	 * default constructor
@@ -30,12 +27,9 @@ public abstract class Room {
 		name = "Small Party Room";
 		capacity = 50;
 		cost = 700.00;
-<<<<<<< HEAD
 		//upgrades u = new Upgrades();
-		description = "room with party tables, chairs and is next to arcade\n";
-=======
+		//description = "room with party tables, chairs and is next to arcade\n";
 		description = "room with party tables, chairs and is next to arcade";
->>>>>>> master
 
 	}
 	
@@ -115,10 +109,7 @@ public abstract class Room {
 	public void setCapacity(int cap) {
 		capacity = cap;
 	}
-<<<<<<< HEAD
-		
-=======
-	
+
 	public Date getDate() {
 		return date;
 	}
@@ -135,7 +126,6 @@ public abstract class Room {
 	 * method that alows you to upgrade a meal plan
 	 * @param P - mealplan that you want to upgrade to
 	 * **/
->>>>>>> master
 	public void upgradeMealPlan(MealPlans P) {
 		
 	}
@@ -186,6 +176,4 @@ public abstract class Room {
 		return description;
 	}
 	
-	public abstract double getCost();
-
 }

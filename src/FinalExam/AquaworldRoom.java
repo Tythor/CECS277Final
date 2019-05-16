@@ -8,7 +8,6 @@ package FinalExam;
 public class AquaworldRoom extends Room{
 
 	private String restrictions;
-<<<<<<< HEAD
 	
 	private static AquaworldRoom aquaWorld = new AquaworldRoom();
 
@@ -16,6 +15,9 @@ public class AquaworldRoom extends Room{
 	 * Default Constructor 
 	 */
 	
+	/**
+	 * constructor method uses singleton design pattern
+	 * **/
 	public AquaworldRoom() {}
 
 	/**
@@ -23,21 +25,12 @@ public class AquaworldRoom extends Room{
 	 * @return - aquaWorld, the only instance of aquaWorld, representing the Singleton Pattern.
 	 * Singleton - This design pattern is a creational pattern that ensures that only one instance of the class can ever be made
 	 */
-	
-=======
-	private static AquaworldRoom aquaWorld = new AquaworldRoom(); //instance variables
-
-	/**
-	 * constructor method uses singleton design pattern
-	 * **/
-	public AquaworldRoom() {}
 
 	/**
 	 * method that creates new instance of itself
 	 * @return aquaworld - a new aquaworld room
 	 * **/
 
->>>>>>> master
 	public static AquaworldRoom getInstance() {
 
 		if(aquaWorld == null) {
@@ -47,20 +40,18 @@ public class AquaworldRoom extends Room{
 
 		return aquaWorld;
 	}
-<<<<<<< HEAD
 
 	public AquaworldRoom(String restrictions) {
 		this.restrictions = restrictions;
 	}
 	
 	
-=======
 	
 	/**
 	 * method that gets the information specific to aquaworld room
 	 * @return a - a string of information about aquaworld room 
 	 * **/
->>>>>>> master
+
 	public String newAquaworldRoom() {
 		super.name = "Aquaworld Room";
 		super.setCapacity(75);
@@ -102,11 +93,8 @@ public class AquaworldRoom extends Room{
 	 * @return - a string
 	 * **/
 	public String toString() {
-<<<<<<< HEAD
 		return("Aquaworld Room: \nCapacity: " + capacity + " people \nDescription: " + description + "\nRestrictions: 21+ or older" + restrictions + "\nCost: $" + cost +" an hour");
-=======
-		return(name + ": \nCapacity: " + capacity + " people \nDescription: " + description + "\nRestrictions: " + restrictions + "\nCost: $" + cost +" an hour");
->>>>>>> master
+		//return(name + ": \nCapacity: " + capacity + " people \nDescription: " + description + "\nRestrictions: " + restrictions + "\nCost: $" + cost +" an hour");
 	}
 }
 

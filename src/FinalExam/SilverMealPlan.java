@@ -93,8 +93,5 @@ public class SilverMealPlan extends BronzeMealPlan {
 		System.out.println(smp.toString());
 		System.out.println("Cost: $" + smp.getCost());
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> master
+

@@ -8,6 +8,10 @@ package FinalExam;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+
+import FinalExam.GUI.NewReservationFrame;
+import FinalExam.GUI.SetDateAndTimeFrame;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -14,11 +14,8 @@ public class SmallPartyRoom extends Room{
 	public SmallPartyRoom() {
 		super.name = "Small Party Room";
 		super.setCapacity(30);
-<<<<<<< HEAD
-		super.setDescription("Room with party tables and chairs, adjacent to arcade. Includes table & chair set-up and basic meal plan in cost.\n");
-=======
+		//super.setDescription("Room with party tables and chairs, adjacent to arcade. Includes table & chair set-up and basic meal plan in cost.\n");
 		super.setDescription("Room with party tables and chairs, adjacent to arcade. \nIncludes table & chair set-up and basic meal plan in cost.");
->>>>>>> master
 		getCost();
 	}
 	

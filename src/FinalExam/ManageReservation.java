@@ -9,11 +9,9 @@ public class ManageReservation {
     Date date;
     Room Room;
 
-<<<<<<< HEAD
-=======
+
     Time time;
 
->>>>>>> master
     public ManageReservation() {
     }
 
@@ -52,8 +50,5 @@ public class ManageReservation {
     public void setRoom(Room room) {
         Room = room;
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 }
