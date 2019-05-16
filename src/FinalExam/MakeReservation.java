@@ -27,6 +27,6 @@ public class MakeReservation {
     }
 
     public void finalizeReservation() {
-    	
+    
     }
 }
