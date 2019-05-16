@@ -1,13 +1,13 @@
 package FinalExam;
 
 public class MakeReservation {
-    private Date date;
-    private Room room;
+    protected Date date;
+    protected Room room;
     private GuestInfo guest;
     private boolean isFinalized;
 
     public MakeReservation(Date date, Room room) {
-
+    		
     }
 
     public Date getDate() {

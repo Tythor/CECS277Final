@@ -216,6 +216,7 @@ public class Room {
 		Time timeE = new Time(endH, endM, 0);
 		System.out.println(timeS);
 		System.out.println(date);
+		isAvailable = false;
 	    return isAvailable;
 	}
 	

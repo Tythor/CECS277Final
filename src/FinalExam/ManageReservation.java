@@ -3,15 +3,16 @@ package FinalExam;
 import java.util.ArrayList;
 import java.sql.Time;
 
-public class ManageReservation {
+public class ManageReservation extends MakeReservation {
+	ArrayList<MakeReservation> reservations = new ArrayList<MakeReservation>();
     ArrayList<Room> log;
     boolean isFinalized;
     Date date;
     Room Room;
-
     Time time;
-
-    public ManageReservation() {
+    
+    public ManageReservation(Date date, Room room) {
+    	super(date, room);
     }
 
     public void update(GuestInfo x, Object y) {
@@ -49,5 +50,10 @@ public class ManageReservation {
     public void setRoom(Room room) {
         Room = room;
     }
-
+    
+    public void checkAvailable(Date d, Time t, String name) {
+    	for(int i = 0; i < reservations.size(); i++) {
+    		
+    	}
+    }
 }
