@@ -4,13 +4,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+import FinalExam.Card;
+import FinalExam.Factory.*;
+import FinalExam.GuestInfo;
+import FinalExam.Room;
+
 public class NewReservationFrame implements ActionListener {
 
 	private JTextField firstName, lastName, phoneNumber, address, dob, email, cardName, cardNumber, cardCode, expDate;
 	private JLabel guestInfo, cardInfo, contact, cardType, fn, ln, pn, ad, db, em, cname, cnum, ccode, edate, roomDetail, roomNumber, date, time, mealPlanDetail;
-	private JCheckBox phoneBox, emailBox, visaBox, mastercardBox, amExpressBox;
+	private JCheckBox phoneBox, emailBox;
 	private JComboBox roomTypes, mealPlans, pizzaToppings, sodaChoices,  soda2, soda3, soda4, soda5,
-						toppings2, toppings3, toppings4, wingFlavors, wingFlavors2, iceCreamFlavors, iceCreamFlavors2, side;
+						toppings2, toppings3, toppings4, wingFlavors, wingFlavors2, iceCreamFlavors, iceCreamFlavors2, side, 
+						cardCompanies;
 	private JButton save, cancel;
 
 	private static final int FRAME_WIDTH = 1000;
@@ -29,6 +35,7 @@ public class NewReservationFrame implements ActionListener {
 	private String[] iceCreamFlavorsList = {"Chocolate Fudge", "Vanilla Bean", "Strawberry Shortcake", "Choco-Mint", "Butter Pecan"};
 	private String[] sodaChoicesList = {"Coca-Cola", "Diet Coke", "Canada Dry", "Orange Crush", "Squirt", "Root Beer"};
 	private String[] sidesList = {"salad", "breadsticks"};
+	private String[] companyList = {"Visa", "Mastercard", "American Express"};
 
 	public NewReservationFrame() {
 		createComponents();
@@ -73,9 +80,7 @@ public class NewReservationFrame implements ActionListener {
 		emailBox = new JCheckBox("Email");
 
 		cardType = new JLabel("Select Card Type: ");
-		visaBox = new JCheckBox("Visa");
-		mastercardBox = new JCheckBox("Mastercard");
-		amExpressBox = new JCheckBox("AM Express");
+		cardCompanies = new JComboBox(companyList);
 
 		roomDetail = new JLabel("Room Details: ");
         roomTypes = new JComboBox(roomTypesList);
@@ -115,9 +120,7 @@ public class NewReservationFrame implements ActionListener {
 		newPanel.add(edate);
 		newPanel.add(expDate);
 		newPanel.add(cardType);
-		newPanel.add(visaBox);
-		newPanel.add(mastercardBox);
-		newPanel.add(amExpressBox);
+		newPanel.add(cardCompanies);
 
 		newPanel.add(contact);
 		newPanel.add(phoneBox);
@@ -262,7 +265,32 @@ public class NewReservationFrame implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent item) {
         	
+        	Card card = new Card(cardInfo.getText(), cardCompanies.getSelectedItem().toString(), cardCode.getText(),
+        						 expDate.getText());
         	
+        	GuestInfo gi = new GuestInfo(firstName.getText(), lastName.getText(), phoneNumber.getText(), address.getText(),
+        								 dob.getText(), email.getText());
+
+			RoomFactory roomFactory = null;
+			switch (roomTypes.getSelectedItem().toString()) {
+				case "Small Party Room":
+					roomFactory = new SmallPartyRoomFactory();
+					break;
+				case "Medium Party Room":
+					roomFactory = new MediumPartyRoomFactory();
+					break;
+				case "Aquaworld Room":
+					roomFactory = new AquaworldRoomFactory();
+					break;
+				case "Billiards Lounge":
+					roomFactory = new BilliardsLoungeFactory();
+					break;
+				case "Karaoke Lounge":
+					roomFactory = new KaraokeLoungeFactory();
+					break;
+			}
+			Room room = roomFactory.createRoom();
+			System.out.println(room);
         	
         }
     }
