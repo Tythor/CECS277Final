@@ -11,9 +11,13 @@ package FinalExam.GUI;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+
+import FinalExam.Room;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -22,13 +26,11 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
     protected JSpinner dateSpinner;
     private JButton save;
     private JButton cancel;
-    private String month;
     private JPanel panel;
-    private Date s;
     private JComponent e;
     private JSpinner spinner;
     private JFrame frame;
-    private JFormattedTextField text;
+    private String name;
 
     private static SpinnerModel monthModel;
     private static SpinnerModel dayModel;
@@ -38,11 +40,16 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
 
 
     public SetDateAndTimeFrame() {
-        frame = new JFrame();
+    }
+    
+    
+    public void createGUI(String n) {
+    	frame = new JFrame();
         createComponents();
-        frame.setTitle("Something");
+        frame.setTitle(n);
         frame.pack();
         frame.setVisible(true);
+        name = n;
     }
 
     public SetDateAndTimeFrame(boolean cycleMonths) {
@@ -161,6 +168,7 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         return spinner;
     }
 
+    
     public JComponent findDate() {
         e = spinner.getEditor();
         return e;
@@ -196,11 +204,22 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
             JFrame m = (JFrame) SwingUtilities.getRoot(n);
             m.setVisible(false);
             //System.out.println(e);
-            System.out.println(monthModel.getValue());
-            System.out.println(dayModel.getValue());
-            System.out.println(yearModel.getValue());
-            System.out.println(timeModel.getValue());
-            System.out.println(timeMod.getValue());
+            String month = (String) monthModel.getValue();
+            int day = (int) dayModel.getValue();
+            int year = (int) yearModel.getValue();
+            String startTime = new SimpleDateFormat("HH:mm").format(timeModel.getValue());
+            String endTime = new SimpleDateFormat("HH:mm").format(timeMod.getValue());
+            Room r = new Room();
+            boolean available = r.isAvaliable(month, day, year, startTime, endTime, name);
+            if (available =true) {
+            	//NewReservationFrame nrf = new NewReservationFrame(name, day, month);
+            	System.out.println("yay");
+            }
+            else if(available = false) {
+            	//waitlistFrame wait = new WaitListFrame();
+            }
+            System.out.println(startTime);
+            System.out.println(endTime);
 
         }
     }

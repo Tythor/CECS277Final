@@ -1,11 +1,13 @@
 package FinalExam;
+
+
 /**
  * @author (group 6)
  * @release date - May 6, 2019
  * this class creates a basic room
  * **/
 
-public class Time {
+public class SetUpandCleanUp {
 	
 	private double startTime;
 	private double endTime;
