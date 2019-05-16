@@ -3,6 +3,8 @@ package FinalExam.GUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Time;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import javax.swing.*;
 
 import FinalExam.*;
@@ -22,6 +24,7 @@ public class NewReservationFrame implements ActionListener {
 	private Time rStartTime;
 	private Time rEndTime;
 	private JLabel roomName;
+	private JLabel ageError;
 
 	private ManageReservation manageReservation = new ManageReservation();
 
@@ -121,6 +124,7 @@ public class NewReservationFrame implements ActionListener {
 		save = new JButton("Save");
 		cancel = new JButton("Cancel");
 		error = new JLabel("Error: Fill all fields");
+		ageError = new JLabel("Error: Too young");
 
 		newPanel.add(guestInfo);
 		newPanel.add(fn);
@@ -169,6 +173,8 @@ public class NewReservationFrame implements ActionListener {
 
 		newPanel.add(save);
 		newPanel.add(cancel);
+
+
 
 
 		mealPlans.addActionListener(this);
@@ -325,6 +331,7 @@ public class NewReservationFrame implements ActionListener {
 
 			RoomFactory roomFactory = null;
 			//switch (roomTypes.getSelectedItem().toString()) {
+			
 			switch (roomName.getText()) {
 				case "Small Party Room":
 					roomFactory = new SmallPartyRoomFactory();
@@ -371,6 +378,23 @@ public class NewReservationFrame implements ActionListener {
 					pmp.setICFlavor1(iceCreamFlavors.getSelectedItem().toString());
 					pmp.setICFlavor2(iceCreamFlavors2.getSelectedItem().toString());
 					break;
+			}
+
+
+			if(roomName.getText().equals("Billiards Lounge")) {
+				int month = Integer.parseInt(dob.getText().substring(0, 2));
+				int day = Integer.parseInt(dob.getText().substring(3, 5));
+				int year = Integer.parseInt(dob.getText().substring(6, 10));
+
+				LocalDate start = LocalDate.of(year, month, day);
+				LocalDate end = LocalDate.now();
+				long years = ChronoUnit.YEARS.between(start, end);
+				if (years < 21) {
+					newPanel.add(ageError);
+					newPanel.revalidate();
+					newPanel.repaint();
+					return;
+				}
 			}
 
 
