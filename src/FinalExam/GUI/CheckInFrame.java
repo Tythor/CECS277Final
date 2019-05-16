@@ -17,6 +17,7 @@ public class CheckInFrame extends JPanel {
     JButton cancel;
     JPanel panel;
     JFrame frame;
+    Reservation reserv;
 
 
     public CheckInFrame() {
@@ -29,6 +30,7 @@ public class CheckInFrame extends JPanel {
 
     public void createComponents(){
         //get reservations
+
         list = new JList<Reservation>();
         check_in = new JButton("Check-in");
 
@@ -37,17 +39,18 @@ public class CheckInFrame extends JPanel {
 
         panel = new JPanel();
         panel.add(list);
-        Reservation reserv = list.getSelectedValue();
-        ActionListener checkinListener = new CheckInlistener();
-        check_in.addActionListener(checkinListener);
+        reserv = list.getSelectedValue();
+        ActionListener checkInListener = new CheckInlistener();
+        check_in.addActionListener(checkInListener);
         panel.add(check_in);
         panel.add(cancel);
         frame.add(panel);
     }
 
     class CheckInlistener implements ActionListener {
-        public void actionPerformed(ActionEvent x) {
-            JButton temp = (JButton) x.getSource();
+        public void actionPerformed(ActionEvent select) {
+            reserv.finalizeReservation(true);
+//            JButton temp = (JButton) select.getSource();
 
         }
     }
