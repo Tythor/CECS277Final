@@ -75,7 +75,8 @@ public class waitListFrame extends JFrame {
 				
 				w.setVisible(false);
 				
-				NewReservationFrame newRes = new NewReservationFrame(); // If the user accepts to be added to the waitlist, and the NewReservationFrame appears again
+				ConfirmWaitList wait = new ConfirmWaitList();
+				//NewReservationFrame newRes = new NewReservationFrame(); // If the user accepts to be added to the waitlist, and the NewReservationFrame appears again
 								
 				//System.out.println("Not generating an ID at the moment for check in") // Testing Purposes
 				
