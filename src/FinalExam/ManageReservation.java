@@ -73,6 +73,10 @@ public class ManageReservation {
         return reservations.size();
     }
     
+    public static ArrayList<Reservation> getReservations() {
+        return reservations;
+    }
+
     public boolean checkAvailable(Date d, Time sT, Time eT, String name) {
         //boolean flag = true;
         //Reservation r = new Reservation();
