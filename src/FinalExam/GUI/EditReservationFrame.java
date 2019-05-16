@@ -1,8 +1,12 @@
 package FinalExam.GUI;
 
+import FinalExam.Reservation;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+
+import static FinalExam.GUI.MainFrame.manageReservation;
 
 public class EditReservationFrame implements ActionListener {
 	
@@ -30,13 +34,21 @@ public class EditReservationFrame implements ActionListener {
 	private void createComponents() {
 		newPanel = new JPanel();
 		
-		reservationType = new JLabel("Select Reservation Type");
+		reservationType = new JLabel("Select Reservation Type:");
+		enterNum = new JTextField(5);
 		confirmed = new JButton("Confirmed Reservation");
+		enterName = new JTextField(5);
 		waitlist = new JButton("Waitlist Reservation");
-		
+		delete = new JButton("Delete Reservation");
+
 		newPanel.add(reservationType);
+		newPanel.add(enterNum);
 		newPanel.add(confirmed);
+		newPanel.add(enterName);
 		newPanel.add(waitlist);
+		newPanel.add(delete);
+
+		updateReservationList();
 		
 		confirmed.addActionListener(this);
 		waitlist.addActionListener(this);
@@ -48,9 +60,6 @@ public class EditReservationFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent item) {
-		enterNum = new JTextField();
-		newPanel.add(enterNum);
-		enterNum.setVisible(true);
 		
 		if(item.getSource() == confirmed)
 		{
@@ -60,37 +69,58 @@ public class EditReservationFrame implements ActionListener {
 		{
 			checkWaitlist();
 		}
+		else if(item.getSource() == delete)
+		{
+			deleteReservation();
+		}
 		
 	}
 	
 	public void checkConfirmed()
 	{
-		if()
+		manageReservation.getReservations().set(Integer.parseInt(enterNum.getText()) - 1, new NewReservationFrame().reservation);
+		updateReservationList();
+		/*if()
 		{
 			
 		}
 		else
 		{
 			editFrame();
-		}
+		}*/
 	}
 	
 	public void checkWaitlist()
 	{
-		if()
+		/*if()
 		{
-			
+
 		}
 		else
 		{
 			editFrame();
-		}
+		}*/
+	}
+
+	public void deleteReservation()
+	{
+		Reservation reservation = manageReservation.getReservations().remove(Integer.parseInt(enterNum.toString()) + 1);
+		newPanel.add(new JLabel("Removed " + reservation.toString()));
+		updateReservationList();
 	}
 	
 	public void editFrame()
 	{
 		NewReservationFrame nrf = new NewReservationFrame();
 		
+	}
+
+	public void updateReservationList() {
+		for (Reservation reservation : manageReservation.getReservations()) {
+			newPanel.add(new JLabel(reservation.toString()));
+		}
+		newPanel.repaint();
+		newPanel.validate();
 	}
 	
 	public static void main(String[] args) {

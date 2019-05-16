@@ -10,6 +10,8 @@ import javax.swing.*;
 import FinalExam.*;
 import FinalExam.Factory.*;
 
+import static FinalExam.GUI.MainFrame.manageReservation;
+
 public class NewReservationFrame implements ActionListener {
 
 	private JTextField firstName, lastName, phoneNumber, address, dob, email, cardName, cardNumber, cardCode, expDate;
@@ -21,12 +23,11 @@ public class NewReservationFrame implements ActionListener {
 	private JButton save, cancel;
 
 	private Date rDate;
-	private Time rStartTime;
-	private Time rEndTime;
+	private Time rStartTime, rEndTime;
 	private JLabel roomName;
 	private JLabel ageError;
 
-	private ManageReservation manageReservation = new ManageReservation();
+	Reservation reservation;
 
 	private static final int FRAME_WIDTH = 1000;
 	private static final int FRAME_HEIGHT = 1000;
@@ -48,6 +49,10 @@ public class NewReservationFrame implements ActionListener {
 	private String[] companyList = {"Visa", "Mastercard", "American Express"};
 
 	public NewReservationFrame() {
+		rDate = new Date();
+		rStartTime = new Time(0);
+		rEndTime = new Time(0);
+		roomName = new JLabel();
 		createComponents();
 		newReservationFrame.setVisible(true);
 		newReservationFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,7 +69,7 @@ public class NewReservationFrame implements ActionListener {
 		rEndTime = endTime;
 		this.roomName = new JLabel(roomName);
 
-		System.out.println("Printing..." + rDate.toString() + rStartTime.toString() + rEndTime.toString());
+		//System.out.println("Printing..." + rDate.toString() + rStartTime.toString() + rEndTime.toString());
 
 		createComponents();
 		newReservationFrame.setVisible(true);
@@ -126,6 +131,21 @@ public class NewReservationFrame implements ActionListener {
 		error = new JLabel("Error: Fill all fields");
 		ageError = new JLabel("Error: Too young");
 
+		toppings2 = new JComboBox(pizzaToppingsList);
+		toppings3 = new JComboBox(pizzaToppingsList);
+		toppings4 = new JComboBox(pizzaToppingsList);
+		soda2 = new JComboBox(sodaChoicesList);
+		soda3 = new JComboBox(sodaChoicesList);
+		soda4 = new JComboBox(sodaChoicesList);
+		soda5 = new JComboBox(sodaChoicesList);
+		wingType = new JComboBox(wingTypesList);
+		wingFlavors = new JComboBox(wingFlavorsList);
+		wingFlavors2 = new JComboBox(wingFlavorsList);
+		iceCreamFlavors = new JComboBox(iceCreamFlavorsList);
+		iceCreamFlavors2 = new JComboBox(iceCreamFlavorsList);
+		side = new JComboBox(sidesList);
+
+
 		newPanel.add(guestInfo);
 		newPanel.add(fn);
 		newPanel.add(firstName);
@@ -159,22 +179,26 @@ public class NewReservationFrame implements ActionListener {
 
 		newPanel.add(roomDetail);
 		//newPanel.add(roomTypes);
+		newPanel.add(new JLabel("Room Name:"));
 		newPanel.add(roomName);
 		newPanel.add(roomNumber);
+		newPanel.add(new JLabel("Date:"));
 		newPanel.add(date);
+		newPanel.add(new JLabel("Start Time:"));
 		newPanel.add(startTime);
+		newPanel.add(new JLabel("End Time:"));
 		newPanel.add(endTime);
 
 		newPanel.add(mealPlanDetail);
 		newPanel.add(mealPlans);
 		newPanel.add(pizzaToppings);
+		newPanel.add(toppings2);
+		newPanel.add(toppings3);
 		newPanel.add(sodaChoices);
-		newPanel.add(sodaChoices);
+		newPanel.add(soda2);
 
 		newPanel.add(save);
 		newPanel.add(cancel);
-
-
 
 
 		mealPlans.addActionListener(this);
@@ -191,54 +215,56 @@ public class NewReservationFrame implements ActionListener {
 		{
 			JComboBox cb = (JComboBox)item.getSource();
 			String i = (String)cb.getSelectedItem();
+			newPanel.remove(soda4);
+			newPanel.remove(soda5);
+			newPanel.remove(side);
+			newPanel.remove(wingType);
+			newPanel.remove(wingFlavors);
+			newPanel.remove(wingFlavors2);
+			newPanel.remove(iceCreamFlavors);
+			newPanel.remove(iceCreamFlavors2);
 
 			if(i == "Basic Meal Plan")
 			{
-				soda2 = new JComboBox(sodaChoicesList);
-				soda3 = new JComboBox(sodaChoicesList);
-				newPanel.add(soda2);
-				newPanel.add(soda3);
-				newPanel.repaint();
-				newPanel.revalidate();
+				/*soda2 = new JComboBox(sodaChoicesList);
+				soda3 = new JComboBox(sodaChoicesList);*/
+				/*newPanel.add(soda2);
+				newPanel.add(soda3);*/
 			}
 			else if(i == "Bronze Meal Plan")
 			{
-				toppings2 = new JComboBox(pizzaToppingsList);
+				/*toppings2 = new JComboBox(pizzaToppingsList);
 				soda2 = new JComboBox(sodaChoicesList);
 				soda3 = new JComboBox(sodaChoicesList);
 				soda4 = new JComboBox(sodaChoicesList);
 				soda5 = new JComboBox(sodaChoicesList);
-				side = new JComboBox(sidesList);
-				newPanel.add(toppings2);
+				side = new JComboBox(sidesList);*/
+				/*newPanel.add(toppings2);
 				newPanel.add(soda2);
-				newPanel.add(soda3);
+				newPanel.add(soda3);*/
 				newPanel.add(soda4);
 				newPanel.add(soda5);
 				newPanel.add(side);
-				newPanel.repaint();
-				newPanel.revalidate();
 			}
 			else if(i == "Silver Meal Plan")
 			{
-				toppings2 = new JComboBox(pizzaToppingsList);
+				/*toppings2 = new JComboBox(pizzaToppingsList);
 				toppings3 = new JComboBox(pizzaToppingsList);
 				soda2 = new JComboBox(sodaChoicesList);
 				soda3 = new JComboBox(sodaChoicesList);
 				soda4 = new JComboBox(sodaChoicesList);
-				soda5 = new JComboBox(sodaChoicesList);
-				newPanel.add(toppings2);
+				soda5 = new JComboBox(sodaChoicesList);*/
+				/*newPanel.add(toppings2);
 				newPanel.add(toppings3);
 				newPanel.add(soda2);
-				newPanel.add(soda3);
+				newPanel.add(soda3);*/
 				newPanel.add(soda4);
 				newPanel.add(soda5);
-				newPanel.repaint();
-				newPanel.revalidate();
 			}
 			else if(i == "Gold Meal Plan")
 			{
 
-				toppings2 = new JComboBox(pizzaToppingsList);
+				/*toppings2 = new JComboBox(pizzaToppingsList);
 				toppings3 = new JComboBox(pizzaToppingsList);
 				soda2 = new JComboBox(sodaChoicesList);
 				soda3 = new JComboBox(sodaChoicesList);
@@ -246,22 +272,20 @@ public class NewReservationFrame implements ActionListener {
 				soda5 = new JComboBox(sodaChoicesList);
 				wingType = new JComboBox(wingTypesList);
 				wingFlavors = new JComboBox(wingFlavorsList);
-				wingFlavors2 = new JComboBox(wingFlavorsList);
-				newPanel.add(toppings2);
+				wingFlavors2 = new JComboBox(wingFlavorsList);*/
+				/*newPanel.add(toppings2);
 				newPanel.add(toppings3);
 				newPanel.add(soda2);
-				newPanel.add(soda3);
+				newPanel.add(soda3);*/
 				newPanel.add(soda4);
 				newPanel.add(soda5);
 				newPanel.add(wingType);
 				newPanel.add(wingFlavors);
 				newPanel.add(wingFlavors2);
-				newPanel.repaint();
-				newPanel.revalidate();
 			}
 			else if(i == "Platinum Meal Plan")
 			{
-				toppings2 = new JComboBox(pizzaToppingsList);
+				/*toppings2 = new JComboBox(pizzaToppingsList);
 				toppings3 = new JComboBox(pizzaToppingsList);
 				toppings4 = new JComboBox(pizzaToppingsList);
 				soda2 = new JComboBox(sodaChoicesList);
@@ -272,11 +296,12 @@ public class NewReservationFrame implements ActionListener {
 				wingFlavors = new JComboBox(wingFlavorsList);
 				wingFlavors2 = new JComboBox(wingFlavorsList);
 				iceCreamFlavors = new JComboBox(iceCreamFlavorsList);
-				iceCreamFlavors2 = new JComboBox(iceCreamFlavorsList);
-				newPanel.add(toppings2);
+				iceCreamFlavors2 = new JComboBox(iceCreamFlavorsList);*/
+				/*newPanel.add(toppings2);
 				newPanel.add(toppings3);
 				newPanel.add(soda2);
-				newPanel.add(soda3);
+				newPanel.add(soda3);*/
+				newPanel.add(toppings4);
 				newPanel.add(soda4);
 				newPanel.add(soda5);
 				newPanel.add(wingType);
@@ -284,10 +309,15 @@ public class NewReservationFrame implements ActionListener {
 				newPanel.add(wingFlavors2);
 				newPanel.add(iceCreamFlavors);
 				newPanel.add(iceCreamFlavors2);
-				newPanel.repaint();
-				newPanel.revalidate();
 			}
 		}
+
+		newPanel.add(save);
+		newPanel.add(cancel);
+
+		newPanel.repaint();
+		newPanel.revalidate();
+
 		if(item.getSource() == save)
 		{
 			SaveButtonListener sbl = new SaveButtonListener();
@@ -331,7 +361,7 @@ public class NewReservationFrame implements ActionListener {
 
 			RoomFactory roomFactory = null;
 			//switch (roomTypes.getSelectedItem().toString()) {
-			
+
 			switch (roomName.getText()) {
 				case "Small Party Room":
 					roomFactory = new SmallPartyRoomFactory();
@@ -400,20 +430,20 @@ public class NewReservationFrame implements ActionListener {
 
 
 			//Reservation reservation = new Reservation(setDateAndTimeFrame.getDate(), setDateAndTimeFrame.getStartTime(), setDateAndTimeFrame.getEndTime(), room, gi, card);
-			Reservation reservation = new Reservation(rDate, rStartTime, rEndTime, room, gi, card);
+			reservation = new Reservation(rDate, rStartTime, rEndTime, room, gi, card);
 			//NewReservationFrame.this.manageReservation.addReservation(reservation);
 			int confirmNum = manageReservation.addReservation(reservation);
+			manageReservation.addReservation(reservation);
 
-			newReservationFrame.dispose();
-			
 			String a = reservation.toString();
-			
+
 			ConfirmationFrame confirm = new ConfirmationFrame();
 			confirm.addText(a);
 			String b = String.format("Your confirmation number is %s", confirmNum);
 			confirm.addText(b);
-			
 
+
+			newReservationFrame.dispose();
 
 		}
 	}
