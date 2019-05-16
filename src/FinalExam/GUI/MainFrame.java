@@ -27,6 +27,8 @@ public class MainFrame extends JFrame {
     JPanel gmp;
     JPanel pmp;
     protected String name;
+    static ManageReservation manageReservation = new ManageReservation();
+
 
     ArrayList<JPanel> partyRooms = new ArrayList<>();
     ArrayList<JPanel> lounges = new ArrayList<>();
@@ -233,7 +235,7 @@ public class MainFrame extends JFrame {
         //Edit reservation item
         menuItem = new JMenuItem("Edit Existing Reservation...");
         menu.add(menuItem);
-        
+        menuItem.addActionListener(new EditReservationListener());
         menu.addSeparator();
 
 
@@ -437,6 +439,13 @@ public class MainFrame extends JFrame {
         	
             NewReservationFrame nrf = new NewReservationFrame();
             //setDateandTime.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        }
+    }
+
+    class EditReservationListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            EditReservationFrame erf = new EditReservationFrame();
         }
     }
 }
