@@ -5,6 +5,7 @@ import FinalExam.Reservation;
 import FinalExam.Reservation;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -37,11 +38,14 @@ public class CheckInFrame extends JPanel {
         cancel = new JButton("Cancel");
 
 
+
         panel = new JPanel();
         panel.add(list);
         reserv = list.getSelectedValue();
         ActionListener checkInListener = new CheckInlistener();
         check_in.addActionListener(checkInListener);
+        ActionListener CancelListener = new CancelListener();
+        cancel.addActionListener(CancelListener);
         panel.add(check_in);
         panel.add(cancel);
         frame.add(panel);
@@ -54,6 +58,16 @@ public class CheckInFrame extends JPanel {
 
         }
     }
+
+    class CancelListener implements ActionListener {
+        public void actionPerformed(ActionEvent click) {
+            Component n = (Component) click.getSource(); //e.getSource() returns Object
+            JFrame m = (JFrame) SwingUtilities.getRoot(n);
+            m.setVisible(false);
+        }
+    }
+
+
     public static void main(String[] args) {
 
 
