@@ -8,7 +8,7 @@ import javax.swing.*;
 import FinalExam.*;
 import FinalExam.Factory.*;
 
-public class NewReservationFrame implements ActionListener {
+public class NewReserv implements ActionListener {
 
 	private JTextField firstName, lastName, phoneNumber, address, dob, email, cardName, cardNumber, cardCode, expDate;
 	private JLabel guestInfo, cardInfo, contact, cardType, fn, ln, pn, ad, db, em, cname, cnum, ccode, edate, roomDetail, roomNumber, date, startTime, endTime, mealPlanDetail, error;
@@ -44,7 +44,7 @@ public class NewReservationFrame implements ActionListener {
 	private String[] sidesList = {"salad", "breadsticks"};
 	private String[] companyList = {"Visa", "Mastercard", "American Express"};
 
-	public NewReservationFrame() {
+	public NewReserv() {
 		createComponents();
 		newReservationFrame.setVisible(true);
 		newReservationFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,7 +55,7 @@ public class NewReservationFrame implements ActionListener {
 
 	}
 
-	public NewReservationFrame(Date date, Time startTime, Time endTime, String roomName) {
+	public NewReserv(Date date, Time startTime, Time endTime, String roomName) {
 		rDate = date;
 		rStartTime = startTime;
 		rEndTime = endTime;
@@ -107,11 +107,11 @@ public class NewReservationFrame implements ActionListener {
 		cardCompanies = new JComboBox(companyList);
 
 		roomDetail = new JLabel("Room Details: ");
-		//roomTypes = new JComboBox(roomTypesList);
+		roomTypes = new JComboBox(roomTypesList);
 		roomNumber = new JLabel();
-		date = new JLabel(rDate.toString());
-		startTime = new JLabel(rStartTime.toString());
-		endTime = new JLabel(rEndTime.toString());
+		//date = new JLabel(rDate.toString());
+		//startTime = new JLabel(rStartTime.toString());
+		//endTime = new JLabel(rEndTime.toString());
 
 		mealPlanDetail = new JLabel("Meal Plan Details: ");
 		mealPlans = new JComboBox(mealPlansList);
@@ -154,12 +154,12 @@ public class NewReservationFrame implements ActionListener {
 
 
 		newPanel.add(roomDetail);
-		//newPanel.add(roomTypes);
-		newPanel.add(roomName);
+		newPanel.add(roomTypes);
+		//newPanel.add(roomName);
 		newPanel.add(roomNumber);
-		newPanel.add(date);
-		newPanel.add(startTime);
-		newPanel.add(endTime);
+//		newPanel.add(date);
+//		newPanel.add(startTime);
+//		newPanel.add(endTime);
 
 		newPanel.add(mealPlanDetail);
 		newPanel.add(mealPlans);
@@ -312,10 +312,10 @@ public class NewReservationFrame implements ActionListener {
         		return;
 			}*/
 
-        	/*SetDateAndTimeFrame setDateAndTimeFrame = new SetDateAndTimeFrame();
+        	SetDateAndTimeFrame setDateAndTimeFrame = new SetDateAndTimeFrame();
 			setDateAndTimeFrame.createGUI(roomTypes.getSelectedItem().toString());
-			setDateAndTimeFrame.setVisible(true);*/
-
+			setDateAndTimeFrame.setVisible(true);
+			
 			Card card = new Card(cardInfo.getText(), cardCompanies.getSelectedItem().toString(), cardCode.getText(),
 					expDate.getText());
 
@@ -378,18 +378,9 @@ public class NewReservationFrame implements ActionListener {
 			//Reservation reservation = new Reservation(setDateAndTimeFrame.getDate(), setDateAndTimeFrame.getStartTime(), setDateAndTimeFrame.getEndTime(), room, gi, card);
 			Reservation reservation = new Reservation(rDate, rStartTime, rEndTime, room, gi, card);
 			//NewReservationFrame.this.manageReservation.addReservation(reservation);
-			int confirmNum = manageReservation.addReservation(reservation);
+			manageReservation.addReservation(reservation);
 
 			newReservationFrame.dispose();
-			
-			String a = reservation.toString();
-			
-			ConfirmationFrame confirm = new ConfirmationFrame();
-			confirm.addText(a);
-			String b = String.format("Your confirmation number is %s", confirmNum);
-			confirm.addText(b);
-			
-
 
 		}
 	}
@@ -406,7 +397,7 @@ public class NewReservationFrame implements ActionListener {
 	//
 	public static void main(String[] args) {
 
-		NewReservationFrame nrf =  new NewReservationFrame();
+		NewReserv nrf =  new NewReserv();
 	}
 
 }

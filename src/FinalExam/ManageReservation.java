@@ -62,8 +62,9 @@ public class ManageReservation {
         Room = room;
     }
 
-    public void addReservation(Reservation reservation) {
+    public int addReservation(Reservation reservation) {
         reservations.add(reservation);
+        return reservations.size();
     }
     
     public boolean checkAvailable(Date d, Time sT, Time eT, String name) {

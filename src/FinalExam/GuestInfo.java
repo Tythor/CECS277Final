@@ -122,6 +122,10 @@ public class GuestInfo {
 	public Upgrades getUpgrade() {
 		return upgrade;
 	}
+	
+	public String toString() {
+		return "\nName: " + firstName + " " + lastName + " \nAddress: " + address + "\nPhone Number: " + phoneNum + "\nEmail: " + email +  "\nMeal Plan: " + mealplan; 
+	}
 }
 
 

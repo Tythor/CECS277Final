@@ -237,7 +237,7 @@ public class Room {
 	 * @return - a string
 	 * **/
 	public String toString() {
-		return description;
+		return name;
 	}
 }
 

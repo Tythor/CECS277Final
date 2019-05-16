@@ -47,4 +47,8 @@ public class Reservation {
     public void finalizeReservation() {
     
     }
+    
+    public String toString() {
+    	return "Room: " + room + "\nDate: " + date + "\nStart Time: " + startTime + "\nEnd Time: " + endTime + "\nGuest Info: " + guest + "Card Info "+ card;
+    }
 }
