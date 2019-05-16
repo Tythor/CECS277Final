@@ -8,6 +8,13 @@ public class Card {
 	private String ccNum;
 	private String securityCode;
 	private String expDate;
+	
+	public Card(String cardCompany, String ccNum, String securityCode, String expDate) {
+		this.cardCompany = cardCompany;
+		this.ccNum = ccNum;
+		this.securityCode = securityCode;
+		this.expDate = expDate;
+	}
 
 	/**
 	 * Getter for cardCompany

@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class GuestInfo {
 	ArrayList<ManageReservation> manager_list;
-	private String name;
+	private String firstName;
+	private String lastName;
 	private String address;
 	private String phoneNum;
+	private String dob;
 	private String email;
 	private Card paymentMethod;
 	private Date date;
@@ -14,10 +16,16 @@ public class GuestInfo {
 	private MealPlans mealplan;
 	private Upgrades upgrade;
 
-	public GuestInfo(Date date, Room room) {
-
+	public GuestInfo(String firstName, String lastName, String phoneNum, String address, String dob, String email)
+	{
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNum = phoneNum;
+		this.address = address;
+		this.dob = dob;
+		this.email = email;
 	}
-
+	
 	public void attach(ManageReservation manager) {
 		manager_list.add(manager);
 	}
@@ -26,8 +34,12 @@ public class GuestInfo {
 
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 
@@ -67,8 +79,12 @@ public class GuestInfo {
 
 	// Getter Methods
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
 	}
 
 
