@@ -1,15 +1,18 @@
 package FinalExam.GUI;
 
 import FinalExam.GuestInfo;
-import FinalExam.MakeReservation;
+import FinalExam.Reservation;
+import FinalExam.Reservation;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class CheckInFrame extends JPanel {
     private static final int FRAME_WIDTH = 425;
     private static final int FRAME_HEIGHT = 300;
 
-    JList<MakeReservation> list;
+    JList<Reservation> list;
     JButton check_in;
     JButton cancel;
     JPanel panel;
@@ -26,17 +29,27 @@ public class CheckInFrame extends JPanel {
 
     public void createComponents(){
         //get reservations
-        list = new JList<MakeReservation>();
+        list = new JList<Reservation>();
         check_in = new JButton("Check-in");
+
         cancel = new JButton("Cancel");
 
 
         panel = new JPanel();
         panel.add(list);
-        MakeReservation reserv = list.getSelectedValue();
+        Reservation reserv = list.getSelectedValue();
+        ActionListener checkinListener = new CheckInlistener();
+        check_in.addActionListener(checkinListener);
         panel.add(check_in);
         panel.add(cancel);
         frame.add(panel);
+    }
+
+    class CheckInlistener implements ActionListener {
+        public void actionPerformed(ActionEvent x) {
+            JButton temp = (JButton) x.getSource();
+
+        }
     }
     public static void main(String[] args) {
 
