@@ -19,7 +19,8 @@ public class Room {
 	protected boolean isAvailable;
 	protected Date date;
 	protected MealPlans Meal;
-	protected ArrayList<MakeReservation> waitlist = new ArrayList<>(); //instance variables
+	protected ArrayList<Reservation> waitlist = new ArrayList<>(); //instance variables
+
 	private int month;
 	
 	/**
@@ -136,7 +137,7 @@ public class Room {
 	 * method that adds person to waitlist
 	 * @param reservation - takes in the reservation info of person and adds them to the waitlist
 	 * **/
-	public void addToWaitlist(MakeReservation reservation) {
+	public void addToWaitlist(Reservation reservation) {
 	    waitlist.add(reservation);
 	    System.out.println("Added " + reservation + " to the waitlist");
     }
@@ -145,7 +146,7 @@ public class Room {
 	 * method that removes person to waitlist
 	 * @param reservation - takes in the reservation info of person and removes them from the waitlist
 	 * **/
-    public void removeFromWaitlist(MakeReservation reservation) {
+    public void removeFromWaitlist(Reservation reservation) {
         waitlist.remove(reservation);
         System.out.println("Removed " + reservation + " from the waitlist");
     }
@@ -197,7 +198,7 @@ public class Room {
 			 month = 11;
 		}
 		if(a.equals("December")) {
-			int month = 12;
+			month = 12;
 		}
 		Date date = new Date();
 		date.setMonth(month);
@@ -216,7 +217,14 @@ public class Room {
 		Time timeE = new Time(endH, endM, 0);
 		System.out.println(timeS);
 		System.out.println(date);
-		isAvailable = false;
+
+		ManageReservation manageReservation = new ManageReservation();
+		isAvailable = manageReservation.checkAvailable(date, timeS, timeE, name);
+
+		if (isAvailable) {
+
+		}
+
 	    return isAvailable;
 	}
 	

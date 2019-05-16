@@ -12,11 +12,13 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import FinalExam.ManageReservation;
 import FinalExam.Room;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,6 +39,10 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
     private static SpinnerModel yearModel;
     private static SpinnerModel timeModel;
     private static SpinnerModel timeMod;
+
+    private FinalExam.Date date;
+    private Time startTime;
+    private Time endTime;
 
 
     public SetDateAndTimeFrame() {
@@ -197,6 +203,18 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
         frame.add(panel);
     }
 
+    public FinalExam.Date getDate() {
+        return date;
+    }
+
+    public Time getStartTime() {
+        return startTime;
+    }
+
+    public Time getEndTime() {
+        return endTime;
+    }
+
     class saveButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent click) {
@@ -210,17 +228,83 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
             String startTime = new SimpleDateFormat("HH:mm").format(timeModel.getValue());
             String endTime = new SimpleDateFormat("HH:mm").format(timeMod.getValue());
             Room r = new Room();
-            boolean available = r.isAvaliable(month, day, year, startTime, endTime, name);
-            if (available == true) {
-            	//NewReservationFrame nrf = new NewReservationFrame(name, day, month);
+            //boolean available = r.isAvaliable(month, day, year, startTime, endTime, name);
+
+
+            int monthInt = 0;
+
+            if(month.equals("January")) {
+                monthInt = 1;
+            }
+            if(month.equals("February")) {
+                monthInt = 2;
+            }
+            if(month.equals("March")) {
+                monthInt = 3;
+            }
+            if(month.equals("April")) {
+                monthInt = 4;
+            }
+            if(month.equals("May")) {
+                monthInt = 5;
+            }
+            if(month.equals("June")) {
+                monthInt = 6;
+            }
+            if(month.equals("July")) {
+                monthInt = 7;
+            }
+            if(month.equals("August")) {
+                monthInt = 8;
+            }
+            if(month.equals("September")) {
+                monthInt = 9;
+            }
+            if(month.equals("October")) {
+                monthInt = 10;
+            }
+            if(month.equals("November")) {
+                monthInt = 11;
+            }
+            if(month.equals("December")) {
+                monthInt = 12;
+            }
+            FinalExam.Date newDate = new FinalExam.Date();
+            newDate.setMonth(monthInt);
+            newDate.setDay(day);
+            newDate.setYear(year);
+
+            String hourS = startTime.substring(0, 2);
+            String hourE = endTime.substring(0, 2);
+            String minuteS = startTime.substring(3, 5);
+            String minuteE = endTime.substring(3, 5);
+            int startH = Integer.parseInt(hourS);
+            int startM = Integer.parseInt(minuteS);
+            int endH = Integer.parseInt(hourE);
+            int endM = Integer.parseInt(minuteE);
+            Time timeS = new Time(startH, startM, 0);
+            Time timeE = new Time(endH, endM, 0);
+            System.out.println(timeS);
+            System.out.println(newDate);
+
+            ManageReservation manageReservation = new ManageReservation();
+            boolean isAvailable = manageReservation.checkAvailable(newDate, timeS, timeE, name);
+
+            if (isAvailable) {
+            	NewReservationFrame nrf = new NewReservationFrame(newDate, timeS, timeE, name);
             	System.out.println("yay");
             }
-            else if(available == false) {
+            else {
             	waitListFrame wait = new waitListFrame(name);
             	wait.setVisible(true);
             }
             System.out.println(startTime);
             System.out.println(endTime);
+
+            SetDateAndTimeFrame.this.date = newDate;
+            SetDateAndTimeFrame.this.startTime = timeS;
+            SetDateAndTimeFrame.this.endTime = timeE;
+
 
         }
     }
