@@ -2,16 +2,28 @@ package FinalExam.GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Time;
 import javax.swing.*;
+
+import FinalExam.*;
+import FinalExam.Factory.*;
 
 public class NewReservationFrame implements ActionListener {
 
 	private JTextField firstName, lastName, phoneNumber, address, dob, email, cardName, cardNumber, cardCode, expDate;
-	private JLabel guestInfo, cardInfo, contact, cardType, fn, ln, pn, ad, db, em, cname, cnum, ccode, edate, roomDetail, roomNumber, date, time, mealPlanDetail;
-	private JCheckBox phoneBox, emailBox, visaBox, mastercardBox, amExpressBox;
+	private JLabel guestInfo, cardInfo, contact, cardType, fn, ln, pn, ad, db, em, cname, cnum, ccode, edate, roomDetail, roomNumber, date, startTime, endTime, mealPlanDetail, error;
+	private JCheckBox phoneBox, emailBox;
 	private JComboBox roomTypes, mealPlans, pizzaToppings, sodaChoices,  soda2, soda3, soda4, soda5,
-						toppings2, toppings3, toppings4, wingFlavors, wingFlavors2, iceCreamFlavors, iceCreamFlavors2, side;
+			toppings2, toppings3, toppings4, wingType, wingFlavors, wingFlavors2, iceCreamFlavors, iceCreamFlavors2, side,
+			cardCompanies;
 	private JButton save, cancel;
+
+	private Date rDate;
+	private Time rStartTime;
+	private Time rEndTime;
+	private JLabel roomName;
+
+	private ManageReservation manageReservation = new ManageReservation();
 
 	private static final int FRAME_WIDTH = 1000;
 	private static final int FRAME_HEIGHT = 1000;
@@ -26,9 +38,11 @@ public class NewReservationFrame implements ActionListener {
 	private String[] pizzaToppingsList = {"Cheese", "Pepperoni", "Ham", "Jalapeno", "Sausage", "Mushroom", "Pineapple", "Bell Pepper",
 			"Onion", "Garlic Chicken"};
 	private String[] wingFlavorsList = {"Mild Spicy", "Diablo", "Lemmon Pepper", "BBQ", "Sesame"};
+	private String[] wingTypesList = {"Bone-In", "Boneless"};
 	private String[] iceCreamFlavorsList = {"Chocolate Fudge", "Vanilla Bean", "Strawberry Shortcake", "Choco-Mint", "Butter Pecan"};
 	private String[] sodaChoicesList = {"Coca-Cola", "Diet Coke", "Canada Dry", "Orange Crush", "Squirt", "Root Beer"};
 	private String[] sidesList = {"salad", "breadsticks"};
+	private String[] companyList = {"Visa", "Mastercard", "American Express"};
 
 	public NewReservationFrame() {
 		createComponents();
@@ -39,6 +53,23 @@ public class NewReservationFrame implements ActionListener {
 		newReservationFrame.setLocationRelativeTo(null);
 		newReservationFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
+	}
+
+	public NewReservationFrame(Date date, Time startTime, Time endTime, String roomName) {
+		rDate = date;
+		rStartTime = startTime;
+		rEndTime = endTime;
+		this.roomName = new JLabel(roomName);
+
+		System.out.println("Printing..." + rDate.toString() + rStartTime.toString() + rEndTime.toString());
+
+		createComponents();
+		newReservationFrame.setVisible(true);
+		newReservationFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		newReservationFrame.setTitle("New Reservation");
+		newReservationFrame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+		newReservationFrame.setLocationRelativeTo(null);
+		newReservationFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
 	public void createComponents() {
@@ -73,23 +104,23 @@ public class NewReservationFrame implements ActionListener {
 		emailBox = new JCheckBox("Email");
 
 		cardType = new JLabel("Select Card Type: ");
-		visaBox = new JCheckBox("Visa");
-		mastercardBox = new JCheckBox("Mastercard");
-		amExpressBox = new JCheckBox("AM Express");
+		cardCompanies = new JComboBox(companyList);
 
 		roomDetail = new JLabel("Room Details: ");
-        roomTypes = new JComboBox(roomTypesList);
-        roomNumber = new JLabel();
-        date = new JLabel();
-        time = new JLabel();
+		//roomTypes = new JComboBox(roomTypesList);
+		roomNumber = new JLabel();
+		date = new JLabel(rDate.toString());
+		startTime = new JLabel(rStartTime.toString());
+		endTime = new JLabel(rEndTime.toString());
 
-        mealPlanDetail = new JLabel("Meal Plan Details: ");
+		mealPlanDetail = new JLabel("Meal Plan Details: ");
 		mealPlans = new JComboBox(mealPlansList);
 		pizzaToppings = new JComboBox(pizzaToppingsList);
 		sodaChoices = new JComboBox(sodaChoicesList);
 
 		save = new JButton("Save");
 		cancel = new JButton("Cancel");
+		error = new JLabel("Error: Fill all fields");
 
 		newPanel.add(guestInfo);
 		newPanel.add(fn);
@@ -115,9 +146,7 @@ public class NewReservationFrame implements ActionListener {
 		newPanel.add(edate);
 		newPanel.add(expDate);
 		newPanel.add(cardType);
-		newPanel.add(visaBox);
-		newPanel.add(mastercardBox);
-		newPanel.add(amExpressBox);
+		newPanel.add(cardCompanies);
 
 		newPanel.add(contact);
 		newPanel.add(phoneBox);
@@ -125,12 +154,14 @@ public class NewReservationFrame implements ActionListener {
 
 
 		newPanel.add(roomDetail);
-        newPanel.add(roomTypes);
-        newPanel.add(roomNumber);
-        newPanel.add(date);
-        newPanel.add(time);
+		//newPanel.add(roomTypes);
+		newPanel.add(roomName);
+		newPanel.add(roomNumber);
+		newPanel.add(date);
+		newPanel.add(startTime);
+		newPanel.add(endTime);
 
-        newPanel.add(mealPlanDetail);
+		newPanel.add(mealPlanDetail);
 		newPanel.add(mealPlans);
 		newPanel.add(pizzaToppings);
 		newPanel.add(sodaChoices);
@@ -139,10 +170,11 @@ public class NewReservationFrame implements ActionListener {
 		newPanel.add(save);
 		newPanel.add(cancel);
 
+
 		mealPlans.addActionListener(this);
-        save.addActionListener(new SaveButtonListener());
-        cancel.addActionListener(new CancelButtonListener());
-        
+		save.addActionListener(new SaveButtonListener());
+		cancel.addActionListener(new CancelButtonListener());
+
 		newPanel.setVisible(true);
 		newReservationFrame.add(newPanel);
 	}
@@ -206,6 +238,7 @@ public class NewReservationFrame implements ActionListener {
 				soda3 = new JComboBox(sodaChoicesList);
 				soda4 = new JComboBox(sodaChoicesList);
 				soda5 = new JComboBox(sodaChoicesList);
+				wingType = new JComboBox(wingTypesList);
 				wingFlavors = new JComboBox(wingFlavorsList);
 				wingFlavors2 = new JComboBox(wingFlavorsList);
 				newPanel.add(toppings2);
@@ -214,6 +247,7 @@ public class NewReservationFrame implements ActionListener {
 				newPanel.add(soda3);
 				newPanel.add(soda4);
 				newPanel.add(soda5);
+				newPanel.add(wingType);
 				newPanel.add(wingFlavors);
 				newPanel.add(wingFlavors2);
 				newPanel.repaint();
@@ -228,6 +262,7 @@ public class NewReservationFrame implements ActionListener {
 				soda3 = new JComboBox(sodaChoicesList);
 				soda4 = new JComboBox(sodaChoicesList);
 				soda5 = new JComboBox(sodaChoicesList);
+				wingType = new JComboBox(wingTypesList);
 				wingFlavors = new JComboBox(wingFlavorsList);
 				wingFlavors2 = new JComboBox(wingFlavorsList);
 				iceCreamFlavors = new JComboBox(iceCreamFlavorsList);
@@ -238,6 +273,7 @@ public class NewReservationFrame implements ActionListener {
 				newPanel.add(soda3);
 				newPanel.add(soda4);
 				newPanel.add(soda5);
+				newPanel.add(wingType);
 				newPanel.add(wingFlavors);
 				newPanel.add(wingFlavors2);
 				newPanel.add(iceCreamFlavors);
@@ -258,25 +294,107 @@ public class NewReservationFrame implements ActionListener {
 
 	}
 
-    class SaveButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent item) {
-        	
-        	
-        	
-        }
-    }
+	private boolean checkCompleteness() {
+		if(firstName.getText().isEmpty() || lastName.getText().isEmpty() || phoneNumber.getText().isEmpty() || address.getText().isEmpty() || dob.getText().isEmpty() || email.getText().isEmpty() || cardName.getText().isEmpty() || cardNumber.getText().isEmpty() || cardCode.getText().isEmpty() || expDate.getText().isEmpty())
+			return false;
+		else
+			return true;
+	}
 
-    class CancelButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent item) {
-        	
-        	newReservationFrame.dispose();	
-        	
-        }
-    }
+	class SaveButtonListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent item) {
 
-//
+        	/*if (!checkCompleteness()) {
+        		newPanel.add(error);
+        		newPanel.revalidate();
+        		newPanel.repaint();
+        		return;
+			}*/
+
+        	/*SetDateAndTimeFrame setDateAndTimeFrame = new SetDateAndTimeFrame();
+			setDateAndTimeFrame.createGUI(roomTypes.getSelectedItem().toString());
+			setDateAndTimeFrame.setVisible(true);*/
+
+			Card card = new Card(cardInfo.getText(), cardCompanies.getSelectedItem().toString(), cardCode.getText(),
+					expDate.getText());
+
+			GuestInfo gi = new GuestInfo(firstName.getText(), lastName.getText(), phoneNumber.getText(), address.getText(),
+					dob.getText(), email.getText());
+
+
+			RoomFactory roomFactory = null;
+			//switch (roomTypes.getSelectedItem().toString()) {
+			switch (roomName.getText()) {
+				case "Small Party Room":
+					roomFactory = new SmallPartyRoomFactory();
+					break;
+				case "Medium Party Room":
+					roomFactory = new MediumPartyRoomFactory();
+					break;
+				case "Aquaworld Room":
+					roomFactory = new AquaworldRoomFactory();
+					break;
+				case "Billiards Lounge":
+					roomFactory = new BilliardsLoungeFactory();
+					break;
+				case "Karaoke Lounge":
+					roomFactory = new KaraokeLoungeFactory();
+					break;
+			}
+			Room room = roomFactory.createRoom();
+
+			String mp = mealPlans.getSelectedItem().toString();
+			switch(mp)
+			{
+				case "Basic Meal Plan":
+					BasicMealPlan bmp = new BasicMealPlan();
+					break;
+				case "Bronze Meal Plan":
+					BronzeMealPlan brmp = new BronzeMealPlan();
+					brmp.setSide(side.getSelectedItem().toString());
+					break;
+				case "Silver Meal Plan":
+					SilverMealPlan smp = new SilverMealPlan();
+					break;
+				case "Gold Meal Plan":
+					GoldMealPlan gmp = new GoldMealPlan();
+					gmp.setWingType(wingType.getSelectedItem().toString());
+					gmp.setWingFlavor1(wingFlavors.getSelectedItem().toString());
+					gmp.setWingFlavor2(wingFlavors2.getSelectedItem().toString());
+					break;
+				case "Platinum Meal Plan":
+					PlatinumMealPlan pmp = new PlatinumMealPlan();
+					pmp.setWingType(wingType.getSelectedItem().toString());
+					pmp.setWingFlavor1(wingFlavors.getSelectedItem().toString());
+					pmp.setWingFlavor2(wingFlavors2.getSelectedItem().toString());
+					pmp.setICFlavor1(iceCreamFlavors.getSelectedItem().toString());
+					pmp.setICFlavor2(iceCreamFlavors2.getSelectedItem().toString());
+					break;
+			}
+
+
+
+			//Reservation reservation = new Reservation(setDateAndTimeFrame.getDate(), setDateAndTimeFrame.getStartTime(), setDateAndTimeFrame.getEndTime(), room, gi, card);
+			Reservation reservation = new Reservation(rDate, rStartTime, rEndTime, room, gi, card);
+			//NewReservationFrame.this.manageReservation.addReservation(reservation);
+			manageReservation.addReservation(reservation);
+
+			newReservationFrame.dispose();
+
+		}
+	}
+
+	class CancelButtonListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent item) {
+
+			newReservationFrame.dispose();
+
+		}
+	}
+
+	//
 	public static void main(String[] args) {
 
 		NewReservationFrame nrf =  new NewReservationFrame();

@@ -43,7 +43,7 @@ public class GoldMealPlan extends SilverMealPlan{
 	 * method that sets the first flavor of wings
 	 * @param f1 represents the first flavor of wings
 	 */
-	public void setFlavor1(String f1)
+	public void setWingFlavor1(String f1)
 	{
 		wingFlavor1 = f1;
 	}
@@ -52,7 +52,7 @@ public class GoldMealPlan extends SilverMealPlan{
 	 * method that sets the second flavor of wings
 	 * @param f2 represents the second flavor of wings 
 	 */
-	public void setFlavor2(String f2)
+	public void setWingFlavor2(String f2)
 	{
 		wingFlavor2 = f2;
 	}
@@ -70,7 +70,7 @@ public class GoldMealPlan extends SilverMealPlan{
 	 * method that returns the first flavor of wings
 	 * @return a String representing the first flavor of wings 
 	 */
-	public String getFlavor1()
+	public String getWingFlavor1()
 	{
 		return wingFlavor1;
 	}
@@ -79,7 +79,7 @@ public class GoldMealPlan extends SilverMealPlan{
 	 * method that returns the second flavor of wings
 	 * @return a String representing the second flavor of wings
 	 */
-	public String getFlavor2()
+	public String getWingFlavor2()
 	{
 		return wingFlavor2;
 	}
