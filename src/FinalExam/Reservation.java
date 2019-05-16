@@ -52,4 +52,8 @@ public class Reservation extends abstract_reserv{
     public void Update() {
         System.out.println("A reservation has been finalized!");
     }
+    
+    public String toString() {
+    	return "Room: " + room + "\nDate: " + date + "\nStart Time: " + startTime + "\nEnd Time: " + endTime + "\nGuest Info: " + guest + "Card Info "+ card;
+    }
 }

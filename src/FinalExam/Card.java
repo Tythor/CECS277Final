@@ -79,4 +79,9 @@ public class Card {
 	public void setExpDate(String expDate) {
 		this.expDate = expDate;
 	}
+	
+	public String toString() {
+		return "\nCard Company: " + cardCompany + "\nCard Number: " + ccNum + "\nSecurity Code: " + securityCode + "\nExpiration Date: " + expDate;
+		
+	}
 }
