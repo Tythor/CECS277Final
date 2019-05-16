@@ -80,15 +80,15 @@ public class MainFrame extends JFrame {
 
         //	bookButton.addActionListener(new bookButtonListener());
         spr = addARoomDescription(System.getProperty("user.dir") + "/src/FinalExam/GUI/smallPartyRoom.jpg", "Small Party Room", small.toString());
-        bookButton.addActionListener(new bookButtonListener());
+        bookButton.addActionListener(new bookButtonListenerSPR());
         mpr = addARoomDescription(System.getProperty("user.dir") + "/src/FinalExam/GUI/mediumPartyRoom.jpg", "Medium Party Room", medium.toString());
-        bookButton.addActionListener(new bookButtonListener());
+        bookButton.addActionListener(new bookButtonListenerMPR());
         aq = addARoomDescription(System.getProperty("user.dir") + "/src/FinalExam/GUI/aquaWorld.jpg", "Aquaworld Room", aquaworld.newAquaworldRoom());
-        bookButton.addActionListener(new bookButtonListener());
+        bookButton.addActionListener(new bookButtonListenerAQ());
         kl = addARoomDescription(System.getProperty("user.dir") + "/src/FinalExam/GUI/karaokeLounge.jpg", "Karaoke Lounge", karaoke.toString());
-        bookButton.addActionListener(new bookButtonListener());
+        bookButton.addActionListener(new bookButtonListenerKL());
         bl = addARoomDescription(System.getProperty("user.dir") + "/src/FinalExam/GUI/billiardsLounge.jpg", "Billiards Lounge", billiards.toString());
-        bookButton.addActionListener(new bookButtonListener());
+        bookButton.addActionListener(new bookButtonListenerBL());
         
         
         bmp = addMealPlanDescription("Basic Meal Plan", basic.toString(), basic.getCost());
@@ -227,11 +227,13 @@ public class MainFrame extends JFrame {
         //New reservation item
         menuItem = new JMenuItem("New Reservation...");
         menu.add(menuItem);
+        menuItem.addActionListener(new NewReservationListener());
         menu.addSeparator();
 
         //Edit reservation item
         menuItem = new JMenuItem("Edit Existing Reservation...");
         menu.add(menuItem);
+        
         menu.addSeparator();
 
 
@@ -251,14 +253,13 @@ public class MainFrame extends JFrame {
 
         menuBar.add(menu);
         this.add(menuBar, BorderLayout.NORTH);
-
     }
 
 
     private JPanel addARoomDescription(String imgDir, String roomName, String roomDesc) {
         JPanel p = new JPanel();
 
-        ImageIcon icon = new ImageIcon(imgDir);
+        ImageIcon icon = new ImageIcon(new ImageIcon(imgDir).getImage().getScaledInstance(300, 200, Image.SCALE_DEFAULT));
         JLabel picture = new JLabel(roomName, icon, JLabel.CENTER);
         picture.setFont(new Font(Font.SERIF, Font.BOLD, 20));
 
@@ -378,14 +379,63 @@ public class MainFrame extends JFrame {
         }
     }
 
-    class bookButtonListener implements ActionListener {
+    class bookButtonListenerSPR implements ActionListener {
     	@Override
         public void actionPerformed(ActionEvent click) {
-        	
-        	
+    		name = "Small Party Room";
             SetDateAndTimeFrame setDateandTime = new SetDateAndTimeFrame();
-   
+            setDateandTime.createGUI(name);
             setDateandTime.setVisible(true);
+        }
+    }
+    
+    class bookButtonListenerMPR implements ActionListener {
+    	@Override
+        public void actionPerformed(ActionEvent click) {
+    		name = "Medium Party Room";
+            SetDateAndTimeFrame setDateandTime = new SetDateAndTimeFrame();
+            setDateandTime.createGUI(name);
+            setDateandTime.setVisible(true);
+        }
+    }
+    
+    class bookButtonListenerAQ implements ActionListener {
+    	@Override
+        public void actionPerformed(ActionEvent click) {
+    		name = "Aquaworld Room";
+            SetDateAndTimeFrame setDateandTime = new SetDateAndTimeFrame();
+            setDateandTime.createGUI(name);
+            setDateandTime.setVisible(true);
+        }
+    }
+    
+    class bookButtonListenerKL implements ActionListener {
+    	@Override
+        public void actionPerformed(ActionEvent click) {
+    		name = "Karaoke Lounge";
+            SetDateAndTimeFrame setDateandTime = new SetDateAndTimeFrame();
+            setDateandTime.createGUI(name);
+            setDateandTime.setVisible(true);
+        }
+    }
+    
+    class bookButtonListenerBL implements ActionListener {
+    	@Override
+        public void actionPerformed(ActionEvent click) {
+    		name = "Billiards Lounge";
+            SetDateAndTimeFrame setDateandTime = new SetDateAndTimeFrame();
+            setDateandTime.createGUI(name);
+            setDateandTime.setVisible(true);
+        }
+    }
+    
+
+    class NewReservationListener implements ActionListener {
+    	@Override
+        public void actionPerformed(ActionEvent select) {
+        	
+        	
+            NewReservationFrame nrf = new NewReservationFrame();
             //setDateandTime.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         }
     }

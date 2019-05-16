@@ -1,13 +1,15 @@
 package FinalExam;
 
+import java.sql.Time;
 import java.util.ArrayList;
+
 /**
- * @author audreybrio (group 6)
+ * @author (group 6)
  * @release date - May 6, 2019
  * this class creates a basic room
  * **/
 
-public abstract class Room {
+public class Room {
 	
 	protected String name;
 	protected int capacity;
@@ -18,6 +20,7 @@ public abstract class Room {
 	protected Date date;
 	protected MealPlans Meal;
 	protected ArrayList<MakeReservation> waitlist = new ArrayList<>(); //instance variables
+	private int month;
 	
 	/**
 	 * default constructor
@@ -117,7 +120,9 @@ public abstract class Room {
 	/**
 	 * abstract method that gets overridden, gets the cost for each room
 	 * **/
-	abstract public double getCost();
+	public double getCost() {
+		return 0;
+	}
 	
 	/**
 	 * method that alows you to upgrade a meal plan
@@ -157,7 +162,60 @@ public abstract class Room {
      * @param date - takes in the date that you want
      * @return isAvailable - boolean of whether or not the date is available
      * **/
-	public boolean isAvaliable(Date date) {
+	public boolean isAvaliable(String a, int b, int c, String e, String f, String g) {
+		if(a.equals("January")) {
+			 month = 1;
+		}
+		if(a.equals("February")) {
+			month = 2;
+		}
+		if(a.equals("March")) {
+			 month = 3;
+		}
+		if(a.equals("April")) {
+			month = 4;
+		}
+		if(a.equals("May")) {
+			 month = 5;
+		}
+		if(a.equals("June")) {
+			 month = 6;
+		}
+		if(a.equals("July")) {
+			 month = 7;
+		}
+		if(a.equals("August")) {
+			month = 8;
+		}
+		if(a.equals("September")) {
+			 month = 9;
+		}
+		if(a.equals("October")) {
+			 month = 10;
+		}
+		if(a.equals("November")) {
+			 month = 11;
+		}
+		if(a.equals("December")) {
+			int month = 12;
+		}
+		Date date = new Date();
+		date.setMonth(month);
+		date.setDay(b);
+		date.setYear(c);
+		
+		String hourS = e.substring(0, 2);
+		String hourE = f.substring(0, 2);
+		String minuteS = e.substring(3, 5);
+		String minuteE = f.substring(3, 5);
+		int startH = Integer.parseInt(hourS);
+		int startM = Integer.parseInt(minuteS);
+		int endH = Integer.parseInt(hourE);
+		int endM = Integer.parseInt(minuteE);
+		Time timeS = new Time(startH, startM, 0);
+		Time timeE = new Time(endH, endM, 0);
+		System.out.println(timeS);
+		System.out.println(date);
 	    return isAvailable;
 	}
 	
@@ -173,3 +231,4 @@ public abstract class Room {
 		return description;
 	}
 }
+
