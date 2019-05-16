@@ -79,6 +79,56 @@ public class NewReservationFrame implements ActionListener {
 		newReservationFrame.setLocationRelativeTo(null);
 		newReservationFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
+	
+	public void setFirstName(String fn)
+	{
+		firstName.setText(fn);
+	}
+	
+	public void setLastName(String ln)
+	{
+		lastName.setText(ln);
+	}
+	
+	public void setPhoneNum(String pn)
+	{
+		phoneNumber.setText(pn);
+	}
+	
+	public void setAddress(String a)
+	{
+		address.setText(a);
+	}
+	
+	public void setDob(String d)
+	{
+		dob.setText(d);
+	}
+	
+	public void setEmail(String e)
+	{
+		email.setText(e);
+	}
+	
+	public void setCardNum(String cn)
+	{
+		cardNumber.setText(cn);
+	}
+	
+	public void setCardName(String cname)
+	{
+		cardName.setText(cname);
+	}
+	
+	public void setCardCode(String cc)
+	{
+		cardCode.setText(cc);
+	}
+	
+	public void setExpDate(String ed)
+	{
+		expDate.setText(ed);
+	}
 
 	public void createComponents() {
 		newPanel = new JPanel();
