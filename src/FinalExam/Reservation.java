@@ -2,7 +2,7 @@ package FinalExam;
 
 import java.sql.Time;
 
-public class Reservation {
+public class Reservation extends abstract_reserv{
     protected Date date;
     private Time startTime;
     private Time endTime;
@@ -44,8 +44,13 @@ public class Reservation {
         return endTime;
     }
 
-    public void finalizeReservation() {
-    
+    public void finalizeReservation(boolean new_state) {
+        isFinalized = new_state;
+        notify();
+    }
+
+    public void Update() {
+        System.out.println("A reservation has been finalized!");
     }
     
     public String toString() {

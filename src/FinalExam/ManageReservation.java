@@ -18,9 +18,15 @@ public class ManageReservation {
     	//super(date, room);
     }
 
-    public void update(GuestInfo x, Object y) {
-        this.setDate((Date) y);
-        this.setRoom((Room) y);
+//    public void update(GuestInfo x, Object y) {
+//        this.setDate((Date) y);
+//        this.setRoom((Room) y);
+//    }
+
+    public void Notify() {
+        for (Reservation r : reservations) {
+            r.Update();
+        }
     }
     public boolean isFinalized() {
         return isFinalized;

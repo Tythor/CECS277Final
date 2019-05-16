@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce9eb9b9-3f95-4037-94fa-e349ba991113" name="Default Changelist" comment="Merge branch 'master' of https://github.com/Tythor/CECS277Final&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/FinalExam/Main.java&#10;#&#9;src/FinalExam/ManageReservation.java">
+      <change afterPath="$PROJECT_DIR$/src/FinalExam/abstract_reserv.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FinalExam/GUI/CheckInFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FinalExam/GUI/CheckInFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FinalExam/ManageReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FinalExam/ManageReservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FinalExam/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FinalExam/Reservation.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,6 +54,30 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="61729162">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="661" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="661" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Reservation" value="1" />
+          <entry key="java" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="4" />
+          <entry key="UML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="CECS277Final" />
@@ -61,136 +89,83 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FinalExam/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/FinalExam/GUI/CheckInFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FinalExam/GuestInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+            <state relative-caret-position="285">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
               <folding>
-                <element signature="e#455#456#0" expanded="true" />
-                <element signature="e#487#488#0" expanded="true" />
-                <element signature="e#584#585#0" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
-                <element signature="e#657#658#0" expanded="true" />
-                <element signature="e#703#704#0" expanded="true" />
-                <element signature="e#734#735#0" expanded="true" />
-                <element signature="e#774#775#0" expanded="true" />
-                <element signature="e#799#800#0" expanded="true" />
-                <element signature="e#852#853#0" expanded="true" />
-                <element signature="e#893#894#0" expanded="true" />
-                <element signature="e#928#929#0" expanded="true" />
-                <element signature="e#951#952#0" expanded="true" />
-                <element signature="e#986#987#0" expanded="true" />
-                <element signature="e#1009#1010#0" expanded="true" />
-                <element signature="e#1057#1058#0" expanded="true" />
-                <element signature="e#1088#1089#0" expanded="true" />
-                <element signature="e#1133#1134#0" expanded="true" />
-                <element signature="e#1162#1163#0" expanded="true" />
-                <element signature="e#1210#1211#0" expanded="true" />
-                <element signature="e#1228#1229#0" expanded="true" />
-                <element signature="e#1260#1261#0" expanded="true" />
-                <element signature="e#1281#1282#0" expanded="true" />
-                <element signature="e#1314#1315#0" expanded="true" />
-                <element signature="e#1336#1337#0" expanded="true" />
-                <element signature="e#1366#1367#0" expanded="true" />
-                <element signature="e#1385#1386#0" expanded="true" />
-                <element signature="e#1423#1424#0" expanded="true" />
-                <element signature="e#1441#1442#0" expanded="true" />
-                <element signature="e#1467#1468#0" expanded="true" />
-                <element signature="e#1485#1486#0" expanded="true" />
-                <element signature="e#1511#1512#0" expanded="true" />
-                <element signature="e#1529#1530#0" expanded="true" />
-                <element signature="e#1564#1565#0" expanded="true" />
-                <element signature="e#1586#1587#0" expanded="true" />
-                <element signature="e#1619#1620#0" expanded="true" />
-                <element signature="e#1640#1641#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/FinalExam/GUI/Spinner.java">
+        <entry file="file://$PROJECT_DIR$/src/FinalExam/GUI/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="52" column="37" lean-forward="true" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+            <state relative-caret-position="85">
+              <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FinalExam/Reservation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1093#1094#0" expanded="true" />
+                <element signature="e#1129#1130#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FinalExam/GUI/SetDateAndTimeFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2567">
-              <caret line="151" column="20" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
+        <entry file="uml://JAVA/FinalExam.Reservation">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>FinalExam.Reservation</OriginalElement>
+              <nodes>
+                <node x="8.5" y="79.0">FinalExam.Reservation</node>
+                <node x="0.0" y="0.0">FinalExam.abstract_reserv</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="FinalExam.Reservation" target="FinalExam.abstract_reserv">
+                  <point x="0.0" y="-14.5" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="-314.5" y="38.5" />
+              <SelectedNodes>
+                <node>FinalExam.Reservation</node>
+              </SelectedNodes>
+              <Categories />
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FinalExam/ManageReservation.java">
+        <entry file="file://$PROJECT_DIR$/src/FinalExam/abstract_reserv.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#392#393#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#476#477#0" expanded="true" />
-                <element signature="e#515#516#0" expanded="true" />
-                <element signature="e#545#546#0" expanded="true" />
-                <element signature="e#572#573#0" expanded="true" />
-                <element signature="e#610#611#0" expanded="true" />
-                <element signature="e#642#643#0" expanded="true" />
-                <element signature="e#671#672#0" expanded="true" />
-                <element signature="e#698#699#0" expanded="true" />
-                <element signature="e#736#737#0" expanded="true" />
-                <element signature="e#768#769#0" expanded="true" />
-                <element signature="e#797#798#0" expanded="true" />
-                <element signature="e#824#825#0" expanded="true" />
-                <element signature="e#862#863#0" expanded="true" />
-                <element signature="e#889#890#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FinalExam/PartyFavorsBag.java">
+        <entry file="file://$PROJECT_DIR$/src/FinalExam/GoldMealPlan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FinalExam/PartyDecorations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FinalExam/MediumPartyRoom.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -199,7 +174,109 @@
         <entry file="file://$PROJECT_DIR$/src/FinalExam/MealPlans.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+              <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <folding>
+                <element signature="e#79#80#0" expanded="true" />
+                <element signature="e#97#98#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="uml://JAVA/FinalExam.MealPlans">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>FinalExam.MealPlans</OriginalElement>
+              <nodes>
+                <node x="10.5" y="79.0">FinalExam.BronzeMealPlan</node>
+                <node x="52.250000000000014" y="316.0">FinalExam.PlatinumMealPlan</node>
+                <node x="53.475" y="0.0">FinalExam.BasicMealPlan</node>
+                <node x="238.25" y="0.0">FinalExam.MealPlans</node>
+                <node x="9.231250000000017" y="237.0">FinalExam.GoldMealPlan</node>
+                <node x="42.48125000000002" y="158.0">FinalExam.SilverMealPlan</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="FinalExam.BronzeMealPlan" target="FinalExam.BasicMealPlan">
+                  <point x="-32.75" y="-14.5" />
+                  <point x="43.25" y="59.0" />
+                  <point x="89.775" y="59.0" />
+                  <point x="-24.19999999999999" y="14.5" />
+                </edge>
+                <edge source="FinalExam.PlatinumMealPlan" target="FinalExam.SilverMealPlan">
+                  <point x="17.625" y="-14.5" />
+                  <point x="140.375" y="291.0" />
+                  <point x="143.15208333333334" y="291.0" />
+                  <point x="143.15208333333334" y="212.0" />
+                  <point x="144.98125" y="212.0" />
+                  <point x="40.999999999999986" y="14.5" />
+                </edge>
+                <edge source="FinalExam.GoldMealPlan" target="FinalExam.SilverMealPlan">
+                  <point x="39.999999999999986" y="-14.5" />
+                  <point x="109.23125" y="212.0" />
+                  <point x="103.98125000000002" y="212.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="FinalExam.PlatinumMealPlan" target="FinalExam.GoldMealPlan">
+                  <point x="-17.625" y="-14.5" />
+                  <point x="105.12500000000001" y="291.0" />
+                  <point x="99.23125000000002" y="291.0" />
+                  <point x="30.0" y="14.5" />
+                </edge>
+                <edge source="FinalExam.SilverMealPlan" target="FinalExam.BasicMealPlan">
+                  <point x="40.999999999999986" y="-14.5" />
+                  <point x="144.98125" y="133.0" />
+                  <point x="160.02708333333334" y="133.0" />
+                  <point x="160.02708333333334" y="59.0" />
+                  <point x="138.175" y="59.0" />
+                  <point x="24.200000000000017" y="14.5" />
+                </edge>
+                <edge source="FinalExam.GoldMealPlan" target="FinalExam.BasicMealPlan">
+                  <point x="-40.000000000000014" y="-14.5" />
+                  <point x="29.231250000000003" y="212.0" />
+                  <point x="0.0" y="212.0" />
+                  <point x="0.0" y="49.0" />
+                  <point x="65.57499999999999" y="49.0" />
+                  <point x="-48.400000000000006" y="14.5" />
+                </edge>
+                <edge source="FinalExam.SilverMealPlan" target="FinalExam.BronzeMealPlan">
+                  <point x="-1.4210854715202004E-14" y="-14.5" />
+                  <point x="103.98125" y="133.0" />
+                  <point x="108.75" y="133.0" />
+                  <point x="32.75" y="14.5" />
+                </edge>
+                <edge source="FinalExam.PlatinumMealPlan" target="FinalExam.BasicMealPlan">
+                  <point x="52.875" y="-14.5" />
+                  <point x="175.625" y="291.0" />
+                  <point x="178.22500000000002" y="291.0" />
+                  <point x="178.22500000000002" y="49.0" />
+                  <point x="162.375" y="49.0" />
+                  <point x="48.400000000000006" y="14.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="-168.0" y="94.0" />
+              <SelectedNodes>
+                <node>FinalExam.MealPlans</node>
+              </SelectedNodes>
+              <Categories />
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FinalExam/ManageReservation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1198#1199#0" expanded="true" />
+                <element signature="e#1236#1237#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -221,8 +298,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/FinalExam/Rooms.java" />
         <option value="$PROJECT_DIR$/src/FinalExam/Date.java" />
-        <option value="$PROJECT_DIR$/src/FinalExam/ManageReservation.java" />
         <option value="$PROJECT_DIR$/src/FinalExam/GuestInfo.java" />
+        <option value="$PROJECT_DIR$/src/FinalExam/abstract_room.java" />
+        <option value="$PROJECT_DIR$/src/FinalExam/ManageReservation.java" />
+        <option value="$PROJECT_DIR$/src/FinalExam/Reservation.java" />
+        <option value="$PROJECT_DIR$/src/FinalExam/GUI/CheckInFrame.java" />
       </list>
     </option>
   </component>
@@ -232,8 +312,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
+    <option name="y" value="-11" />
     <option name="width" value="980" />
     <option name="height" value="1031" />
   </component>
@@ -243,6 +324,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -280,14 +362,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557792746495" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558008863419" />
     <property name="last_opened_file_path" value="C:/proj_2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -438,10 +519,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13486000" />
+    <option name="totallyTimeSpent" value="17067000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="653" height="687" extended-state="1" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
@@ -449,49 +530,20 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" sideWeight="0.5010846" side_tool="true" weight="0.51865673" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4978308" weight="0.51865673" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4978308" weight="0.51821864" />
       <window_info id="Structure" order="6" sideWeight="0.5021692" side_tool="true" weight="0.51865673" />
       <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" />
-      <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32384342" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32384342" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
@@ -501,7 +553,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -561,48 +613,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FinalExam/MakeReservation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FinalExam/GUI/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2165">
-          <caret line="272" column="37" selection-start-line="272" selection-start-column="37" selection-end-line="272" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FinalExam/MakeReservation.java" />
     <entry file="file://$PROJECT_DIR$/src/FinalExam/GUI/aquaWorld.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FinalExam/ManageReservation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#698#699#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-            <element signature="e#797#798#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#889#890#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FinalExam/PartyFavorsBag.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -614,7 +627,11 @@
     <entry file="file://$PROJECT_DIR$/src/FinalExam/MealPlans.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding>
+            <element signature="e#79#80#0" expanded="true" />
+            <element signature="e#97#98#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -692,6 +709,161 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FinalExam/abstract_reserv.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FinalExam/GUI/CheckInFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/FinalExam.MealPlans">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>FinalExam.MealPlans</OriginalElement>
+          <nodes>
+            <node x="10.5" y="79.0">FinalExam.BronzeMealPlan</node>
+            <node x="52.250000000000014" y="316.0">FinalExam.PlatinumMealPlan</node>
+            <node x="53.475" y="0.0">FinalExam.BasicMealPlan</node>
+            <node x="238.25" y="0.0">FinalExam.MealPlans</node>
+            <node x="9.231250000000017" y="237.0">FinalExam.GoldMealPlan</node>
+            <node x="42.48125000000002" y="158.0">FinalExam.SilverMealPlan</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="FinalExam.BronzeMealPlan" target="FinalExam.BasicMealPlan">
+              <point x="-32.75" y="-14.5" />
+              <point x="43.25" y="59.0" />
+              <point x="89.775" y="59.0" />
+              <point x="-24.19999999999999" y="14.5" />
+            </edge>
+            <edge source="FinalExam.PlatinumMealPlan" target="FinalExam.SilverMealPlan">
+              <point x="17.625" y="-14.5" />
+              <point x="140.375" y="291.0" />
+              <point x="143.15208333333334" y="291.0" />
+              <point x="143.15208333333334" y="212.0" />
+              <point x="144.98125" y="212.0" />
+              <point x="40.999999999999986" y="14.5" />
+            </edge>
+            <edge source="FinalExam.GoldMealPlan" target="FinalExam.SilverMealPlan">
+              <point x="39.999999999999986" y="-14.5" />
+              <point x="109.23125" y="212.0" />
+              <point x="103.98125000000002" y="212.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="FinalExam.PlatinumMealPlan" target="FinalExam.GoldMealPlan">
+              <point x="-17.625" y="-14.5" />
+              <point x="105.12500000000001" y="291.0" />
+              <point x="99.23125000000002" y="291.0" />
+              <point x="30.0" y="14.5" />
+            </edge>
+            <edge source="FinalExam.SilverMealPlan" target="FinalExam.BasicMealPlan">
+              <point x="40.999999999999986" y="-14.5" />
+              <point x="144.98125" y="133.0" />
+              <point x="160.02708333333334" y="133.0" />
+              <point x="160.02708333333334" y="59.0" />
+              <point x="138.175" y="59.0" />
+              <point x="24.200000000000017" y="14.5" />
+            </edge>
+            <edge source="FinalExam.GoldMealPlan" target="FinalExam.BasicMealPlan">
+              <point x="-40.000000000000014" y="-14.5" />
+              <point x="29.231250000000003" y="212.0" />
+              <point x="0.0" y="212.0" />
+              <point x="0.0" y="49.0" />
+              <point x="65.57499999999999" y="49.0" />
+              <point x="-48.400000000000006" y="14.5" />
+            </edge>
+            <edge source="FinalExam.SilverMealPlan" target="FinalExam.BronzeMealPlan">
+              <point x="-1.4210854715202004E-14" y="-14.5" />
+              <point x="103.98125" y="133.0" />
+              <point x="108.75" y="133.0" />
+              <point x="32.75" y="14.5" />
+            </edge>
+            <edge source="FinalExam.PlatinumMealPlan" target="FinalExam.BasicMealPlan">
+              <point x="52.875" y="-14.5" />
+              <point x="175.625" y="291.0" />
+              <point x="178.22500000000002" y="291.0" />
+              <point x="178.22500000000002" y="49.0" />
+              <point x="162.375" y="49.0" />
+              <point x="48.400000000000006" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-168.0" y="94.0" />
+          <SelectedNodes>
+            <node>FinalExam.MealPlans</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FinalExam/ManageReservation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
+            <element signature="e#1236#1237#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/FinalExam.Reservation">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>FinalExam.Reservation</OriginalElement>
+          <nodes>
+            <node x="8.5" y="79.0">FinalExam.Reservation</node>
+            <node x="0.0" y="0.0">FinalExam.abstract_reserv</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="FinalExam.Reservation" target="FinalExam.abstract_reserv">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-314.5" y="38.5" />
+          <SelectedNodes>
+            <node>FinalExam.Reservation</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FinalExam/Reservation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+          <folding>
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FinalExam/GUI/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
         </state>
       </provider>
     </entry>
