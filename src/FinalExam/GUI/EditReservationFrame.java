@@ -112,6 +112,9 @@ public class EditReservationFrame implements ActionListener {
 	public void editFrame()
 	{
 		NewReservationFrame nrf = new NewReservationFrame();
+		//Reservation reservation = manageReservation.getR
+		
+		//nrf.setFirstName(reservation.getF);
 		
 	}
 
