@@ -1,6 +1,7 @@
 package FinalExam.GUI;
 
 import FinalExam.GuestInfo;
+import FinalExam.ManageReservation;
 import FinalExam.Reservation;
 import FinalExam.Reservation;
 
@@ -8,12 +9,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class CheckInFrame extends JPanel {
     private static final int FRAME_WIDTH = 425;
     private static final int FRAME_HEIGHT = 300;
 
-    JList<Reservation> list;
+    JList<String> list;
     JButton check_in;
     JButton cancel;
     JPanel panel;
@@ -31,8 +33,16 @@ public class CheckInFrame extends JPanel {
 
     public void createComponents(){
         //get reservations
+        ArrayList<Reservation> r = ManageReservation.getReservations();
+        ArrayList<String> r_string = new ArrayList<>();
+        for (Reservation res: r) {
+            r_string.add(res.toString());
+        }
+        // iteration and putting arraylist into jlist
+//        for (String res: r_string) {
+//            list.add(res);
+//        }
 
-        list = new JList<Reservation>();
         check_in = new JButton("Check-in");
 
         cancel = new JButton("Cancel");
@@ -41,7 +51,7 @@ public class CheckInFrame extends JPanel {
 
         panel = new JPanel();
         panel.add(list);
-        reserv = list.getSelectedValue();
+        int res_index = list.getSelectedIndex();
         ActionListener checkInListener = new CheckInlistener();
         check_in.addActionListener(checkInListener);
         ActionListener CancelListener = new CancelListener();
