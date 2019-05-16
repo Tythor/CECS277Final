@@ -8,7 +8,7 @@ public class EditReservationFrame implements ActionListener {
 	
 	private JTextField enterNum, enterName;
 	private JLabel reservationType, confirmationNum, guestName;
-	private JButton confirmed, waitlist;
+	private JButton confirmed, waitlist, delete;
 	
 	private JPanel newPanel;
 	private JFrame editReservationFrame = new JFrame();
@@ -48,6 +48,9 @@ public class EditReservationFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent item) {
+		enterNum = new JTextField();
+		newPanel.add(enterNum);
+		enterNum.setVisible(true);
 		
 		if(item.getSource() == confirmed)
 		{
@@ -86,6 +89,7 @@ public class EditReservationFrame implements ActionListener {
 	
 	public void editFrame()
 	{
+		NewReservationFrame nrf = new NewReservationFrame();
 		
 	}
 	
