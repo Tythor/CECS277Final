@@ -51,7 +51,6 @@ public class NewReservationFrame implements ActionListener {
 		newReservationFrame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		newReservationFrame.setLocationRelativeTo(null);
 		newReservationFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
 	}
 
 	public void createComponents() {
