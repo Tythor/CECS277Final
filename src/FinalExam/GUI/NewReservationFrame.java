@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import FinalExam.Card;
+import FinalExam.Factory.*;
 import FinalExam.GuestInfo;
+import FinalExam.Room;
 
 public class NewReservationFrame implements ActionListener {
 
@@ -268,6 +270,27 @@ public class NewReservationFrame implements ActionListener {
         	
         	GuestInfo gi = new GuestInfo(firstName.getText(), lastName.getText(), phoneNumber.getText(), address.getText(),
         								 dob.getText(), email.getText());
+
+			RoomFactory roomFactory = null;
+			switch (roomTypes.getSelectedItem().toString()) {
+				case "Small Party Room":
+					roomFactory = new SmallPartyRoomFactory();
+					break;
+				case "Medium Party Room":
+					roomFactory = new MediumPartyRoomFactory();
+					break;
+				case "Aquaworld Room":
+					roomFactory = new AquaworldRoomFactory();
+					break;
+				case "Billiards Lounge":
+					roomFactory = new BilliardsLoungeFactory();
+					break;
+				case "Karaoke Lounge":
+					roomFactory = new KaraokeLoungeFactory();
+					break;
+			}
+			Room room = roomFactory.createRoom();
+			System.out.println(room);
         	
         }
     }
