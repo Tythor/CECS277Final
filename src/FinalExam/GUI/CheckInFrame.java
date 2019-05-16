@@ -50,6 +50,7 @@ public class CheckInFrame extends JPanel {
 
 
         panel = new JPanel();
+        list = new JList<>();
         panel.add(list);
         int res_index = list.getSelectedIndex();
         ActionListener checkInListener = new CheckInlistener();

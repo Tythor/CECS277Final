@@ -245,9 +245,11 @@ public class MainFrame extends JFrame {
 
         menuItem = new JMenuItem("Check-in");
         submenu.add(menuItem);
+        menuItem.addActionListener(new CheckInListener());
 
         menuItem = new JMenuItem("Check-out");
         submenu.add(menuItem);
+        menuItem.addActionListener(new CheckOutListener());
 
 
         menu.add(submenu);
@@ -446,6 +448,20 @@ public class MainFrame extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             EditReservationFrame erf = new EditReservationFrame();
+        }
+    }
+
+    class CheckInListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            CheckInFrame cif = new CheckInFrame();
+        }
+    }
+
+    class CheckOutListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            CheckOutFrame cof = new CheckOutFrame();
         }
     }
 }

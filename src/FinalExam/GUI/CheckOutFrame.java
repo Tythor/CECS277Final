@@ -1,6 +1,7 @@
 package FinalExam.GUI;
 
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-public class checkOutFrame extends JFrame {
+public class CheckOutFrame extends JFrame {
 	
 	private JPanel checkOutPanel;
 
@@ -32,14 +33,14 @@ public class checkOutFrame extends JFrame {
 	
 	private static ArrayList<String> damagedItems = new ArrayList<String> ();
 	
-	public checkOutFrame() {
+	public CheckOutFrame() {
 		createComponents();
 		this.setTitle("Check Out");
 		this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		
 		text.setText(" ********** Invoice **********\n");
 		
-		
+		this.setVisible(true);
 		
 	}
 	
@@ -79,7 +80,7 @@ public class checkOutFrame extends JFrame {
 			
 			JButton chkTemp = (JButton) c.getSource();
 			
-			checkOutFrame finalizeFrame = (checkOutFrame) SwingUtilities.getRoot(chkTemp);
+			CheckOutFrame finalizeFrame = (CheckOutFrame) SwingUtilities.getRoot(chkTemp);
 			
 			if(chkTemp.getText().equals("Check Out")) {
 				
@@ -87,6 +88,9 @@ public class checkOutFrame extends JFrame {
 			
 				System.out.println(damageCost.getText()); // Testing Purposes
 				System.out.println(damageDescription.getText());
+				Component n = (Component) c.getSource(); //e.getSource() returns Object
+				JFrame m = (JFrame) SwingUtilities.getRoot(n);
+				m.setVisible(false);
 				
 				// Checkpoint 2
 				
@@ -98,7 +102,7 @@ public class checkOutFrame extends JFrame {
 	
 	public static void main(String [] args) {
 		
-		checkOutFrame ch = new checkOutFrame();
+		CheckOutFrame ch = new CheckOutFrame();
 		
 		ch.setVisible(true);
 	}
