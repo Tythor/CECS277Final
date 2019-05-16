@@ -210,14 +210,15 @@ public class SetDateAndTimeFrame extends JPanel implements ChangeListener {
             String startTime = new SimpleDateFormat("HH:mm").format(timeModel.getValue());
             String endTime = new SimpleDateFormat("HH:mm").format(timeMod.getValue());
             Room r = new Room();
-            boolean available = r.isAvaliable(month, day, year, startTime, endTime, name);
-            if (available =true) {
+            //boolean available = r.isAvaliable(month, day, year, startTime, endTime, name);
+            //if (available == true) {
             	//NewReservationFrame nrf = new NewReservationFrame(name, day, month);
             	System.out.println("yay");
-            }
-            else if(available = false) {
-            	//waitlistFrame wait = new WaitListFrame();
-            }
+          //  }
+           // else if(available == false) {
+            	waitListFrame wait = new waitListFrame(name);
+            	wait.setVisible(true);
+            //}
             System.out.println(startTime);
             System.out.println(endTime);
 
